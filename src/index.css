@@ -78,3 +78,45 @@ div.hamburger.links a {
 div.hamburger.links a:hover {
   background-color: rgba(196, 196, 196, 1);
 }
+.hero.container {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.hero h1,
+h5 {
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.hero h5 {
+  font-size: 12px;
+  margin-bottom: 48px;
+}
+
+.slideshow {
+  display: flex;
+  flex-direction: row;
+}
+
+.slideshow :nth-child(2) {
+  display: none;
+}
+.slideshow :nth-child(4) {
+  display: none;
+}
+
+.slideshow .hero {
+  width: 256px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.slideshow .navigation {
+  height: 64px;
+}
