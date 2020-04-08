@@ -12,6 +12,7 @@ const images = [
     artist: "Svreca",
     href: "",
     order: 1,
+    textColor: "rgba(255, 255, 255, 1)",
   },
   {
     img: hero1,
@@ -19,6 +20,7 @@ const images = [
     artist: "Donato Dozzy & Nuel",
     href: "",
     order: 0,
+    textColor: "rgba(0, 0, 0, 1)",
   },
   {
     img: hero3,
@@ -26,6 +28,7 @@ const images = [
     artist: "Convextion",
     href: "",
     order: 2,
+    textColor: "rgba(255, 255, 255, 1)",
   },
 ];
 
@@ -57,17 +60,37 @@ function SlideShow() {
   function makeSlides(arr) {
     return arr.map((image) => {
       return (
-        <div key={image.title}>
-          <img className="hero" src={image.img} width="100px"></img>
+        <div key={image.title} className="slideshow img container">
+          <img
+            className="hero"
+            src={image.img}
+            alt={image.title}
+            width="100px"
+          ></img>
+          <div></div>
+          <div className="img text" style={{ color: image.textColor }}>
+            {image.title} <br />
+            {image.artist}
+          </div>
         </div>
       );
     });
   }
   return (
-    <div className="slideshow">
-      <img className="navigation" src={left} onClick={handlePrev}></img>
+    <div className="slideshow box">
+      <img
+        className="navigation"
+        src={left}
+        onClick={handlePrev}
+        alt=".."
+      ></img>
       {makeSlides(orders[index])}
-      <img className="navigation" src={right} onClick={handleNext}></img>
+      <img
+        className="navigation"
+        src={right}
+        onClick={handleNext}
+        alt=".."
+      ></img>
     </div>
   );
 }
