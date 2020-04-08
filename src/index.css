@@ -40,7 +40,7 @@ input {
   color: rgba(68, 68, 68, 1);
 }
 
-.navbar input:focus {
+input:focus {
   outline: none;
 }
 
@@ -232,28 +232,91 @@ h5 {
   color: white;
 }
 
-.footer.menu {
+.footer .hamburger.links {
+  top: -196px;
+  padding: 0px;
+  padding-top: 16px;
+  color: rgb(252, 232, 230);
+}
+
+.auth.container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.auth.form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 343px;
+  height: 342px;
+  background-color: white;
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 15px;
+  color: rgba(31, 31, 31, 1);
+  padding: 24px 24px 48px 24px;
+}
+
+.auth.form h3 {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.auth.input {
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 15px;
+  height: 16px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.auth.input:last-of-type {
+  margin-bottom: 24px;
+}
+
+.auth.submit {
+  height: 32px;
+  padding: 8px 16px 8px 16px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(31, 31, 31, 1);
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.footer.links {
-  position: absolute;
-  top: -196px;
-  right: 0;
-  width: 100%;
-  background-color: rgba(229, 229, 229, 1);
-  padding: 0px;
-  padding-top: 16px;
+.auth.form p {
+  font-size: 12px;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
-.footer.links a {
-  color: rgba(31, 31, 31, 1);
-  font-size: 18px;
-  padding: 14px 16px;
+.auth.form a {
+  font-size: 12px;
   text-decoration: none;
-  font-size: 17px;
-  display: block;
+  color: rgba(146, 146, 146, 1);
 }
-.footer.links a:hover {
-  background-color: rgba(196, 196, 196, 1);
+
+.auth.submit.facebook,
+.auth.submit.google {
+  height: 24px;
+  padding: 6px 12px 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.auth.submit.facebook {
+  margin-top: 24px;
+
+  background-color: rgba(66, 103, 178, 1);
+}
+
+.auth.submit.google {
+  margin-top: 12px;
+  background-color: rgba(206, 62, 62, 1);
+}
+
+.auth.form.signup {
+  height: 442px;
 }

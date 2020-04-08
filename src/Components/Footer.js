@@ -7,16 +7,19 @@ function Footer() {
   return (
     <div className="footer container">
       <div className="icons container">
-        <img className="footer logo" src={logo} alt="..."></img>
+        <a href="/">
+          <img className="footer logo" src={logo} alt="..."></img>
+        </a>
+
         <img
-          className="footer menu"
+          className="hamburger"
           src={menu}
           alt="..."
           onClick={() => (open ? setOpen(false) : setOpen(true))}
           style={open ? { transform: "rotate(180deg)" } : { transform: "none" }}
         ></img>
         <div
-          className="footer links"
+          className="hamburger links"
           style={open ? { display: "block" } : { display: "none" }}
         >
           <a href="#">Terms of Use</a>

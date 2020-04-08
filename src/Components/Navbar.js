@@ -7,7 +7,10 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <div className="navbar">
-      <img className="logo" src={logo} alt="musicdb logo"></img>
+      <a href="/">
+        <img className="logo" src={logo} alt="musicdb logo"></img>
+      </a>
+
       <form>
         <input
           className="input search"
@@ -16,7 +19,7 @@ function Navbar() {
           placeholder="Search"
         ></input>
         <div className="button search">
-          <img className="img search" src={icon}></img>
+          <img className="img search" src={icon} alt="..."></img>
         </div>
       </form>
       <img
@@ -24,13 +27,14 @@ function Navbar() {
         src={hamburger}
         onClick={() => (open ? setOpen(false) : setOpen(true))}
         style={open ? { transform: "rotate(90deg)" } : { transform: "none" }}
+        alt="..."
       ></img>
       <div
         className="hamburger links"
         style={open ? { display: "block" } : { display: "none" }}
       >
-        <a href="#">Log In</a>
-        <a href="#">Sign Up</a>
+        <a href="/login">Log In</a>
+        <a href="/signup">Sign Up</a>
         <a href="#">Explore genres</a>
       </div>
     </div>
