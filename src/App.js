@@ -1,24 +1,26 @@
 import React from "react";
 import "./App.css";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
+import { AuthProvider } from "./Components/Auth/AuthProvider";
 import Navbar from "./Components/Navbar";
 import MainPageContent from "./Components/MainPageContent";
 import Footer from "./Components/Footer";
 import LogIn from "./Components/Auth/LogIn";
 import SignUp from "./Components/Auth/SignUp";
+import ForgotPassword from "./Components/Auth/ForgotPassword";
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Navbar />
       <Router>
         <MainPageContent path="/" />
         <LogIn path="/login" />
         <SignUp path="/signup" />
+        <ForgotPassword path="/forgotPassword" />
       </Router>
-
       <Footer />
-    </div>
+    </AuthProvider>
   );
 }
 

@@ -12,6 +12,7 @@ class SignUp extends React.Component {
       signupConfirmPassword: "",
       signed: false,
       showErr: false,
+      error: null,
     };
   }
 
@@ -24,7 +25,6 @@ class SignUp extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     if (this.state.signupPassword === this.state.signupConfirmPassword) {
       firebaseAuth
         .auth()
@@ -39,7 +39,10 @@ class SignUp extends React.Component {
             displayName: this.state.signupUsername,
           });
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {
+          console.log(err.message);
+          this.setState({ error: err.message });
+        });
     } else {
       this.setState({ showErr: true });
     }
@@ -49,23 +52,13 @@ class SignUp extends React.Component {
     firebaseAuth
       .auth()
       .signInWithPopup(provider)
-      .then(function (result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(user);
+      .then((result) => {
+        console.log(result.user);
         this.setState({ signed: true });
       })
-      .catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        console.log(errorMessage);
+      .catch(function (err) {
+        this.setState({ error: err.message });
+        console.log(err.message);
       });
   };
 
@@ -75,11 +68,10 @@ class SignUp extends React.Component {
         <form
           className="auth form signup"
           // https://reach.tech/router/api/navigate
+
           onSubmit={async (event) => {
             const newUser = await this.handleSubmit(event);
-            if (this.state.signed) {
-              navigate("/");
-            }
+            navigate("/");
           }}
         >
           <h3>Create new MusicDB account</h3>
@@ -122,6 +114,7 @@ class SignUp extends React.Component {
           {this.state.showErr ? (
             <span className="error">Passwords do not match</span>
           ) : null}
+          {this.state.error ? <span>{this.state.error}</span> : null}
           <button className="auth submit" type="submit">
             Create account
           </button>
@@ -136,7 +129,13 @@ class SignUp extends React.Component {
           <button
             className="auth submit google"
             type="button"
-            onClick={this.handleGoogleSignUp}
+            onClick={async (event) => {
+              const user = await this.handleGoogleSignUp();
+              console.log(user);
+              if (this.state.signed) {
+                navigate("/");
+              }
+            }}
           >
             Sign Up with Google
           </button>

@@ -4,12 +4,16 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 .navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
   height: 48px;
   background-color: rgba(31, 31, 31, 1);
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: relative;
   justify-content: center;
 }
 
@@ -63,8 +67,13 @@ input:focus {
   cursor: pointer;
 }
 
+.hamburger.container {
+  position: relative;
+}
+
 div.hamburger.links {
-  position: absolute;
+  position: fixed;
+  z-index: 2;
   top: 48px;
   right: 0px;
   width: 100%;
@@ -77,14 +86,19 @@ div.hamburger.links a {
   font-size: 18px;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   display: block;
+}
+
+div.hamburger.links .logout {
+  margin-top: 16px;
 }
 div.hamburger.links a:hover {
   background-color: rgba(196, 196, 196, 1);
 }
+
 .hero.container {
-  margin-top: 48px;
+  margin-top: 96px;
   margin-bottom: 48px;
   text-align: center;
 }
@@ -240,7 +254,7 @@ h5 {
 }
 
 .auth.container {
-  padding-top: 32px;
+  padding-top: 80px;
   padding-bottom: 32px;
 }
 
@@ -287,6 +301,7 @@ h5 {
   font-style: italic;
   font-size: 12px;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .auth.submit {
@@ -306,6 +321,13 @@ h5 {
   font-size: 12px;
   margin-top: 24px;
   margin-bottom: 12px;
+}
+
+.auth.form .forgot {
+  margin-bottom: 24px;
+  text-align: center;
+  color: rgba(146, 146, 146, 1);
+  line-height: 1.5;
 }
 
 .auth.form a {
@@ -334,4 +356,8 @@ h5 {
 
 .auth.form.signup {
   height: 442px;
+}
+
+.auth.submit.reset {
+  margin-bottom: 24px;
 }
