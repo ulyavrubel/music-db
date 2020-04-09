@@ -274,6 +274,21 @@ h5 {
   margin-bottom: 24px;
 }
 
+.auth.input:focus:valid {
+  border-color: rgba(146, 146, 146, 1);
+}
+
+.auth.input:focus:invalid {
+  border-color: tomato;
+}
+
+.auth span {
+  color: tomato;
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
 .auth.submit {
   height: 32px;
   padding: 8px 16px 8px 16px;

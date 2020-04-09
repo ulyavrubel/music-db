@@ -4,8 +4,8 @@ import { Router, Link } from "@reach/router";
 import Navbar from "./Components/Navbar";
 import MainPageContent from "./Components/MainPageContent";
 import Footer from "./Components/Footer";
-import LogIn from "./Components/LogIn";
-import SignUp from "./Components/SignUp";
+import LogIn from "./Components/Auth/LogIn";
+import SignUp from "./Components/Auth/SignUp";
 
 function App() {
   return (
