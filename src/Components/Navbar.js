@@ -62,7 +62,8 @@ function Navbar() {
             </Link>
 
             <a href="#">Wishlist</a>
-            <a href="#">Upload</a>
+
+            <Link to="/upload">Upload</Link>
             <a href="#">Explore genres</a>
             <a className="logout" href="#" onClick={logout}>
               Log Out

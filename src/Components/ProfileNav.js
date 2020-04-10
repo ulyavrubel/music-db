@@ -23,7 +23,7 @@ function ProfileNav() {
       >
         Wishlist
       </Link>
-      <Link to={`/upload`} className="profile nav link">
+      <Link to="/upload" className="profile nav link">
         Upload
       </Link>
       <Link
