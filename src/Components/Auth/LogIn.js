@@ -1,6 +1,8 @@
 import React from "react";
-import { firebaseAuth, provider } from "./FirebaseInit";
+import { firebaseAuth } from "./FirebaseInit";
 import { navigate } from "@reach/router";
+import GoogleSignIn from "./GoogleSignIn";
+import FacebookSignIn from "./FacebookSignIn";
 
 class LogIn extends React.Component {
   constructor() {
@@ -8,7 +10,6 @@ class LogIn extends React.Component {
     this.state = {
       loginEmail: "",
       loginPassword: "",
-      signed: false,
       error: null,
     };
   }
@@ -29,49 +30,26 @@ class LogIn extends React.Component {
         this.state.loginPassword
       )
       .then((cred) => {
-        this.setState({ signed: true });
         console.log(cred);
+        navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
-        console.log(err.code);
         this.setState({ error: err.message });
       });
   };
 
-  handleGoogleSignUp = () => {
-    firebaseAuth
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result.user);
-        this.setState({ signed: true });
-      })
-      .catch(function (err) {
-        this.setState({ error: err.message });
-        console.log(err.message);
-      });
+  getErr = (err) => {
+    this.setState({ error: err });
   };
 
   render() {
     return (
       <div className="auth container">
-        <form
-          className="auth form"
-          onSubmit={this.handleSubmit}
-          // onSubmit={async (event) => {
-          //   const user = await this.handleSubmit(event);
-          //   console.log(user);
-          //   if (this.state.signed) {
-          //     this.setState({ signed: false });
-          //     navigate("/");
-          //   }
-          // }}
-        >
+        <form className="auth form" onSubmit={this.handleSubmit}>
           <h3>Log In to Music-DB</h3>
           <input
             className="auth input"
-            name="login-email"
+            name="loginEmail"
             id="loginEmail"
             type="email"
             placeholder="E-mail"
@@ -81,7 +59,7 @@ class LogIn extends React.Component {
           <input
             className="auth input"
             name="loginPassword"
-            id="login-password"
+            id="loginPassword"
             type="password"
             placeholder="Password"
             required
@@ -97,23 +75,9 @@ class LogIn extends React.Component {
             Don’t have an account? <a href="/signup">Sign Up</a>
           </p>
           <a href="/forgotPassword">Forgot your password? </a>
-          <button className="auth submit facebook" type="button">
-            Log In with Facebook
-          </button>
-          <button
-            className="auth submit google"
-            type="button"
-            onClick={async (event) => {
-              const user = await this.handleGoogleSignUp();
-              console.log(user);
-              if (this.state.signed) {
-                this.setState({ signed: false });
-                navigate("/");
-              }
-            }}
-          >
-            Log In with Google
-          </button>
+
+          <FacebookSignIn sendErr={this.getErr} />
+          <GoogleSignIn sendErr={this.getErr} />
         </form>
       </div>
     );

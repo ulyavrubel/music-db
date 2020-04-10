@@ -1,6 +1,8 @@
 import React from "react";
-import { firebaseAuth, provider } from "./FirebaseInit";
+import { firebaseAuth } from "./FirebaseInit";
 import { navigate } from "@reach/router";
+import GoogleSignIn from "./GoogleSignIn";
+import FacebookSignIn from "./FacebookSignIn";
 
 class SignUp extends React.Component {
   constructor() {
@@ -10,7 +12,6 @@ class SignUp extends React.Component {
       signupEmail: "",
       signupPassword: "",
       signupConfirmPassword: "",
-      signed: false,
       showErr: false,
       error: null,
     };
@@ -34,7 +35,7 @@ class SignUp extends React.Component {
         )
         .then((cred) => {
           console.log(cred);
-          this.setState({ signed: true });
+          navigate("/");
           return cred.user.updateProfile({
             displayName: this.state.signupUsername,
           });
@@ -48,32 +49,14 @@ class SignUp extends React.Component {
     }
   };
 
-  handleGoogleSignUp = () => {
-    firebaseAuth
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result.user);
-        this.setState({ signed: true });
-      })
-      .catch(function (err) {
-        this.setState({ error: err.message });
-        console.log(err.message);
-      });
+  getErr = (err) => {
+    this.setState({ error: err });
   };
 
   render() {
     return (
       <div className="auth container">
-        <form
-          className="auth form signup"
-          // https://reach.tech/router/api/navigate
-
-          onSubmit={async (event) => {
-            const newUser = await this.handleSubmit(event);
-            navigate("/");
-          }}
-        >
+        <form className="auth form signup" onSubmit={this.handleSubmit}>
           <h3>Create new MusicDB account</h3>
           <input
             className="auth input"
@@ -123,22 +106,8 @@ class SignUp extends React.Component {
             Already have an account? <a href="/login">Log In</a>
           </p>
 
-          <button className="auth submit facebook" type="button">
-            Sign Up with Facebook
-          </button>
-          <button
-            className="auth submit google"
-            type="button"
-            onClick={async (event) => {
-              const user = await this.handleGoogleSignUp();
-              console.log(user);
-              if (this.state.signed) {
-                navigate("/");
-              }
-            }}
-          >
-            Sign Up with Google
-          </button>
+          <FacebookSignIn sendErr={this.getErr} />
+          <GoogleSignIn sendErr={this.getErr} />
         </form>
       </div>
     );
