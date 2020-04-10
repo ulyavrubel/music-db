@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import LogIn from "./Components/Auth/LogIn";
 import SignUp from "./Components/Auth/SignUp";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
+import Collection from "./Components/Collection";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <LogIn path="/login" />
         <SignUp path="/signup" />
         <ForgotPassword path="/forgotPassword" />
+        <Collection path="/collection/:user" />
       </Router>
       <Footer />
     </AuthProvider>

@@ -75,7 +75,6 @@ class LogIn extends React.Component {
             Don’t have an account? <a href="/signup">Sign Up</a>
           </p>
           <a href="/forgotPassword">Forgot your password? </a>
-
           <FacebookSignIn sendErr={this.getErr} />
           <GoogleSignIn sendErr={this.getErr} />
         </form>

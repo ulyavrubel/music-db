@@ -11,7 +11,7 @@ function GoogleSignIn(props) {
         console.log(result.user);
         navigate("/");
       })
-      .catch(function (err) {
+      .catch((err) => {
         props.sendErr(err.message);
         console.log(err.message);
       });

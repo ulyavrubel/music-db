@@ -361,3 +361,92 @@ h5 {
 .auth.submit.reset {
   margin-bottom: 24px;
 }
+
+.collection.container {
+  margin-top: 96px;
+}
+
+.profile.nav {
+  margin: 64px 16px 24px 16px;
+  color: rgba(31, 31, 31, 1);
+}
+
+.profile.nav a {
+  text-decoration: none;
+  margin: 0px;
+}
+
+.profile.nav.link {
+  margin-right: 32px;
+  position: relative;
+  line-height: 1;
+}
+
+.profile.nav.link:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(31, 31, 31, 1);
+  content: "";
+  transition: width 0.3s ease-out;
+}
+
+.profile.nav.link:hover:after,
+.profile.nav.link:focus:after {
+  width: 100%;
+}
+
+.collection.nav {
+  margin: 0px 16px 64px 16px;
+  color: rgba(31, 31, 31, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.collection.nav label {
+  margin-right: 24px;
+}
+
+.collection.select {
+  width: 96px;
+  height: 24px;
+  background-color: rgba(68, 68, 68, 1);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  padding-right: 4px;
+  padding-left: 8px;
+}
+
+.collection.nav.select:focus {
+  outline: none;
+}
+
+.collection.nav.option {
+  background-color: white;
+  color: rgba(31, 31, 31, 1);
+  height: 24px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.view.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.view.square {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  background-color: rgba(146, 146, 146, 1);
+  margin-right: 8px;
+}
+
+.view.square img {
+  margin: 4px;
+}

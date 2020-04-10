@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseAuth } from "./Auth/FirebaseInit";
+import { Link } from "@reach/router";
 import logo from "../img/logo.png";
 import icon from "../img/search-icon.svg";
 import hamburger from "../img/hamburger.svg";
@@ -53,11 +54,13 @@ function Navbar() {
             className="hamburger links"
             style={open ? { display: "block" } : { display: "none" }}
           >
-            {" "}
-            <a href="#">
+            <Link to={`/profile/${currentUser.displayName}`}>
               Profile: <span>{currentUser.displayName}</span>
-            </a>
-            <a href="#">Collection</a>
+            </Link>
+            <Link to={`/collection/${currentUser.displayName}`}>
+              Collection
+            </Link>
+
             <a href="#">Wishlist</a>
             <a href="#">Upload</a>
             <a href="#">Explore genres</a>

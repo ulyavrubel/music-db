@@ -14,20 +14,17 @@ function ForgotPassword() {
     firebaseAuth
       .auth()
       .sendPasswordResetEmail(resetPasswordEmail)
-      .then(alert(`Email has been sent to ${resetPasswordEmail}`))
+      .then((result) => {
+        console.log(result);
+        alert(`Email has been sent to ${resetPasswordEmail}`);
+        navigate("/");
+      })
       .catch((err) => console.log(err.message));
   };
 
   return (
     <div className="auth container">
-      <form
-        className="auth form"
-        onSubmit={async () => {
-          const user = await handleSubmit();
-          console.log(user);
-          navigate("/");
-        }}
-      >
+      <form className="auth form" onSubmit={handleSubmit}>
         <h3>Forgot your password?</h3>
         <p className="forgot">
           Enter your account e-mail <br />
