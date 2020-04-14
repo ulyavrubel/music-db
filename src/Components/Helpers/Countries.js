@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Countries = () => {
+export const Countries = (props) => {
   return (
-    <select id="country" required>
+    <select id="country" onChange={props.onChange} required>
       <option>Select</option>
       <option value="AF">Afghanistan</option>
       <option value="AX">Åland Islands</option>
