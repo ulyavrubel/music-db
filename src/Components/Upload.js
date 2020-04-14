@@ -39,11 +39,19 @@ class UploadForm extends React.Component {
   render() {
     return (
       <div className="upload container">
-        {/* <form className="upload form file">
-          <label>Upload image</label>
-          <input type="file" id="img" name="img" accept="image/*"></input>
-          <input type="submit"></input>
-        </form> */}
+        <form className="upload form file">
+          <div className="album container file">
+            <label className="file label">Upload image</label>
+            <input
+              className="album container file input"
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+            ></input>
+            {/* <input type="submit"></input> */}
+          </div>
+        </form>
         <form className="upload form album">
           <div className="album container">
             <label>Artist</label>
@@ -69,6 +77,7 @@ class UploadForm extends React.Component {
           </div>
           <div className="album container format">
             <label>Format</label>
+            <br />
             <select id="format" required>
               <option value="vinyl">Vinyl</option>
               <option value="cd">CD</option>
@@ -77,14 +86,18 @@ class UploadForm extends React.Component {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className="album container">
+          <div className="album container year">
             <label>Released</label>
+            <br />
             <input
               className="album input year"
               type="number"
               name="year"
               id="year"
               placeholder="YYYY"
+              min="1900"
+              max="2020"
+              step="1"
               required
             ></input>
           </div>
@@ -95,108 +108,146 @@ class UploadForm extends React.Component {
 
           <div className="album container genres">
             <label>Genres</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="electronic"
-              name="electronic"
-              value="Electronic"
-            ></input>
-            <label for="electronic"> Electronic</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="hiphop"
-              name="hiphop"
-              value="Hip Hop"
-            ></input>
-            <label for="hiphop"> Hip Hop</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="jazz"
-              name="jazz"
-              value="Jazz"
-            ></input>
-            <label for="jazz"> Jazz</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="rock"
-              name="rock"
-              value="Rock"
-            ></input>
-            <label for="rock"> Rock</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="latin"
-              name="latin"
-              value="Latin"
-            ></input>
-            <label for="latin"> Latin</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="funckSoul"
-              name="funckSoul"
-              value="Funck / Soul"
-            ></input>
-            <label for="funckSoul"> Funck / Soul</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="blues"
-              name="blues"
-              value="Blues"
-            ></input>
-            <label for="blues"> Blues</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="nonMusic"
-              name="nonMusic"
-              value="Non-Music"
-            ></input>
-            <label for="nonMusic"> Non-Music</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="classical"
-              name="classical"
-              value="Classical"
-            ></input>
-            <label for="classical"> classical</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="folkCountry"
-              name="folkCountry"
-              value="Folk / Country"
-            ></input>
-            <label for="folkCountry"> Folk / Country</label>
-            <input type="checkbox" id="pop" name="pop" value="Pop"></input>
-            <label for="pop"> Pop</label>
-            <input
-              className="input genres checkbox"
-              type="checkbox"
-              id="reggae"
-              name="reggae"
-              value="Reggae"
-            ></input>
-            <label for="reggae"> Reggae</label>
+            <div className="album container genres grid">
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="electronic"
+                  name="electronic"
+                  value="Electronic"
+                ></input>
+                <label htmlFor="electronic"> Electronic</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="hiphop"
+                  name="hiphop"
+                  value="Hip Hop"
+                ></input>
+                <label for="hiphop"> Hip Hop</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="jazz"
+                  name="jazz"
+                  value="Jazz"
+                ></input>
+                <label for="jazz"> Jazz</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="rock"
+                  name="rock"
+                  value="Rock"
+                ></input>
+                <label for="rock"> Rock</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="latin"
+                  name="latin"
+                  value="Latin"
+                ></input>
+                <label for="latin"> Latin</label>
+              </div>
+              <div>
+                {" "}
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="funckSoul"
+                  name="funckSoul"
+                  value="Funck / Soul"
+                ></input>
+                <label for="funckSoul"> Funck / Soul</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="blues"
+                  name="blues"
+                  value="Blues"
+                ></input>
+                <label for="blues"> Blues</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="nonMusic"
+                  name="nonMusic"
+                  value="Non-Music"
+                ></input>
+                <label for="nonMusic"> Non-Music</label>
+              </div>
+              <div>
+                {" "}
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="classical"
+                  name="classical"
+                  value="Classical"
+                ></input>
+                <label for="classical"> Classical</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="folkCountry"
+                  name="folkCountry"
+                  value="Folk / Country"
+                ></input>
+                <label for="folkCountry"> Folk / Country</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="pop"
+                  name="pop"
+                  value="Pop"
+                ></input>
+                <label for="pop"> Pop</label>
+              </div>
+              <div>
+                <input
+                  className="input genres checkbox"
+                  type="checkbox"
+                  id="reggae"
+                  name="reggae"
+                  value="Reggae"
+                ></input>
+                <label for="reggae"> Reggae</label>
+              </div>
+            </div>
           </div>
-          <div className="album container">
+          <div className="album container myCollection">
             <label>Collection</label>
-            <input
-              type="checkbox"
-              id="addCollection"
-              name="addCollection"
-              value="addCollection"
-            ></input>
-            <label for="addCollection"> Add to my collection</label>
+            <br />
+            <div>
+              <input
+                className="input genres checkbox"
+                type="checkbox"
+                id="addCollection"
+                name="addCollection"
+                value="addCollection"
+              ></input>
+              <label for="addCollection"> Add to my collection</label>
+            </div>
           </div>
-          <button>Preview/Submit</button>
+          <button className="auth submit upload">Preview/Submit</button>
         </form>
       </div>
     );

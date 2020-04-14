@@ -459,21 +459,56 @@ h5 {
 
 .upload.container {
   width: 319px;
-  margin: 0px 16px 48px 16px;
   padding: 12px 12px 48px 12px;
   border: solid 1px rgba(229, 229, 229, 1);
   border-radius: 4px;
   margin: auto;
+  margin-bottom: 48px;
 }
 
 .upload.form.file {
-  margin: 12px;
+  width: 319px;
+  height: 96px;
+
+  background-color: white;
 }
+
+.album.container.file {
+  display: flex;
+  flex-direction: column;
+}
+
+.album.container.file.input {
+  border: none;
+  height: 16px;
+  min-width: 294px;
+  background-color: white;
+  padding: 8px 12px 8px 0px;
+  margin-top: 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* .file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+}
+
+.file input {
+  min-width: 14rem;
+  margin: 0;
+
+  opacity: 0;
+} */
 
 .upload.form.album {
   display: flex;
   flex-direction: column;
-  height: 848px;
+  height: 752px;
   background-color: white;
   margin: auto;
 }
@@ -489,32 +524,84 @@ h5 {
 }
 
 .album.input {
-  height: 12px;
+  height: 16px;
   min-width: 294px;
   background-color: rgba(229, 229, 229, 1);
   padding: 8px 12px 8px 12px;
   margin-top: 12px;
   font-size: 12px;
+  border-radius: 4px;
 }
 
 .album.container.format {
   min-width: 318px;
 }
-.album.container.format select {
-  margin-left: 12px;
+.album.container select {
+  margin-top: 16px;
+  width: 256px;
+  height: 32px;
   font-family: "Josefin Sans", sans-serif;
+  background-color: rgba(196, 196, 196, 1);
+  color: rgba(68, 68, 68, 1);
+  border: none;
+  border-radius: 4px;
 }
-
+.album.container select:focus {
+  outline: none;
+}
+.album.container.year {
+  min-width: 318px;
+}
+.album.input.year {
+  min-width: 96px;
+}
 .album.container.contries select {
-  font-family: "Josefin Sans", sans-serif;
+  min-width: 318px;
 }
-
 .album.container.genres {
+  min-width: 318px;
+}
+.album.container.genres.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: repeat(4, auto);
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.album.container.genres.grid div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.album.container.genres.grid label {
+  font-size: 12px;
+  margin: 0;
 }
 
 .input.genres.checkbox {
   width: 12px;
+  padding: 0;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.album.container.myCollection {
+  min-width: 318px;
+}
+.album.container.myCollection div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.album.container.myCollection div label {
+  margin-top: 16px;
+  font-size: 12px;
+}
+
+.auth.submit.upload {
+  margin-top: 24px;
+  margin-bottom: 48px;
 }
