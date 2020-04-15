@@ -620,7 +620,7 @@ h5 {
 .preview.box {
   display: flex;
   flex-direction: row;
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 .preview.img {
@@ -650,7 +650,7 @@ h5 {
 }
 
 .auth.submit.preview {
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 .upload.success {

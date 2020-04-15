@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { firebaseDB } from "./Auth/FirebaseInit";
 
 function Preview(props) {
-  const [uploaded, setuploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
   let {
     currentUser,
     url,
@@ -12,6 +12,7 @@ function Preview(props) {
     format,
     country,
     released,
+    addCollection,
   } = props.release;
 
   let targetGenre = "";
@@ -39,13 +40,28 @@ function Preview(props) {
       .collection("Albums")
       .add(album)
       .then((result) => {
-        setuploaded(true);
+        if (addCollection) {
+          firebaseDB
+            .collection("Users")
+            .doc(currentUser.uid)
+            .collection("Collection")
+            .add({ album: result.id, date: new Date() })
+            .then((result) => {
+              console.log("Added to collection", result);
+            })
+            .catch((err) => {
+              console.log(err.message);
+            });
+        }
+        console.log(result);
+        setUploaded(true);
         console.log("Added to database");
       })
       .catch((err) => {
         console.log(err.message);
       });
   };
+
   if (uploaded) {
     return (
       <div className="upload success">
@@ -54,7 +70,7 @@ function Preview(props) {
     );
   } else {
     return (
-      <div>
+      <div style={uploaded ? { display: "none" } : { display: "block" }}>
         <h3 className="upload header">Preview</h3>
         <div className="upload container preview">
           <div className="preview box">

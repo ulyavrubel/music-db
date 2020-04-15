@@ -13,7 +13,6 @@ function Upload() {
   return (
     <div>
       <ProfileNav />
-
       <UploadForm user={currentUser} />
     </div>
   );
@@ -142,6 +141,38 @@ class UploadForm extends React.Component {
   };
 
   render() {
+    const genres = [
+      "Electronic",
+      "Rock",
+      "Blues",
+      "Folk",
+      "Hiphop",
+      "Latin",
+      "NonMusic",
+      "Pop",
+      "Jazz",
+      "Funck",
+      "Classical",
+      "Reggae",
+    ];
+
+    const genresCheckBoxes = genres.map((genre) => {
+      return (
+        <div key={genre}>
+          <input
+            className="input genres checkbox"
+            type="checkbox"
+            id={genre}
+            name={genre}
+            value={genre}
+            onChange={this.handleGenreCheck}
+            checked={this.state.genre[genre]}
+          ></input>
+          <label htmlFor={genre}> {genre}</label>
+        </div>
+      );
+    });
+
     return (
       <div>
         <h3 className="upload header">Add release</h3>
@@ -239,154 +270,10 @@ class UploadForm extends React.Component {
               <label>Country</label>
               <Countries onChange={this.handleChange} />
             </div>
-
             <div className="album container genres">
               <label>Genres</label>
               <div className="album container genres grid">
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Electronic"
-                    name="electronic"
-                    value="Electronic"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Electronic}
-                  ></input>
-                  <label htmlFor="electronic"> Electronic</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Hiphop"
-                    name="hiphop"
-                    value="Hip Hop"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Hiphop}
-                  ></input>
-                  <label htmlFor="hiphop"> Hip Hop</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Jazz"
-                    name="jazz"
-                    value="Jazz"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Jazz}
-                  ></input>
-                  <label htmlFor="jazz"> Jazz</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Rock"
-                    name="rock"
-                    value="Rock"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Rock}
-                  ></input>
-                  <label htmlFor="rock"> Rock</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Latin"
-                    name="latin"
-                    value="Latin"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Latin}
-                  ></input>
-                  <label htmlFor="latin"> Latin</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Funck"
-                    name="funckSoul"
-                    value="Funck / Soul"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Funck}
-                  ></input>
-                  <label htmlFor="funckSoul"> Funck / Soul</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Blues"
-                    name="blues"
-                    value="Blues"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Blues}
-                  ></input>
-                  <label htmlFor="blues"> Blues</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="NonMusic"
-                    name="nonMusic"
-                    value="Non-Music"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.NonMusic}
-                  ></input>
-                  <label htmlFor="nonMusic"> Non-Music</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Classical"
-                    name="classical"
-                    value="Classical"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Classical}
-                  ></input>
-                  <label htmlFor="classical"> Classical</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Folk"
-                    name="folkCountry"
-                    value="Folk / Country"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Folk}
-                  ></input>
-                  <label htmlFor="folkCountry"> Folk / Country</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Pop"
-                    name="pop"
-                    value="Pop"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Pop}
-                  ></input>
-                  <label htmlFor="pop"> Pop</label>
-                </div>
-                <div>
-                  <input
-                    className="input genres checkbox"
-                    type="checkbox"
-                    id="Reggae"
-                    name="reggae"
-                    value="Reggae"
-                    onChange={this.handleGenreCheck}
-                    checked={this.state.genre.Reggae}
-                  ></input>
-                  <label htmlFor="reggae"> Reggae</label>
-                </div>
+                {genresCheckBoxes}
               </div>
             </div>
             <div className="album container myCollection">
