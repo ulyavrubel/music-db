@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import hero1 from "../img/hero1.jpg";
-import hero2 from "../img/hero2.jpg";
-import hero3 from "../img/hero3.jpg";
-import left from "../img/left.svg";
-import right from "../img/right.svg";
+import hero1 from "../../img/hero1.jpg";
+import hero2 from "../../img/hero2.jpg";
+import hero3 from "../../img/hero3.jpg";
+import left from "../../img/left.svg";
+import right from "../../img/right.svg";
 
 const images = [
   {

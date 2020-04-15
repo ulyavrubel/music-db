@@ -27,14 +27,17 @@ function Preview(props) {
     event.preventDefault();
     let album = {
       addedBy: currentUser.uid,
+      addedToDB: new Date(),
       url: url,
       artist: artist,
       title: title,
+      label: label,
       format: format,
       released: released,
       country: country,
       genre: targetGenre,
     };
+
     console.log(album);
     firebaseDB
       .collection("Albums")

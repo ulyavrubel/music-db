@@ -1,10 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseAuth } from "./Auth/FirebaseInit";
 import { Link } from "@reach/router";
 import logo from "../img/logo.png";
 import icon from "../img/search-icon.svg";
 import hamburger from "../img/hamburger.svg";
+import useOutsideClick from "./Helpers/useOutsideClick";
 
 function Navbar() {
   const { currentUser } = useContext(AuthContext);
@@ -14,6 +15,11 @@ function Navbar() {
     firebaseAuth.auth().signOut();
     console.log(currentUser + "signed out");
   }
+
+  const ref = useRef();
+  useOutsideClick(ref, () => {
+    setOpen(false);
+  });
 
   return (
     <div className="navbar">
@@ -32,7 +38,7 @@ function Navbar() {
           <img className="img search" src={icon} alt="..."></img>
         </div>
       </form>
-      <div className="hamburger container">
+      <div className="hamburger container" ref={ref}>
         <img
           className="hamburger"
           src={hamburger}

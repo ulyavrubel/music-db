@@ -1,0 +1,128 @@
+.hero.container {
+  margin-top: 96px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.hero h1,
+h5 {
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.hero h5 {
+  font-size: 12px;
+  margin-bottom: 48px;
+}
+
+.slideshow.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.slideshow.box :nth-child(2) {
+  display: none;
+}
+.slideshow.box :nth-child(4) {
+  display: none;
+}
+
+.slideshow .hero {
+  width: 256px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.slideshow .navigation {
+  height: 64px;
+  align-self: center;
+}
+
+.slideshow.img.container {
+  position: relative;
+  text-align: right;
+  color: rgba(31, 31, 31, 1);
+}
+
+.img.text {
+  position: absolute;
+  bottom: 8px;
+  right: 24px;
+  display: block;
+  font-size: 10px;
+}
+
+.subscribe.container {
+  background-color: rgba(31, 31, 31, 1);
+  color: white;
+  padding-top: 24px;
+  padding-bottom: 48px;
+  text-align: center;
+}
+
+.subscribe.container h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.subscribe.container h2 span {
+  font-size: 12px;
+}
+
+.subscribe.form {
+  height: 32px;
+  width: 343px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(31, 31, 31, 1);
+  margin: auto;
+}
+
+.subscribe.input {
+  height: 12px;
+  padding: 10px 12px 10px 12px;
+  width: 224px;
+  background-color: rgba(229, 229, 229, 1);
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.subscribe.input:focus {
+  outline: none;
+}
+
+.subscribe.button {
+  height: 32px;
+  width: 96px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: rgba(31, 31, 31, 1);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.recentlyAdded.container {
+  background-color: rgba(31, 31, 31, 1);
+  color: white;
+  padding: 0px 16px 64px 16px;
+}
+
+.recentlyAdded.container h3 {
+  margin: 0px 0px 12px 12px;
+  font-size: 18px;
+}
+
+.collection.grid.container.recentlyAdded a {
+  color: rgba(229, 229, 229, 1);
+}

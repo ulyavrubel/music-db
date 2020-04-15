@@ -3,12 +3,12 @@ import "./App.css";
 import { Router } from "@reach/router";
 import { AuthProvider } from "./Components/Auth/AuthProvider";
 import Navbar from "./Components/Navbar";
-import MainPageContent from "./Components/MainPageContent";
+import MainPageContent from "./Components/Main/MainPageContent";
 import Footer from "./Components/Footer";
 import LogIn from "./Components/Auth/LogIn";
 import SignUp from "./Components/Auth/SignUp";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
-import Collection from "./Components/Collection";
+import Collection from "./Components/Collection/Collection";
 import Upload from "./Components/Upload";
 
 function App() {
