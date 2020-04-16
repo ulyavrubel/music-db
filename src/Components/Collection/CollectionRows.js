@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@reach/router";
 
 function CollectionRows(props) {
+  const [checked, setChecked] = useState([]);
+
+  const handleChange = (event) => {
+    console.log(event.target.id);
+  };
+  const handleRemove = () => {
+    console.log("remove");
+  };
+
   let albums = props.collection;
   let sort = props.sort;
   if (sort !== "newest") {
@@ -14,6 +23,7 @@ function CollectionRows(props) {
           className="rows album input"
           type="checkbox"
           id={album.inCollectionId}
+          onChange={handleChange}
         ></input>
         <Link to={`/albums/${album.id}`}>
           <img src={album.url} alt={`${album.artist} - ${album.title} `}></img>
@@ -38,10 +48,13 @@ function CollectionRows(props) {
       </div>
     );
   });
+
   return (
     <div className="collection rows wrapper">
       <div className="collection rows container">{albumItems}</div>
-      <button className="auth submit upload">Remove Selected</button>
+      <button onClick={handleRemove} className="auth submit upload">
+        Remove Selected
+      </button>
     </div>
   );
 }

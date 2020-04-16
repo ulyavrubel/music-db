@@ -10,11 +10,19 @@ import CollectionRows from "./CollectionRows";
 import "./collection.css";
 
 function Collection() {
+  const step = 5;
+
   const { currentUser } = useContext(AuthContext);
   const [collection, setCollection] = useState([]);
+  const [collectionToShow, setCollectionToShow] = useState([]);
   const [sort, setSort] = useState("newest");
   const [grid, setGrid] = useState(true);
   const [rows, setRows] = useState(false);
+  const [indexFrom, setIndexFrom] = useState(1);
+  const [indexTo, setIndexTo] = useState(step);
+  const [collectionLength, setCollectionLength] = useState(0);
+  const [showNext, setShowNext] = useState(true);
+  const [showPrev, setShowPrev] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -44,6 +52,7 @@ function Collection() {
                   setCollection((prev) => {
                     return [...prev, album];
                   });
+                  setCollectionLength((prev) => prev + 1);
                 } else {
                   console.log("No such document!");
                 }
@@ -58,6 +67,11 @@ function Collection() {
         });
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    let newColl = collection.slice(indexFrom - 1, indexTo);
+    setCollectionToShow(newColl);
+  }, [collection, indexTo, indexFrom]);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -74,6 +88,44 @@ function Collection() {
     event.preventDefault();
     setGrid(false);
     setRows(true);
+  };
+
+  const handlePrev = () => {
+    if (indexFrom === 1) {
+      setShowPrev(false);
+      return;
+    }
+    if (indexTo === collectionLength) {
+      let curFrom = indexFrom;
+      setIndexFrom((prev) => prev - step);
+      setIndexTo((prev) => prev - (prev - curFrom + 1));
+      setShowNext(true);
+    } else {
+      if (indexFrom - step >= 1) {
+        setIndexFrom((prev) => prev - step);
+        setIndexTo((prev) => prev - step);
+        setShowNext(true);
+      }
+      if (indexFrom - step === 1) {
+        setShowPrev(false);
+      }
+    }
+  };
+
+  const handleNext = () => {
+    if (indexTo === collectionLength) {
+      return;
+    }
+    if (indexTo + step <= collectionLength) {
+      setIndexFrom((prev) => prev + step);
+      setIndexTo((prev) => prev + step);
+      setShowPrev(true);
+    } else {
+      setIndexFrom((prev) => prev + step);
+      setIndexTo(collectionLength);
+      setShowPrev(true);
+      setShowNext(false);
+    }
   };
 
   if (!currentUser) {
@@ -118,8 +170,25 @@ function Collection() {
           </div>
         </div>
       </div>
-      {grid ? <CollectionGrid collection={collection} sort={sort} /> : null}
-      {rows ? <CollectionRows collection={collection} sort={sort} /> : null}
+      {grid ? (
+        <CollectionGrid collection={collectionToShow} sort={sort} />
+      ) : null}
+      {rows ? (
+        <CollectionRows collection={collectionToShow} sort={sort} />
+      ) : null}
+      {collectionLength > step ? (
+        <div className="collection navigation">
+          <p>
+            {indexFrom} - {indexTo} of {collectionLength}
+          </p>
+          <div>
+            {showPrev ? (
+              <button onClick={handlePrev}>{`< Previous`}</button>
+            ) : null}
+            {showNext ? <button onClick={handleNext}>{`Next >`}</button> : null}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

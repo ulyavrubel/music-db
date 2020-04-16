@@ -115,14 +115,31 @@ h5 {
 .recentlyAdded.container {
   background-color: rgba(31, 31, 31, 1);
   color: white;
-  padding: 0px 16px 64px 16px;
+  padding: 0px 16px 48px 16px;
 }
 
 .recentlyAdded.container h3 {
   margin: 0px 0px 12px 12px;
   font-size: 18px;
 }
-
+.collection.grid.container.recentlyAdded {
+  margin-bottom: 0px;
+}
 .collection.grid.container.recentlyAdded a {
   color: rgba(229, 229, 229, 1);
+}
+.showmore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.showmore p {
+  margin: 0px 0px 8px 0px;
+  color: rgba(229, 229, 229, 1);
+  font-size: 16px;
+}
+
+.showmore img {
+  margin: auto;
 }

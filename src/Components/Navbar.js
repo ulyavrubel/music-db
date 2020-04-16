@@ -50,6 +50,7 @@ function Navbar() {
           <div
             className="hamburger links"
             style={open ? { display: "block" } : { display: "none" }}
+            onClick={() => setOpen(false)}
           >
             <a href="/login">Log In</a>
             <a href="/signup">Sign Up</a>
@@ -59,6 +60,7 @@ function Navbar() {
           <div
             className="hamburger links"
             style={open ? { display: "block" } : { display: "none" }}
+            onClick={() => setOpen(false)}
           >
             <Link to={`/profile/${currentUser.displayName}`}>
               Profile: <span>{currentUser.displayName}</span>
