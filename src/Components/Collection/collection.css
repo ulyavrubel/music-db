@@ -6,7 +6,7 @@
 
 .collection.grid.container {
   margin-top: 24px;
-  margin-bottom: 24px;
+
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -89,4 +89,38 @@
 p.rows.album.format,
 p.rows.album.year {
   color: rgba(146, 146, 146, 1);
+}
+
+.auth.submit.remove {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.collection.navigation {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection.navigation.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 48px;
+}
+
+.collection.navigation p {
+  margin: 0px;
+  font-size: 14px;
+  color: rgba(146, 146, 146, 1);
+}
+
+.auth.submit.navigation {
+  width: 96px;
+  padding: 8px;
+  background-color: white;
+  border: 1px solid rgba(196, 196, 196, 1);
+  border-radius: 15px;
+  color: rgba(68, 68, 68, 1);
+  margin: 12px 0px 0px 8px;
 }

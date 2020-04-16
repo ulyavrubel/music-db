@@ -181,11 +181,19 @@ function Collection() {
           <p>
             {indexFrom} - {indexTo} of {collectionLength}
           </p>
-          <div>
+          <div className="collection navigation buttons">
             {showPrev ? (
-              <button onClick={handlePrev}>{`< Previous`}</button>
+              <button
+                className="auth submit navigation"
+                onClick={handlePrev}
+              >{`< Previous`}</button>
             ) : null}
-            {showNext ? <button onClick={handleNext}>{`Next >`}</button> : null}
+            {showNext ? (
+              <button
+                className="auth submit navigation"
+                onClick={handleNext}
+              >{`Next >`}</button>
+            ) : null}
           </div>
         </div>
       ) : null}

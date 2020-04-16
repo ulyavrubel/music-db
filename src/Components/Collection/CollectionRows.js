@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
+import Modal from "../Modal";
 
 function CollectionRows(props) {
   const [checked, setChecked] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (event) => {
-    console.log(event.target.id);
+    setChecked((prev) => {
+      return [...prev, event.target.value];
+    });
+    console.log("select" + event.target.value);
   };
+
+  const handleClick = (event) => {
+    console.log("click" + event.target.id);
+  };
+
   const handleRemove = () => {
     console.log("remove");
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   let albums = props.collection;
@@ -19,12 +33,14 @@ function CollectionRows(props) {
   const albumItems = albums.map((album) => {
     return (
       <div className="collection rows album" key={album.id}>
-        <input
-          className="rows album input"
-          type="checkbox"
-          id={album.inCollectionId}
-          onChange={handleChange}
-        ></input>
+        <select value={album.inCollectionId} onChange={handleChange}>
+          <input
+            className="rows album input"
+            type="checkbox"
+            id={album.inCollectionId}
+          ></input>
+        </select>
+
         <Link to={`/albums/${album.id}`}>
           <img src={album.url} alt={`${album.artist} - ${album.title} `}></img>
         </Link>
@@ -52,9 +68,30 @@ function CollectionRows(props) {
   return (
     <div className="collection rows wrapper">
       <div className="collection rows container">{albumItems}</div>
-      <button onClick={handleRemove} className="auth submit upload">
+      <button onClick={toggleModal} className="auth submit remove">
         Remove Selected
       </button>
+      {showModal ? (
+        <Modal>
+          <div>
+            <h3>Do you want to remove selected albums from your collection?</h3>
+            <div>
+              <button
+                className="auth submit remove modal"
+                onClick={handleRemove}
+              >
+                Yes
+              </button>
+              <button
+                className="auth submit remove modal"
+                onClick={toggleModal}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </Modal>
+      ) : null}
     </div>
   );
 }
