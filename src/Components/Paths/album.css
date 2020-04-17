@@ -16,6 +16,10 @@
   width: 182px;
 }
 
+.upload.container.preview.album button:focus {
+  outline: none;
+}
+
 .upload.container.preview.album button:hover {
   background-color: rgba(196, 196, 196, 1);
 }

@@ -23,6 +23,7 @@ function Collection() {
   const [collectionLength, setCollectionLength] = useState(0);
   const [showNext, setShowNext] = useState(true);
   const [showPrev, setShowPrev] = useState(false);
+  const [rerender, setRerender] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -66,7 +67,7 @@ function Collection() {
           console.log(err.message);
         });
     }
-  }, [currentUser]);
+  }, [currentUser, rerender]);
 
   useEffect(() => {
     let newColl = collection.slice(indexFrom - 1, indexTo);
@@ -128,6 +129,14 @@ function Collection() {
     }
   };
 
+  const handleRender = () => {
+    setCollection([]);
+    setIndexFrom(1);
+    setIndexTo(step);
+    setCollectionLength(0);
+    setRerender(!rerender);
+  };
+
   if (!currentUser) {
     return <h3>Please, login to see collection</h3>;
   }
@@ -174,7 +183,11 @@ function Collection() {
         <CollectionGrid collection={collectionToShow} sort={sort} />
       ) : null}
       {rows ? (
-        <CollectionRows collection={collectionToShow} sort={sort} />
+        <CollectionRows
+          collection={collectionToShow}
+          sort={sort}
+          handleRender={handleRender}
+        />
       ) : null}
       {collectionLength > step ? (
         <div className="collection navigation">

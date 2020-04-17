@@ -59,7 +59,6 @@ function Album(props) {
     removeFromDB(currentUser.uid, "Collection", inCollectionID);
     setShowModal(false);
     setInCollection(false);
-    setUpdate(!update);
   };
 
   const handleAddToCollection = () => {

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import Modal from "../Modal";
-import { firebaseDB } from "../Auth/FirebaseInit";
 import { AuthContext } from "../Auth/AuthProvider";
 import { removeFromDB } from "../Helpers/removeFromDB";
 
 function CollectionRows(props) {
   const { currentUser } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
+  const [showMessageModal, setShowMessageModal] = useState(false);
   const [albumIDs, setAlbumIDs] = useState({ id: false });
 
   useEffect(() => {
@@ -35,6 +35,8 @@ function CollectionRows(props) {
       }
     }
     setShowModal(false);
+    setShowMessageModal(true);
+    props.handleRender();
   };
 
   const toggleModal = () => {
@@ -105,6 +107,29 @@ function CollectionRows(props) {
                 No
               </button>
             </div>
+          </div>
+        </Modal>
+      ) : null}
+      {showMessageModal ? (
+        <Modal>
+          <div>
+            <h3>Albums were removed from your collection</h3>
+            <Link
+              to={`/collection/${currentUser.displayName}`}
+              className="profile nav link"
+              onClick={() => setShowMessageModal(false)}
+            >
+              OK
+            </Link>
+
+            {/* <button
+                className="auth submit remove modal"
+                onClick={() => {
+                  navigate(`/collection/${currentUser.displayName}`);
+                }}
+              >
+                OK
+              </button> */}
           </div>
         </Modal>
       ) : null}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseDB } from "./Auth/FirebaseInit";
 import AlbumCard from "./Paths/AlbumCard";
+import { addToDBCollection } from "./Helpers/addToDBCollection";
 
 function Preview(props) {
   const [uploaded, setUploaded] = useState(false);
@@ -50,23 +52,12 @@ function Preview(props) {
       genre: album.genre,
     };
 
-    console.log(album);
     firebaseDB
       .collection("Albums")
       .add(albumAdd)
       .then((result) => {
         if (addCollection) {
-          firebaseDB
-            .collection("Users")
-            .doc(currentUser.uid)
-            .collection("Collection")
-            .add({ album: result.id, date: new Date() })
-            .then((result) => {
-              console.log("Added to collection", result);
-            })
-            .catch((err) => {
-              console.log(err.message);
-            });
+          addToDBCollection(currentUser.uid, "Collection", result.id);
         }
         console.log(result);
         setUploaded(true);

@@ -2,6 +2,21 @@ import React, { useContext } from "react";
 import { AuthContext } from "./Auth/AuthProvider";
 import { Link } from "@reach/router";
 
+function NavLink(props) {
+  return (
+    <Link
+      {...props}
+      getProps={({ isCurrent }) => {
+        return {
+          style: {
+            color: isCurrent ? "rgba(206, 62, 62, 1)" : "rgba(31, 31, 31, 1)",
+          },
+        };
+      }}
+    />
+  );
+}
+
 function ProfileNav() {
   const { currentUser } = useContext(AuthContext);
 
@@ -11,27 +26,27 @@ function ProfileNav() {
 
   return (
     <div className="profile nav">
-      <Link
+      <NavLink
         to={`/collection/${currentUser.displayName}`}
         className="profile nav link"
       >
         Collection
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to={`/wishlist/${currentUser.displayName}`}
         className="profile nav link"
       >
         Wishlist
-      </Link>
-      <Link to="/upload" className="profile nav link">
+      </NavLink>
+      <NavLink to="/upload" className="profile nav link">
         Upload
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to={`/profile/${currentUser.displayName}`}
         className="profile nav link"
       >
         Profile
-      </Link>
+      </NavLink>
     </div>
   );
 }
