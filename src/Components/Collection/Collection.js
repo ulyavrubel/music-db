@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useCallback } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import ProfileNav from "../ProfileNav";

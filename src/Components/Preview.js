@@ -1,8 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { firebaseDB } from "./Auth/FirebaseInit";
+import AlbumCard from "./Paths/AlbumCard";
 
 function Preview(props) {
   const [uploaded, setUploaded] = useState(false);
+  const [album, setAlbum] = useState({});
+
+  useEffect(() => {
+    setAlbum(props.release);
+  }, []);
+
+  useEffect(() => {
+    let targetGenre = "";
+    let genres = props.release.genre;
+    for (let genre in genres) {
+      if (genres[genre] === true) {
+        targetGenre = genre;
+      }
+    }
+    setAlbum((prev) => {
+      return { ...prev, genre: targetGenre };
+    });
+  }, []);
+
   let {
     currentUser,
     url,
@@ -15,17 +35,9 @@ function Preview(props) {
     addCollection,
   } = props.release;
 
-  let targetGenre = "";
-  let genres = props.release.genre;
-  for (let genre in genres) {
-    if (genres[genre] === true) {
-      targetGenre = genre;
-    }
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    let album = {
+    let albumAdd = {
       addedBy: currentUser.uid,
       addedToDB: new Date(),
       url: url,
@@ -35,13 +47,13 @@ function Preview(props) {
       format: format,
       released: released,
       country: country,
-      genre: targetGenre,
+      genre: album.genre,
     };
 
     console.log(album);
     firebaseDB
       .collection("Albums")
-      .add(album)
+      .add(albumAdd)
       .then((result) => {
         if (addCollection) {
           firebaseDB
@@ -76,34 +88,7 @@ function Preview(props) {
       <div style={uploaded ? { display: "none" } : { display: "block" }}>
         <h3 className="upload header">Preview</h3>
         <div className="upload container preview">
-          <div className="preview box">
-            <img className="preview img" src={url} alt=".."></img>
-            <div className="preview info">
-              <h5>
-                {artist} - {title}
-              </h5>
-              <p>
-                <span>Label </span>
-                {label}
-              </p>
-              <p>
-                <span>Format </span>
-                {format}
-              </p>
-              <p>
-                <span>Country </span>
-                {country}
-              </p>
-              <p>
-                <span>Year </span>
-                {released}
-              </p>
-              <p>
-                <span>Genre </span>
-                {targetGenre}
-              </p>
-            </div>
-          </div>
+          <AlbumCard album={album} />
           <button className="auth submit preview" onClick={handleSubmit}>
             Submit
           </button>

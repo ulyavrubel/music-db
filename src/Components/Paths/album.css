@@ -1,0 +1,21 @@
+.upload.container.preview.album {
+  margin-top: 96px;
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 15px;
+}
+
+.upload.container.preview.album button:first-of-type {
+  margin-top: 48px;
+  width: 210px;
+}
+.upload.container.preview.album button:last-of-type {
+  margin-top: 12px;
+}
+.upload.container.preview.album button {
+  margin: 0;
+  width: 182px;
+}
+
+.upload.container.preview.album button:hover {
+  background-color: rgba(196, 196, 196, 1);
+}

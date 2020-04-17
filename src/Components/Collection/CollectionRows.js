@@ -1,24 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "@reach/router";
 import Modal from "../Modal";
+import { firebaseDB } from "../Auth/FirebaseInit";
+import { AuthContext } from "../Auth/AuthProvider";
+import { removeFromDB } from "../Helpers/removeFromDB";
 
 function CollectionRows(props) {
-  const [checked, setChecked] = useState([]);
+  const { currentUser } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
+  const [albumIDs, setAlbumIDs] = useState({ id: false });
+
+  useEffect(() => {
+    if (Object.keys(albumIDs).length === 0) {
+      props.collection.map((album) => {
+        setAlbumIDs((prev) => {
+          return { ...prev, [album.inCollectionId]: false };
+        });
+      });
+    }
+  }, []);
 
   const handleChange = (event) => {
-    setChecked((prev) => {
-      return [...prev, event.target.value];
+    let id = event.target.id;
+    let checked = event.target.checked;
+    setAlbumIDs((prev) => {
+      return { ...prev, [id]: checked };
     });
-    console.log("select" + event.target.value);
-  };
-
-  const handleClick = (event) => {
-    console.log("click" + event.target.id);
   };
 
   const handleRemove = () => {
-    console.log("remove");
+    for (let id in albumIDs) {
+      if (albumIDs[id] === true) {
+        removeFromDB(currentUser.uid, "Collection", id);
+      }
+    }
+    setShowModal(false);
   };
 
   const toggleModal = () => {
@@ -33,14 +49,14 @@ function CollectionRows(props) {
   const albumItems = albums.map((album) => {
     return (
       <div className="collection rows album" key={album.id}>
-        <select value={album.inCollectionId} onChange={handleChange}>
-          <input
-            className="rows album input"
-            type="checkbox"
-            id={album.inCollectionId}
-          ></input>
-        </select>
-
+        <input
+          className="rows album input"
+          type="checkbox"
+          id={album.inCollectionId}
+          value={album.inCollectionId}
+          onChange={handleChange}
+          checked={albumIDs[album.inCollectionId]}
+        ></input>
         <Link to={`/albums/${album.id}`}>
           <img src={album.url} alt={`${album.artist} - ${album.title} `}></img>
         </Link>

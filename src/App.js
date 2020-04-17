@@ -10,6 +10,7 @@ import SignUp from "./Components/Auth/SignUp";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
 import Collection from "./Components/Collection/Collection";
 import Upload from "./Components/Upload";
+import Album from "./Components/Paths/Album";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <ForgotPassword path="/forgotPassword" />
         <Collection path="/collection/:user" />
         <Upload path="/upload" />
+        <Album path="albums/:id" />
       </Router>
       <Footer />
     </AuthProvider>
