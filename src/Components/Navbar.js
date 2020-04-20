@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef } from "react";
 import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseAuth } from "./Auth/FirebaseInit";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import logo from "../img/logo.png";
 import icon from "../img/search-icon.svg";
 import hamburger from "../img/hamburger.svg";
@@ -10,11 +10,17 @@ import useOutsideClick from "./Helpers/useOutsideClick";
 function Navbar() {
   const { currentUser } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
-  function logout() {
+  const logout = () => {
     firebaseAuth.auth().signOut();
     console.log(currentUser + "signed out");
-  }
+  };
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setQuery(event.target.value);
+  };
 
   const ref = useRef();
   useOutsideClick(ref, () => {
@@ -33,8 +39,13 @@ function Navbar() {
           name="search"
           id="search"
           placeholder="Search"
+          value={query}
+          onChange={handleChange}
         ></input>
-        <div className="button search">
+        <div
+          className="button search"
+          onClick={() => navigate(`/search/${query}/all`)}
+        >
           <img className="img search" src={icon} alt="..."></img>
         </div>
       </form>

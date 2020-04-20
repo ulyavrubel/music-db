@@ -2,10 +2,10 @@ import React, { useState, useContext, useEffect, useCallback } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import ProfileNav from "../ProfileNav";
-import viewGrid from "../../img/view-grid.svg";
-import viewRows from "../../img/view-rows.svg";
 import CollectionGrid from "./CollectionGrid";
 import CollectionRows from "./CollectionRows";
+import AlbumsNav from "../AlbumsNav";
+import Pagination from "../Pagination";
 
 import "./collection.css";
 
@@ -144,41 +144,12 @@ function Collection() {
   return (
     <div>
       <ProfileNav />
-      <div className="collection nav">
-        <div>
-          <label>Sort by</label>
-          <select
-            className="collection select"
-            id="sort"
-            onChange={handleChange}
-          >
-            <option value="newest" className="collection nav option">
-              Newest
-            </option>
-            <option value="artist" className="collection nav option">
-              Artist
-            </option>
-            <option value="album" className="collection nav option">
-              Album
-            </option>
-            <option value="genre" className="collection nav option">
-              Genre
-            </option>
-            <option value="released" className="collection nav option">
-              Year
-            </option>
-          </select>
-        </div>
+      <AlbumsNav
+        handleChange={handleChange}
+        handleGrid={handleGrid}
+        handleRows={handleRows}
+      />
 
-        <div className="view container">
-          <div className="view square" onClick={handleGrid}>
-            <img src={viewGrid} alt="..."></img>
-          </div>
-          <div className="view square" onClick={handleRows}>
-            <img src={viewRows} alt="..."></img>
-          </div>
-        </div>
-      </div>
       {grid ? (
         <CollectionGrid collection={collectionToShow} sort={sort} />
       ) : null}
@@ -189,27 +160,16 @@ function Collection() {
           handleRender={handleRender}
         />
       ) : null}
-      {collectionLength > step ? (
-        <div className="collection navigation">
-          <p>
-            {indexFrom} - {indexTo} of {collectionLength}
-          </p>
-          <div className="collection navigation buttons">
-            {showPrev ? (
-              <button
-                className="auth submit navigation"
-                onClick={handlePrev}
-              >{`< Previous`}</button>
-            ) : null}
-            {showNext ? (
-              <button
-                className="auth submit navigation"
-                onClick={handleNext}
-              >{`Next >`}</button>
-            ) : null}
-          </div>
-        </div>
-      ) : null}
+      <Pagination
+        collectionLength={collectionLength}
+        step={step}
+        indexFrom={indexFrom}
+        indexTo={indexTo}
+        showPrev={showPrev}
+        showNext={showNext}
+        handleNext={handleNext}
+        handlePrev={handlePrev}
+      />
     </div>
   );
 }

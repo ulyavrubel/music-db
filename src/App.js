@@ -11,6 +11,7 @@ import ForgotPassword from "./Components/Auth/ForgotPassword";
 import Collection from "./Components/Collection/Collection";
 import Upload from "./Components/Upload";
 import Album from "./Components/Paths/Album";
+import SearchResultsAll from "./Components/Search/SearchResultsAll";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Collection path="/collection/:user" />
         <Upload path="/upload" />
         <Album path="albums/:id" />
+        <SearchResultsAll path="search/:q/:type" />
       </Router>
       <Footer />
     </AuthProvider>
