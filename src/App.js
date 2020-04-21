@@ -25,7 +25,7 @@ function App() {
         <Collection path="/collection/:user" />
         <Upload path="/upload" />
         <Album path="albums/:id" />
-        <SearchResultsAll path="search/:q/:type" />
+        <SearchResultsAll path="search/:q/*" />
       </Router>
       <Footer />
     </AuthProvider>

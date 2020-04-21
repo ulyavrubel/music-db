@@ -1,10 +1,10 @@
 import { firebaseDB } from "../Auth/FirebaseInit";
 
-export const searchRelease = (name) => {
+export const searchRelease = (title) => {
   let albums = [];
   firebaseDB
     .collection("Albums")
-    .where("title", "==", name)
+    .where("title", "==", title)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {

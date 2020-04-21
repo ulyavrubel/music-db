@@ -1,20 +1,21 @@
 import React from "react";
+import { Link } from "@reach/router";
 
-function SearchResultsNav(props) {
+function SearchResultsNav() {
   return (
     <div className="profile nav">
-      <a className="profile nav link" href={`search/${props.q}/all`}>
+      <Link className="profile nav link" to="all">
         All
-      </a>
-      <a className="profile nav link" href={`search/${props.q}/release`}>
+      </Link>
+      <Link className="profile nav link" to="release">
         Release
-      </a>
-      <a className="profile nav link" href={`search/${props.q}/artist`}>
+      </Link>
+      <Link className="profile nav link" to="artist">
         Artist
-      </a>
-      <a className="profile nav link" href={`search/${props.q}/label`}>
+      </Link>
+      <Link className="profile nav link" to="label">
         Label
-      </a>
+      </Link>
     </div>
   );
 }

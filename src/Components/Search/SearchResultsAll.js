@@ -19,28 +19,25 @@ function SearchResultsAll(props) {
   const [showNext, setShowNext] = useState(true);
   const [showPrev, setShowPrev] = useState(false);
   const [result, setResult] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   const [type, setType] = useState("all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    firebaseDB
-      .collection("Albums")
-      .where("title", "==", props.q)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          let album = doc.data();
-          setResult((prev) => {
-            return [...prev, album];
-          });
-        });
-      })
-      .catch((err) => {
-        if (err) {
-          console.log("Error getting documents", err.message);
-        }
-      });
-  }, []);
+    setSearch(props.q);
+    setType(props.location.pathname.split("/")[3]);
+    console.log(
+      "SearchResultsAll props",
+      props.location.pathname.split("/")[3]
+    );
+  });
+
+  useEffect(() => {
+    const getAlbums = async () => {
+      const res = await searchRelease(search);
+      setResult(res);
+    };
+    getAlbums();
+  }, [search]);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -96,13 +93,9 @@ function SearchResultsAll(props) {
     }
   };
 
-  const getType = (type) => {
-    setType(type);
-  };
-
   return (
     <div className="serachResults container">
-      <SearchResultsNav getType={getType} />
+      <SearchResultsNav q={props.q} />
       <h3>Results for {props.q}</h3>
       <AlbumsNav
         handleChange={handleChange}
@@ -110,9 +103,9 @@ function SearchResultsAll(props) {
         handleRows={handleRows}
       />
       {type === "all" ? (
-        <SearchAll q={props.q} type={props.type} />
+        <SearchAll q={props.q} type={type} />
       ) : (
-        <SearchType q={props.q} type={props.type} />
+        <SearchType q={props.q} type={type} />
       )}
 
       <Pagination
