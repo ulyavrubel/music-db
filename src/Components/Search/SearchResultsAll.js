@@ -3,10 +3,12 @@ import SearchResultsNav from "./SearchResultsNav";
 import AlbumsNav from "../AlbumsNav";
 import "./searchResults.css";
 import Pagination from "../Pagination";
-import { searchRelease } from "../Helpers/searchDB";
+import { searchRelease, searchReleaseAll } from "../Helpers/searchDB";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import SearchAll from "./SearchAll";
 import SearchType from "./SearchType";
+import CollectionGrid from "../Collection/CollectionGrid";
+import NothingFound from "./NothingFound";
 
 function SearchResultsAll(props) {
   const step = 5;
@@ -18,26 +20,98 @@ function SearchResultsAll(props) {
   const [collectionLength, setCollectionLength] = useState(0);
   const [showNext, setShowNext] = useState(true);
   const [showPrev, setShowPrev] = useState(false);
-  const [result, setResult] = useState([]);
+  const [resultTitle, setResultTitle] = useState([]);
+  const [resultArtist, setResultArtist] = useState([]);
+  const [resultLabel, setResultLabel] = useState([]);
+  const [resultsToShow, setResultsToShow] = useState([]);
   const [type, setType] = useState("all");
   const [search, setSearch] = useState("");
+  const [showNothing, setShowNothing] = useState(false);
 
   useEffect(() => {
     setSearch(props.q);
     setType(props.location.pathname.split("/")[3]);
-    console.log(
-      "SearchResultsAll props",
-      props.location.pathname.split("/")[3]
-    );
-  });
+  }, [props]);
 
   useEffect(() => {
-    const getAlbums = async () => {
-      const res = await searchRelease(search);
-      setResult(res);
-    };
-    getAlbums();
-  }, [search]);
+    firebaseDB
+      .collection("Albums")
+      .where("title", "==", props.q)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let album = doc.data();
+          album.id = doc.id;
+          console.log("querySnapshot", doc.data());
+          setResultTitle((prev) => {
+            return [...prev, album];
+          });
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log("Error getting documents", err.message);
+        }
+      });
+    firebaseDB
+      .collection("Albums")
+      .where("artist", "==", props.q)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let album = doc.data();
+          album.id = doc.id;
+          console.log("querySnapshot", doc.data());
+          setResultArtist((prev) => {
+            return [...prev, album];
+          });
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log("Error getting documents", err.message);
+        }
+      });
+    firebaseDB
+      .collection("Albums")
+      .where("label", "==", props.q)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let album = doc.data();
+          album.id = doc.id;
+          console.log("querySnapshot", doc.data());
+          setResultLabel((prev) => {
+            return [...prev, album];
+          });
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log("Error getting documents", err.message);
+        }
+      });
+  }, []);
+
+  useEffect(() => {
+    if (type === "all") {
+      setResultsToShow(resultTitle.concat(resultArtist).concat(resultLabel));
+    } else if (type === "release") {
+      setResultsToShow(resultTitle);
+    } else if (type === "artist") {
+      setResultsToShow(resultArtist);
+    } else if (type === "label") {
+      setResultsToShow(resultLabel);
+    }
+  }, [type, resultTitle, resultArtist, resultLabel]);
+
+  useEffect(() => {
+    if (resultsToShow.length === 0) {
+      setShowNothing(true);
+    } else {
+      setShowNothing(false);
+    }
+  }, [resultsToShow]);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -97,17 +171,18 @@ function SearchResultsAll(props) {
     <div className="serachResults container">
       <SearchResultsNav q={props.q} />
       <h3>Results for {props.q}</h3>
-      <AlbumsNav
-        handleChange={handleChange}
-        handleGrid={handleGrid}
-        handleRows={handleRows}
-      />
-      {type === "all" ? (
-        <SearchAll q={props.q} type={type} />
+
+      {showNothing ? (
+        <NothingFound />
       ) : (
-        <SearchType q={props.q} type={type} />
+        <AlbumsNav
+          handleChange={handleChange}
+          handleGrid={handleGrid}
+          handleRows={handleRows}
+        />
       )}
 
+      <CollectionGrid collection={resultsToShow} sort={sort} />
       <Pagination
         collectionLength={collectionLength}
         step={step}
