@@ -1,0 +1,67 @@
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .navbar {
+    height: 64px;
+    justify-content: space-around;
+  }
+  .navbar .logo {
+    margin-left: 64px;
+  }
+  .form.search {
+    height: 32px;
+    width: 345px;
+  }
+
+  .input.search {
+    height: 32px;
+    width: 306px;
+  }
+
+  .button .search {
+    width: 32px;
+    height: 24px;
+  }
+
+  .navbar.auth.links {
+    position: static;
+    padding-right: 64px;
+  }
+  .navbar.auth.links a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .hamburger.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .hamburger.container img {
+    margin-left: 4px;
+  }
+  div.hamburger.links {
+    top: 56px;
+    right: 30px;
+    width: 192px;
+    background-color: rgba(68, 68, 68, 1);
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  div.hamburger.links a {
+    padding: 12px 12px;
+  }
+  div.hamburger.links a:hover {
+    background-color: rgba(120, 120, 120, 1);
+  }
+
+  #nav-dropdown span {
+    color: white;
+  }
+}

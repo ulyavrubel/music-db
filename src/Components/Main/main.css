@@ -66,10 +66,10 @@ h5 {
   text-align: center;
 }
 
-.subscribe.container h2 {
+.subscribe.container.header {
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   margin-bottom: 16px;
 }
@@ -116,11 +116,15 @@ h5 {
   background-color: rgba(31, 31, 31, 1);
   color: white;
   padding: 0px 16px 48px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recentlyAdded.container h3 {
   margin: 0px 0px 12px 12px;
   font-size: 18px;
+  align-self: start;
 }
 .collection.grid.container.recentlyAdded {
   margin-bottom: 0px;
@@ -142,4 +146,37 @@ h5 {
 
 .showmore img {
   margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .slideshow.box {
+    margin-bottom: 32px;
+  }
+
+  .slideshow .hero {
+    width: 192px;
+  }
+  .slideshow.box :nth-child(2) {
+    display: block;
+  }
+
+  .slideshow.box :nth-child(4) {
+    display: block;
+  }
+  .slideshow.img.container.center img {
+    width: 364px;
+    height: 364px;
+  }
+  .slideshow.img.container {
+    align-self: center;
+  }
+  .subscribe.container.header {
+    font-size: 24px;
+  }
+  .subscribe.container.header span {
+    font-size: 14px;
+  }
+  .recentlyAdded.container h3 {
+    margin-left: 64px;
+  }
 }

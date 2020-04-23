@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+
 import { Router } from "@reach/router";
 import { AuthProvider } from "./Components/Auth/AuthProvider";
 import Navbar from "./Components/Navbar";
@@ -16,17 +16,19 @@ import SearchResultsAll from "./Components/Search/SearchResultsAll";
 function App() {
   return (
     <AuthProvider>
-      <Navbar />
-      <Router>
-        <MainPageContent path="/" />
-        <LogIn path="/login" />
-        <SignUp path="/signup" />
-        <ForgotPassword path="/forgotPassword" />
-        <Collection path="/collection/:user" />
-        <Upload path="/upload" />
-        <Album path="albums/:id" />
-        <SearchResultsAll path="search/:q/*" />
-      </Router>
+      <div className="content">
+        <Navbar />
+        <Router>
+          <MainPageContent path="/" />
+          <LogIn path="/login" />
+          <SignUp path="/signup" />
+          <ForgotPassword path="/forgotPassword" />
+          <Collection path="/collection/:user" />
+          <Upload path="/upload" />
+          <Album path="albums/:id" />
+          <SearchResultsAll path="search/:q/*" />
+        </Router>
+      </div>
       <Footer />
     </AuthProvider>
   );

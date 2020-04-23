@@ -10,7 +10,7 @@ import Pagination from "../Pagination";
 import "./collection.css";
 
 function Collection() {
-  const step = 5;
+  const step = 10;
 
   const { currentUser } = useContext(AuthContext);
   const [collection, setCollection] = useState([]);

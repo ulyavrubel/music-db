@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { AuthContext } from "./Auth/AuthProvider";
 import { Link } from "@reach/router";
 
-function NavLink(props) {
+export function NavLink(props) {
   return (
     <Link
       {...props}
       getProps={({ isCurrent }) => {
         return {
           style: {
-            color: isCurrent ? "rgba(206, 62, 62, 1)" : "rgba(31, 31, 31, 1)",
+            color: isCurrent ? "rgba(120, 120, 120, 1)" : "rgba(31, 31, 31, 1)",
           },
         };
       }}

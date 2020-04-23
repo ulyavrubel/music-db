@@ -65,27 +65,29 @@ class UploadForm extends React.Component {
   handleUploadFile = (event) => {
     event.preventDefault();
     const { img } = this.state;
-    const uploadTask = storage.ref(`images/${img.name}`).put(img);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        //progress function
-      },
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        //complete function
-        storage
-          .ref("images")
-          .child(img.name)
-          .getDownloadURL()
-          .then((url) => {
-            console.log(url);
-            this.setState({ url: url });
-          });
-      }
-    );
+    if (img) {
+      const uploadTask = storage.ref(`images/${img.name}`).put(img);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          //progress function
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          //complete function
+          storage
+            .ref("images")
+            .child(img.name)
+            .getDownloadURL()
+            .then((url) => {
+              console.log(url);
+              this.setState({ url: url });
+            });
+        }
+      );
+    }
   };
 
   handleChange = (event) => {

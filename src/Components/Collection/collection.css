@@ -6,7 +6,6 @@
 
 .collection.grid.container {
   margin-top: 24px;
-
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -95,7 +94,9 @@ p.rows.album.year {
   margin-top: 32px;
   margin-bottom: 32px;
 }
-
+.pagination.container {
+  margin-top: 24px;
+}
 .collection.navigation {
   margin: auto;
   display: flex;
@@ -123,4 +124,10 @@ p.rows.album.year {
   border-radius: 15px;
   color: rgba(68, 68, 68, 1);
   margin: 12px 0px 0px 8px;
+}
+
+@media (min-width: 1024px) {
+  .collection.grid.container {
+    grid-template-columns: repeat(5, 132px);
+  }
 }

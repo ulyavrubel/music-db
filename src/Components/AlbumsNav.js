@@ -34,7 +34,7 @@ function AlbumsNav(props) {
         <div className="view square" onClick={props.handleGrid}>
           <img src={viewGrid} alt="..."></img>
         </div>
-        <div className="view square" onClick={props.handleRows}>
+        <div className="view square" onClick={props.handleRows} id="rows">
           <img src={viewRows} alt="..."></img>
         </div>
       </div>

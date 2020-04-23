@@ -3,19 +3,17 @@ import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseAuth } from "./Auth/FirebaseInit";
 import { Link, navigate } from "@reach/router";
 import logo from "../img/logo.png";
+import logoD from "../img/logo-MusicDB.png";
 import icon from "../img/search-icon.svg";
 import hamburger from "../img/hamburger.svg";
 import useOutsideClick from "./Helpers/useOutsideClick";
+import MobileHamburger from "./MobileHamburger";
+import DesktopDropdown from "./DesktopDropdown";
 
 function Navbar() {
   const { currentUser } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-
-  const logout = () => {
-    firebaseAuth.auth().signOut();
-    console.log(currentUser + "signed out");
-  };
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -29,67 +27,31 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <a href="/">
-        <img className="logo" src={logo} alt="musicdb logo"></img>
-      </a>
-
-      <form>
-        <input
-          className="input search"
-          name="search"
-          id="search"
-          placeholder="Search"
-          value={query}
-          onChange={handleChange}
-        ></input>
-        <div
-          className="button search"
-          onClick={() => navigate(`/search/${query}/all`)}
-        >
-          <img className="img search" src={icon} alt="..."></img>
-        </div>
-      </form>
-      <div className="hamburger container" ref={ref}>
-        <img
-          className="hamburger"
-          src={hamburger}
-          onClick={() => (open ? setOpen(false) : setOpen(true))}
-          style={open ? { transform: "rotate(90deg)" } : { transform: "none" }}
-          alt="..."
-        ></img>
-        {!currentUser ? (
+      <div className="logo-form">
+        <a href="/">
+          <img className="logo mobile" src={logo} alt="musicdb logo"></img>
+          <img className="logo desktop" src={logoD} alt="musicdb logo"></img>
+        </a>
+        <form className="form search">
+          <input
+            className="input search"
+            name="search"
+            id="search"
+            placeholder="Search"
+            value={query}
+            onChange={handleChange}
+          ></input>
           <div
-            className="hamburger links"
-            style={open ? { display: "block" } : { display: "none" }}
-            onClick={() => setOpen(false)}
+            className="button search"
+            onClick={() => navigate(`/search/${query}/all`)}
           >
-            <a href="/login">Log In</a>
-            <a href="/signup">Sign Up</a>
-            <a href="#">Explore genres</a>
+            <img className="img search" src={icon} alt="..."></img>
           </div>
-        ) : (
-          <div
-            className="hamburger links"
-            style={open ? { display: "block" } : { display: "none" }}
-            onClick={() => setOpen(false)}
-          >
-            <Link to={`/profile/${currentUser.displayName}`}>
-              Profile: <span>{currentUser.displayName}</span>
-            </Link>
-            <Link to={`/collection/${currentUser.displayName}`}>
-              Collection
-            </Link>
-
-            <a href="#">Wishlist</a>
-
-            <Link to="/upload">Upload</Link>
-            <a href="#">Explore genres</a>
-            <a className="logout" href="#" onClick={logout}>
-              Log Out
-            </a>
-          </div>
-        )}
+        </form>
       </div>
+
+      <MobileHamburger className="mobile" />
+      <DesktopDropdown className="desktop" />
     </div>
   );
 }

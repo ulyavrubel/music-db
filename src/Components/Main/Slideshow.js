@@ -10,7 +10,7 @@ const images = [
     img: hero2,
     title: "Narita Remixed",
     artist: "Svreca",
-    href: "",
+    href: "/albums/BhJOHfcUcZxjAusf1hOq",
     order: 1,
     textColor: "rgba(255, 255, 255, 1)",
   },
@@ -18,7 +18,7 @@ const images = [
     img: hero1,
     title: "The Aquaplano Sessions",
     artist: "Donato Dozzy & Nuel",
-    href: "",
+    href: "/albums/HK9MBfCh1JdzF8Gdaqnh",
     order: 0,
     textColor: "rgba(0, 0, 0, 1)",
   },
@@ -26,7 +26,7 @@ const images = [
     img: hero3,
     title: "2845",
     artist: "Convextion",
-    href: "",
+    href: "/albums/8Nb5YfVb64bkTOE4TNdI",
     order: 2,
     textColor: "rgba(255, 255, 255, 1)",
   },
@@ -58,20 +58,25 @@ function SlideShow() {
   }
 
   function makeSlides(arr) {
+    var index = 0;
     return arr.map((image) => {
+      index++;
       return (
-        <div key={image.title} className="slideshow img container">
-          <img
-            className="hero"
-            src={image.img}
-            alt={image.title}
-            width="100px"
-          ></img>
-          <div></div>
-          <div className="img text" style={{ color: image.textColor }}>
-            {image.title} <br />
-            {image.artist}
-          </div>
+        <div
+          key={image.title}
+          className={
+            index === 2
+              ? "slideshow img container center"
+              : "slideshow img container"
+          }
+        >
+          <a href={image.href}>
+            <img className="hero" src={image.img} alt={image.title}></img>
+            <div className="img text" style={{ color: image.textColor }}>
+              {image.title} <br />
+              {image.artist}
+            </div>
+          </a>
         </div>
       );
     });

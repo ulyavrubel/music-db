@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import down from "../../img/down.svg";
 
 function RecentlyAddedGrid(props) {
-  const [itemsShow, setItemsShow] = useState(4);
+  const [itemsShow, setItemsShow] = useState(10);
   const [albumItems, setAlbumItems] = useState([]);
   const [showMore, setShowMore] = useState(true);
 
@@ -32,8 +32,8 @@ function RecentlyAddedGrid(props) {
   }, [props, itemsShow]);
 
   const handleClick = () => {
-    if (props.albums.length > itemsShow + 4) {
-      setItemsShow((prev) => prev + 4);
+    if (props.albums.length > itemsShow + 10) {
+      setItemsShow((prev) => prev + 10);
     } else {
       setItemsShow(props.albums.length);
       setShowMore(false);

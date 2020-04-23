@@ -34,11 +34,16 @@ function SearchResultsAll(props) {
   }, [props]);
 
   useEffect(() => {
+    setResultTitle([]);
+    setResultArtist([]);
+    setResultLabel([]);
+    setResultsToShow([]);
     firebaseDB
       .collection("Albums")
       .where("title", "==", props.q)
       .get()
       .then((querySnapshot) => {
+        setResultTitle([]);
         querySnapshot.forEach((doc) => {
           let album = doc.data();
           album.id = doc.id;
@@ -58,6 +63,7 @@ function SearchResultsAll(props) {
       .where("artist", "==", props.q)
       .get()
       .then((querySnapshot) => {
+        setResultArtist([]);
         querySnapshot.forEach((doc) => {
           let album = doc.data();
           album.id = doc.id;
@@ -77,6 +83,7 @@ function SearchResultsAll(props) {
       .where("label", "==", props.q)
       .get()
       .then((querySnapshot) => {
+        setResultLabel([]);
         querySnapshot.forEach((doc) => {
           let album = doc.data();
           album.id = doc.id;
@@ -91,7 +98,7 @@ function SearchResultsAll(props) {
           console.log("Error getting documents", err.message);
         }
       });
-  }, []);
+  }, [props, type]);
 
   useEffect(() => {
     if (type === "all") {
@@ -170,7 +177,9 @@ function SearchResultsAll(props) {
   return (
     <div className="serachResults container">
       <SearchResultsNav q={props.q} />
-      <h3>Results for {props.q}</h3>
+      <h3 className="search header">
+        Results for <span>{props.q}</span>
+      </h3>
 
       {showNothing ? (
         <NothingFound />

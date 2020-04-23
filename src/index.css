@@ -1,8 +1,22 @@
+html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
 }
+
+.content {
+  min-height: calc(100vh - 96px - 48px);
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
 .navbar {
   overflow: hidden;
   position: fixed;
@@ -15,6 +29,12 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.logo-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .navbar .logo {
@@ -55,6 +75,7 @@ input:focus {
   border-radius: 15px;
   margin: 4px;
   margin-top: 6px;
+  cursor: pointer;
 }
 
 .img .search {
@@ -134,7 +155,7 @@ div.hamburger.links a:hover {
 }
 
 .auth.container {
-  padding-top: 80px;
+  margin-top: 96px;
   padding-bottom: 32px;
 }
 
@@ -221,7 +242,7 @@ div.hamburger.links a:hover {
   height: 24px;
   padding: 6px 12px 6px 12px;
   font-size: 12px;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 .auth.submit.facebook {
   margin-top: 24px;
@@ -247,7 +268,7 @@ div.hamburger.links a:hover {
 }
 
 .profile.nav {
-  margin: 64px 16px 24px 16px;
+  margin: 96px 16px 24px 16px;
   color: rgba(31, 31, 31, 1);
 }
 

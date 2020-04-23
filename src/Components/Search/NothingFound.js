@@ -1,27 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, navigate } from "@reach/router";
 
-function NothingFound(props) {
+function NothingFound() {
+  const [query, setQuery] = useState("");
+  const handleChange = (event) => {
+    event.preventDefault();
+    setQuery(event.target.value);
+  };
   return (
-    <div className="container">
+    <div className="nothingFound">
       <p>
-        Sorry, but nothing matched your search terms
-        <br />
-        Please, try again.
+        Sorry, but nothing matched <br />
+        your search terms.
       </p>
-      <form className="subscribe form">
+      <p className="nothingFound please">Please, try again.</p>
+      <form
+        className="subscribe form nothingFound"
+        onSubmit={() => navigate(`/search/${query}/all`)}
+      >
         <input
-          className="subscribe input"
-          name="subscribe"
-          id="subscribe"
+          className="nothingFound input search"
+          name="search"
+          id="search"
           placeholder="Artist, Album, Label"
-          type="email"
+          type="text"
+          onChange={handleChange}
         ></input>
-        <button className="subscribe button" type="submit">
+        <button className="nothingFound button search" type="submit">
           Search
         </button>
       </form>
-      <p>
+      <p className="nothingFound link">
         Or <Link to="/upload">add new album</Link> to the database.
       </p>
     </div>

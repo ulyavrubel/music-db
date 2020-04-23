@@ -13,7 +13,7 @@ function Pagination(props) {
   } = props;
 
   return (
-    <div>
+    <div className="pagination container">
       {collectionLength > step ? (
         <div className="collection navigation">
           <p>
