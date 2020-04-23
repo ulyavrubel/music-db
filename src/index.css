@@ -148,7 +148,8 @@ div.hamburger.links a:hover {
 }
 
 .footer .hamburger.links {
-  top: -196px;
+  top: calc(100vh - 200px - 64px);
+  height: 200px;
   padding: 0px;
   padding-top: 16px;
   color: rgb(252, 232, 230);
@@ -346,6 +347,7 @@ div.hamburger.links a:hover {
   border-radius: 2px;
   background-color: rgba(146, 146, 146, 1);
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .view.square img {

@@ -138,7 +138,11 @@ function Collection() {
   };
 
   if (!currentUser) {
-    return <h3>Please, login to see collection</h3>;
+    return (
+      <h3>
+        Please, <a href="/login">login</a> to see collection
+      </h3>
+    );
   }
 
   return (

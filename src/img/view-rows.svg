@@ -1,13 +1,12 @@
 <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
- <title/>
- <desc/>
 
  <g>
   <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <rect fill="none" id="canvas_background" height="18" width="18" y="-1" x="-1"/>
  </g>
  <g>
   <title>Layer 1</title>
-  <path fill="#ffffff" id="Shape" d="m0,12l18,0l0,-2l-18,0l0,2l0,0zm0,-5l18,0l0,-2l-18,0l0,2l0,0zm0,-7l0,2l18,0l0,-2l-18,0l0,0z"/>
+  <path fill="#ffffff" stroke="null" id="svg_1" d="m-0.131869,10.314965l3.810903,0l0,-4.613082l-3.810903,0l0,4.613082zm0,5.766353l3.810903,0l0,-4.613082l-3.810903,0l0,4.613082zm0,-11.532706l3.810903,0l0,-4.613082l-3.810903,0l0,4.613082zm4.763628,5.766353l11.432708,0l0,-4.613082l-11.432708,0l0,4.613082zm0,5.766353l11.432708,0l0,-4.613082l-11.432708,0l0,4.613082zm0,-16.145788l0,4.613082l11.432708,0l0,-4.613082l-11.432708,0z"/>
+  <path stroke="null" id="svg_2" fill="none" d="m-27.784616,-2.4l15.599999,0l0,15.876923l-15.599999,0l0,-15.876923z"/>
  </g>
 </svg>

@@ -6,11 +6,11 @@
     display: block;
   }
   .navbar {
-    height: 64px;
+    height: 52px;
     justify-content: space-around;
   }
   .navbar .logo {
-    margin-left: 64px;
+    /* margin-left: 64px; */
   }
   .form.search {
     height: 32px;
@@ -46,7 +46,7 @@
     margin-left: 4px;
   }
   div.hamburger.links {
-    top: 56px;
+    top: 46px;
     right: 30px;
     width: 192px;
     background-color: rgba(68, 68, 68, 1);
@@ -63,5 +63,18 @@
 
   #nav-dropdown span {
     color: white;
+  }
+  .footer.links.desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .footer.links.desktop a {
+    text-decoration: none;
+    color: white;
+    margin-right: 16px;
+  }
+  .footer.links.desktop a:last-child {
+    margin-right: 48px;
   }
 }

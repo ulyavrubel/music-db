@@ -13,7 +13,7 @@ function Footer() {
           </a>
 
           <img
-            className="hamburger"
+            className="hamburger mobile"
             src={menu}
             alt="..."
             onClick={() => (open ? setOpen(false) : setOpen(true))}
@@ -22,7 +22,7 @@ function Footer() {
             }
           ></img>
           <div
-            className="hamburger links"
+            className="hamburger links mobile"
             style={open ? { display: "block" } : { display: "none" }}
           >
             <a href="#">Terms of Use</a>
@@ -31,10 +31,18 @@ function Footer() {
             <a href="#">Help</a>
           </div>
         </div>
-
-        <p className="footer p">
-          Created by <a href="https://github.com/ulyavrubel">Ulyana Sichkar</a>
-        </p>
+        <div className="footer links desktop">
+          <div className="footer links desktop">
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Copyright</a>
+            <a href="#">Help</a>
+          </div>
+          <p className="footer p">
+            Created by{" "}
+            <a href="https://github.com/ulyavrubel">Ulyana Sichkar</a>
+          </p>
+        </div>
       </div>
     </footer>
   );
