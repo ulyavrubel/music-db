@@ -1,13 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
-import { getCollectionLength } from "../Helpers/getCollectionLength";
 import { firebaseDB } from "../Auth/FirebaseInit";
 
 function UserReleases() {
   const { currentUser } = useContext(AuthContext);
-  const [userId, setuserId] = useState("");
   const [collectionLength, setCollectionLength] = useState(null);
   const [wishlistLength, setWishlistLength] = useState(null);
+  const [addedByLength, setAddedByLength] = useState(null);
 
   useEffect(() => {
     firebaseDB
@@ -29,12 +28,24 @@ function UserReleases() {
       .collection("Wishlist")
       .get()
       .then((querySnapshot) => {
-        const collectionLength = querySnapshot.Wv.docChanges.length;
-        setWishlistLength(collectionLength);
+        const wishlistLength = querySnapshot.Wv.docChanges.length;
+        setWishlistLength(wishlistLength);
       })
       .catch((err) => {
         console.log(err.message);
         setWishlistLength(0);
+      });
+    firebaseDB
+      .collection("Albums")
+      .where("addedBy", "==", currentUser.uid)
+      .get()
+      .then((querySnapshot) => {
+        const addedByLength = querySnapshot.Wv.docChanges.length;
+        setAddedByLength(addedByLength);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setAddedByLength(0);
       });
   }, []);
 
@@ -43,12 +54,26 @@ function UserReleases() {
       <p className="user-releases header">Releases</p>
       <div className="releases-statistics">
         <a href={`/collection/${currentUser.displayName}`}>In Collection</a>
-        <a href={`/collection/${currentUser.displayName}`}>
+        <a
+          className="statistics-number"
+          href={`/collection/${currentUser.displayName}`}
+        >
           {collectionLength}
         </a>
         <a href={`/wishlist/${currentUser.displayName}`}>In Wishlist</a>
-        <a href={`/wishlist/${currentUser.displayName}`}>{wishlistLength}</a>
-        <a href={`/uploaded/${currentUser.displayName}`}>Uploaded</a>
+        <a
+          className="statistics-number"
+          href={`/wishlist/${currentUser.displayName}`}
+        >
+          {wishlistLength}
+        </a>
+        <a href={`/addedBy/${currentUser.displayName}`}>Uploaded</a>
+        <a
+          className="statistics-number"
+          href={`/addedBy/${currentUser.displayName}`}
+        >
+          {addedByLength}
+        </a>
       </div>
     </div>
   );

@@ -3,10 +3,7 @@ import SearchResultsNav from "./SearchResultsNav";
 import AlbumsNav from "../AlbumsNav";
 import "./searchResults.css";
 import Pagination from "../Pagination";
-import { searchRelease, searchReleaseAll } from "../Helpers/searchDB";
 import { firebaseDB } from "../Auth/FirebaseInit";
-import SearchAll from "./SearchAll";
-import SearchType from "./SearchType";
 import CollectionGrid from "../Collection/CollectionGrid";
 import NothingFound from "./NothingFound";
 

@@ -56,6 +56,17 @@ function Preview(props) {
       .collection("Albums")
       .add(albumAdd)
       .then((result) => {
+        firebaseDB
+          .collection("Users")
+          .doc(currentUser.uid)
+          .collection("Activity")
+          .add({ log: "added to database", album: result.id, date: new Date() })
+          .then((result) => {
+            console.log("Added to activity log", result);
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
         if (addCollection) {
           addToDBCollection(currentUser.uid, "Collection", result.id);
         }

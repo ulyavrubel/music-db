@@ -4,6 +4,7 @@ import ProfileNav from "../ProfileNav";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import { AuthContext } from "../Auth/AuthProvider";
 import UserReleases from "./UserReleases";
+import ActivityLog from "./ActivityLog";
 
 function Profile() {
   const { currentUser } = useContext(AuthContext);
@@ -43,6 +44,7 @@ function Profile() {
         </div>
       </div>
       <UserReleases />
+      <ActivityLog />
     </div>
   );
 }

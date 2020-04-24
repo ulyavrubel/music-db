@@ -13,6 +13,7 @@ import Upload from "./Components/Upload";
 import Album from "./Components/Paths/Album";
 import SearchResultsAll from "./Components/Search/SearchResultsAll";
 import Profile from "./Components/Profile/Profile";
+import AddedBy from "./Components/Profile/AddedBy";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <ForgotPassword path="/forgotPassword" />
           <Collection path="/collection/:user" />
           <Profile path="/profile/:user" />
+          <AddedBy path="/addedBy/:user" />
           <Upload path="/upload" />
           <Album path="albums/:id" />
           <SearchResultsAll path="search/:q/*" />

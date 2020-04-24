@@ -9,7 +9,7 @@
   font-size: 18px;
 }
 .search.header span {
-  font-style: italic;
+  color: rgba(146, 146, 146, 1);
 }
 
 .nothingFound {
