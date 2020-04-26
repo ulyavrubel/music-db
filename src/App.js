@@ -13,7 +13,6 @@ import Album from "./Components/Paths/Album";
 import SearchResultsAll from "./Components/Search/SearchResultsAll";
 import Profile from "./Components/Profile/Profile";
 import AddedBy from "./Components/Profile/AddedBy";
-import Artist from "./Components/Paths/Artist";
 
 function App() {
   return (
@@ -31,7 +30,7 @@ function App() {
           <AddedBy path="/addedBy/:user" />
           <Upload path="/upload" />
           <Album path="albums/:id" />
-          <Artist path="/artists/:artist" />
+
           <SearchResultsAll path="search/:q/*" />
         </Router>
       </div>

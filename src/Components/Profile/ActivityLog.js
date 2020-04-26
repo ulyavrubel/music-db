@@ -19,6 +19,7 @@ function ActivityLog() {
         .collection("Users")
         .doc(currentUser.uid)
         .collection("Activity")
+        .orderBy("date", "desc")
         .where("date", ">=", d)
         .get()
         .then((querySnapshot) => {

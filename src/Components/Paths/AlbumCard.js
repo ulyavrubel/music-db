@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 function AlbumCard(props) {
   let {
@@ -10,6 +11,7 @@ function AlbumCard(props) {
     country,
     released,
     genre,
+    id,
   } = props.album;
 
   return (
@@ -17,11 +19,11 @@ function AlbumCard(props) {
       <img className="preview img" src={url} alt=".."></img>
       <div className="preview info">
         <h5>
-          {artist} - {title}
+          <Link to={`/search/${artist}/artist`}>{artist}</Link> - {title}
         </h5>
         <p>
           <span>Label </span>
-          {label}
+          <Link to={`/search/${label}/label`}>{label}</Link>
         </p>
         <p>
           <span>Format </span>

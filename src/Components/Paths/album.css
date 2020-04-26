@@ -23,3 +23,8 @@
 .upload.container.preview.album button:hover {
   background-color: rgba(196, 196, 196, 1);
 }
+
+a {
+  text-decoration: none;
+  color: rgba(31, 31, 31, 1);
+}

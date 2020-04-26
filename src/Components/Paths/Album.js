@@ -113,7 +113,7 @@ function Album(props) {
       <div className="upload container preview album">
         <AlbumCard album={album} />
         <p>
-          <a href="/login">Login</a> to add to your collection
+          <a href="/login">Login</a> to add to your collection, wishlist
         </p>
       </div>
     );
