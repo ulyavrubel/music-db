@@ -9,9 +9,7 @@
     height: 52px;
     justify-content: space-around;
   }
-  .navbar .logo {
-    /* margin-left: 64px; */
-  }
+
   .form.search {
     height: 32px;
     width: 345px;
@@ -76,5 +74,17 @@
   }
   .footer.links.desktop a:last-child {
     margin-right: 48px;
+  }
+  .profile.nav.profile-page-desktop {
+    margin: 0;
+    padding-left: 12px;
+    padding-top: 16px;
+    height: 32px;
+    background-color: rgba(31, 31, 31, 1);
+    margin-bottom: 32px;
+  }
+
+  .profile-page-desktop .profile.nav.link:after {
+    background-color: white;
   }
 }

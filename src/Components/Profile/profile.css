@@ -1,3 +1,11 @@
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
 .profile.container {
   margin-top: 96px;
   color: rgba(31, 31, 31, 1);
@@ -57,4 +65,63 @@
 .addedBy.container {
   font-size: 16px;
   margin-left: 12px;
+}
+
+.activity-container {
+  margin: 32px 12px 48px 12px;
+}
+.activity-header {
+  font-size: 16px;
+  margin: 0 0 24px 0;
+}
+
+.activity-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+
+.activity-img {
+  width: 64px;
+  height: 64px;
+}
+
+.activity-info {
+  font-size: 14px;
+  margin: 0 0 8px 8px;
+}
+
+.activity-date {
+  font-size: 12px;
+  margin: 0 0 0 8px;
+  color: rgba(120, 120, 120, 1);
+}
+
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .profile.container {
+    margin-top: 52px;
+  }
+  .profile-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .activity-container {
+    margin: 0px 12px 48px 64px;
+  }
+  .profile-cover {
+    background-image: url("../../img/cover.png");
+    width: 100vw;
+    height: 256px;
+  }
+  .user-photo {
+    position: absolute;
+    top: 258px;
+    left: 64px;
+  }
 }
