@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Router } from "@reach/router";
 import { AuthProvider } from "./Components/Auth/AuthProvider";
 import Navbar from "./Components/Navbar";
@@ -14,6 +13,7 @@ import Album from "./Components/Paths/Album";
 import SearchResultsAll from "./Components/Search/SearchResultsAll";
 import Profile from "./Components/Profile/Profile";
 import AddedBy from "./Components/Profile/AddedBy";
+import Artist from "./Components/Paths/Artist";
 
 function App() {
   return (
@@ -25,11 +25,13 @@ function App() {
           <LogIn path="/login" />
           <SignUp path="/signup" />
           <ForgotPassword path="/forgotPassword" />
-          <Collection path="/collection/:user" />
+          <Collection collection="Collection" path="/collection/:user" />
+          <Collection collection="Wishlist" path="/wishlist/:user" />
           <Profile path="/profile/:user" />
           <AddedBy path="/addedBy/:user" />
           <Upload path="/upload" />
           <Album path="albums/:id" />
+          <Artist path="/artists/:artist" />
           <SearchResultsAll path="search/:q/*" />
         </Router>
       </div>

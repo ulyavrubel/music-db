@@ -61,9 +61,12 @@ function DesktopDropdown(props) {
               >
                 Collection
               </Link>
-              <a className="desktop dropdown item link" href="#">
+              <Link
+                className="desktop dropdown item link"
+                to={`/wishlist/${currentUser.displayName}`}
+              >
                 Wishlist
-              </a>
+              </Link>
               <Link className="desktop dropdown item link" to="/upload">
                 Upload
               </Link>

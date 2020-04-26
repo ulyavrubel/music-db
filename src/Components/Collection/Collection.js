@@ -9,7 +9,7 @@ import Pagination from "../Pagination";
 
 import "./collection.css";
 
-function Collection() {
+function Collection(props) {
   const step = 10;
 
   const { currentUser } = useContext(AuthContext);
@@ -30,7 +30,7 @@ function Collection() {
       let collectionRef = firebaseDB
         .collection("Users")
         .doc(currentUser.uid)
-        .collection("Collection");
+        .collection(props.collection);
       if (sort === "newest") {
         collectionRef.orderBy("date");
       }
@@ -140,7 +140,7 @@ function Collection() {
   if (!currentUser) {
     return (
       <h3>
-        Please, <a href="/login">login</a> to see collection
+        Please, <a href="/login">login</a> to see {props.collection}
       </h3>
     );
   }
@@ -159,6 +159,7 @@ function Collection() {
       ) : null}
       {rows ? (
         <CollectionRows
+          collectionName={props.collection}
           collection={collectionToShow}
           sort={sort}
           handleRender={handleRender}

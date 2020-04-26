@@ -18,7 +18,7 @@ function RecentlyAddedGrid(props) {
             ></img>
           </Link>
           <p>
-            <Link to={`/artists/${album.artist}`}>{album.artist}</Link>
+            <Link to={`/search/${album.artist}/artist`}>{album.artist}</Link>
             <br />
             <Link to={`/albums/${album.id}`}>{album.title}</Link>
           </p>

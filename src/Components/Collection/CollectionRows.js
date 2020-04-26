@@ -31,7 +31,7 @@ function CollectionRows(props) {
   const handleRemove = () => {
     for (let id in albumIDs) {
       if (albumIDs[id] === true) {
-        removeFromDB(currentUser.uid, "Collection", id);
+        removeFromDB(currentUser.uid, props.collectionName, id);
       }
     }
     setShowModal(false);
@@ -65,7 +65,7 @@ function CollectionRows(props) {
         <div className="rows album info">
           <Link
             className="rows album name link"
-            to={`/artists/${album.artist}`}
+            to={`/search/${album.artist}/artist`}
           >
             {album.artist}
           </Link>
@@ -74,7 +74,12 @@ function CollectionRows(props) {
             {album.title}
           </Link>
           <p className="rows album format">{album.format}</p>
-          <p className="rows album label">{album.label}</p>
+          <Link
+            className="rows album name link"
+            to={`/search/${album.label}/label`}
+          >
+            {album.label}
+          </Link>
           <p className="rows album year">
             {album.released} {album.country}
           </p>
@@ -92,7 +97,10 @@ function CollectionRows(props) {
       {showModal ? (
         <Modal>
           <div>
-            <h3>Do you want to remove selected albums from your collection?</h3>
+            <h3>
+              Do you want to remove selected albums from your{" "}
+              {props.collectionName}?
+            </h3>
             <div>
               <button
                 className="auth submit remove modal"
@@ -113,7 +121,7 @@ function CollectionRows(props) {
       {showMessageModal ? (
         <Modal>
           <div>
-            <h3>Albums were removed from your collection</h3>
+            <h3>Albums were removed from your {props.collectionName}</h3>
             <Link
               to={`/collection/${currentUser.displayName}`}
               className="profile nav link"
@@ -121,15 +129,6 @@ function CollectionRows(props) {
             >
               OK
             </Link>
-
-            {/* <button
-                className="auth submit remove modal"
-                onClick={() => {
-                  navigate(`/collection/${currentUser.displayName}`);
-                }}
-              >
-                OK
-              </button> */}
           </div>
         </Modal>
       ) : null}

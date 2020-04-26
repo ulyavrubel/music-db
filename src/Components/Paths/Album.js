@@ -12,7 +12,10 @@ function Album(props) {
   const { currentUser } = useContext(AuthContext);
   const [inCollection, setInCollection] = useState(null);
   const [inCollectionID, setInCollectionID] = useState(null);
+  const [inWishlist, setInWishlist] = useState(null);
+  const [inWishlistID, setInWishlistID] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [showModalWishlist, setShowModalWishlist] = useState(false);
   const [update, setUpdate] = useState(true);
 
   useEffect(() => {
@@ -52,6 +55,24 @@ function Album(props) {
         .catch(() => {
           setInCollection(false);
         });
+
+      const wishlistRef = firebaseDB
+        .collection("Users")
+        .doc(currentUser.uid)
+        .collection("Wishlist");
+      wishlistRef
+        .where("album", "==", props.id)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            setInWishlist(true);
+            setInWishlistID(doc.id);
+            console.log(doc.id, " => ", doc.data());
+          });
+        })
+        .catch(() => {
+          setInWishlist(false);
+        });
     }
   }, [album, update]);
 
@@ -66,8 +87,24 @@ function Album(props) {
     setUpdate(!update);
   };
 
+  const handleRemoveFromWishlist = () => {
+    removeFromDB(currentUser.uid, "Wishlist", inWishlistID);
+    setShowModalWishlist(false);
+    setInWishlist(false);
+  };
+
+  const handleAddToWishlist = () => {
+    addToDBCollection(currentUser.uid, "Wishlist", props.id);
+    setUpdate(!update);
+  };
+
   const toggleModal = () => {
     setShowModal(!showModal);
+    setUpdate(!update);
+  };
+
+  const toggleModalWishlist = () => {
+    setShowModalWishlist(!showModalWishlist);
     setUpdate(!update);
   };
 
@@ -98,7 +135,22 @@ function Album(props) {
           Add to my Collection
         </button>
       )}
-      <button className="auth submit navigation">Add to my Wishlist</button>
+      {inWishlist ? (
+        <button
+          className="auth submit navigation"
+          onClick={toggleModalWishlist}
+        >
+          Remove from my Wishlist
+        </button>
+      ) : (
+        <button
+          className="auth submit navigation"
+          onClick={handleAddToWishlist}
+        >
+          Add to my Wishlist
+        </button>
+      )}
+
       {showModal ? (
         <Modal>
           <div>
@@ -113,6 +165,27 @@ function Album(props) {
               <button
                 className="auth submit remove modal"
                 onClick={toggleModal}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </Modal>
+      ) : null}
+      {showModalWishlist ? (
+        <Modal>
+          <div>
+            <h3>Do you want to remove this album from your wishlist?</h3>
+            <div>
+              <button
+                className="auth submit remove modal"
+                onClick={handleRemoveFromWishlist}
+              >
+                Yes
+              </button>
+              <button
+                className="auth submit remove modal"
+                onClick={toggleModalWishlist}
               >
                 No
               </button>

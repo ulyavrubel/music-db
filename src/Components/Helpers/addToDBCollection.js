@@ -7,12 +7,12 @@ export const addToDBCollection = (user, collection, id) => {
     .collection(collection)
     .add({ album: id, date: new Date() })
     .then((result) => {
-      console.log("Added to collection", result);
+      console.log(`Added to ${collection}`, result);
       firebaseDB
         .collection("Users")
         .doc(user)
         .collection("Activity")
-        .add({ log: "added to collection", album: id, date: new Date() })
+        .add({ log: `added to ${collection}`, album: id, date: new Date() })
         .then((result) => {
           console.log("Added to activity log", result);
         })

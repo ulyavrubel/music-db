@@ -46,9 +46,7 @@ function MobileHamburger(props) {
             Profile: <span>{currentUser.displayName}</span>
           </Link>
           <Link to={`/collection/${currentUser.displayName}`}>Collection</Link>
-
-          <a href="#">Wishlist</a>
-
+          <Link to={`/wishlist/${currentUser.displayName}`}>Wishlist</Link>
           <Link to="/upload">Upload</Link>
           <a href="#">Explore genres</a>
           <a className="logout" href="#" onClick={logout}>

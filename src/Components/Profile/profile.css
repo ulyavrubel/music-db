@@ -110,6 +110,7 @@
   .profile-wrapper {
     display: flex;
     flex-direction: row;
+    margin-left: 52px;
   }
   .activity-container {
     margin: 0px 12px 48px 64px;
