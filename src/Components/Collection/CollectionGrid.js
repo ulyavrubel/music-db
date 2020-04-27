@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "@reach/router";
+import { compareValues } from "../Helpers/compareValues";
 
 function CollectionGrid(props) {
   let albums = props.collection;
   let sort = props.sort;
-  if (sort !== "newest") {
-    albums.sort((a, b) => (a.sort < b.sort ? 1 : -1));
+
+  if (sort === "artist") {
+    albums.sort(compareValues("artist"));
+  } else if (sort === "album") {
+    albums.sort(compareValues("title"));
+  } else if (sort === "genre") {
+    albums.sort(compareValues("genre"));
+  } else if (sort === "released") {
+    albums.sort(compareValues("released"));
   }
+
   const albumItems = albums.map((album) => {
     return (
       <div className="collection grid album" key={album.id}>

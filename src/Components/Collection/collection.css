@@ -50,7 +50,7 @@
   display: flex;
   width: 100vw;
   flex-direction: row;
-  padding: 12px 12px 12px 0px;
+  padding: 12px 0px 12px 0px;
   border-top: 1px solid rgba(196, 196, 196, 1);
 }
 
@@ -69,6 +69,7 @@
 
 .rows.album.info {
   margin-left: 12px;
+  max-width: 228px;
 }
 
 .rows.album.info p {
@@ -130,5 +131,8 @@ p.rows.album.year {
 @media (min-width: 1024px) {
   .collection.grid.container {
     grid-template-columns: repeat(5, 132px);
+  }
+  .rows.album.info {
+    max-width: 600px;
   }
 }

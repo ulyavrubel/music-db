@@ -35,6 +35,10 @@
     cursor: pointer;
     font-size: 16px;
   }
+
+  .navbar-account {
+    color: white;
+  }
   .hamburger.container {
     display: flex;
     flex-direction: row;

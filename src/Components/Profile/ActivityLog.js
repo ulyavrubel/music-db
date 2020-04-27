@@ -25,6 +25,7 @@ function ActivityLog() {
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             let log = doc.data();
+            log.logID = doc.id;
             setActivity((prev) => {
               return [...prev, log];
             });
@@ -52,6 +53,7 @@ function ActivityLog() {
             let result = doc.data();
             result.id = doc.id;
             result.log = log.log;
+            result.logID = log.logID;
             result.addedDate = log.date.toDate();
             setActivityWithAlbums((prev) => {
               return [...prev, result];
@@ -71,7 +73,7 @@ function ActivityLog() {
     let addedDate = new Date(log.addedDate);
     let formatedDate = addedDate.toDateString().split(" ").slice(1).join(" ");
     return (
-      <div className="activity-item" key={log.id}>
+      <div className="activity-item" key={log.logID}>
         <Link to={`/albums/${log.id}`}>
           <img
             className="activity-img"

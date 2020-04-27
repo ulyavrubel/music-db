@@ -26,8 +26,6 @@ function RecentlyAddedGrid(props) {
       );
     });
 
-    console.log(albumsToShow);
-
     setAlbumItems(albumsToShow);
   }, [props, itemsShow]);
 

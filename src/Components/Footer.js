@@ -25,18 +25,18 @@ function Footer() {
             className="hamburger links mobile"
             style={open ? { display: "block" } : { display: "none" }}
           >
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Copyright</a>
-            <a href="#">Help</a>
+            <a href="/">Terms of Use</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Copyright</a>
+            <a href="/">Help</a>
           </div>
         </div>
         <div className="footer links desktop">
           <div className="footer links desktop">
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Copyright</a>
-            <a href="#">Help</a>
+            <a href="/">Terms of Use</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Copyright</a>
+            <a href="/">Help</a>
           </div>
           <p className="footer p">
             Created by{" "}

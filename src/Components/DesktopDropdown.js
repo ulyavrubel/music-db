@@ -26,7 +26,7 @@ function DesktopDropdown(props) {
         </div>
       ) : (
         <div className="navbar auth links">
-          <a className="logout" href="#" onClick={logout}>
+          <a className="logout" href="/" onClick={logout}>
             Log Out
           </a>
           <div
@@ -34,7 +34,7 @@ function DesktopDropdown(props) {
             ref={ref}
             onClick={() => (open ? setOpen(false) : setOpen(true))}
           >
-            <a>Account</a>
+            <p className="navbar-account">Account</p>
             <img
               className="hamburger"
               src={dropdown}
@@ -70,9 +70,6 @@ function DesktopDropdown(props) {
               <Link className="desktop dropdown item link" to="/upload">
                 Upload
               </Link>
-              <a className="desktop dropdown item link" href="#">
-                Explore genres
-              </a>
             </div>
           </div>
         </div>

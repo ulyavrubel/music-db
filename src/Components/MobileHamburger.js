@@ -34,7 +34,6 @@ function MobileHamburger(props) {
         >
           <a href="/login">Log In</a>
           <a href="/signup">Sign Up</a>
-          <a href="#">Explore genres</a>
         </div>
       ) : (
         <div
@@ -48,8 +47,7 @@ function MobileHamburger(props) {
           <Link to={`/collection/${currentUser.displayName}`}>Collection</Link>
           <Link to={`/wishlist/${currentUser.displayName}`}>Wishlist</Link>
           <Link to="/upload">Upload</Link>
-          <a href="#">Explore genres</a>
-          <a className="logout" href="#" onClick={logout}>
+          <a className="logout" href="/" onClick={logout}>
             Log Out
           </a>
         </div>

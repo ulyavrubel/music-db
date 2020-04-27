@@ -25,7 +25,7 @@ function ProfileNavProfileDesktop() {
   }
 
   return (
-    <div className="profile nav profile-page-desktop">
+    <div className="profile nav profile-page-desktop desktop">
       <NavLink
         to={`/collection/${currentUser.displayName}`}
         className="profile nav link"

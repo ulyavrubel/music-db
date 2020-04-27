@@ -1,11 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./profile.css";
 import ProfileNavProfileDesktop from "../ProfileNavProfileDesktop";
-import { firebaseDB } from "../Auth/FirebaseInit";
 import { AuthContext } from "../Auth/AuthProvider";
 import UserReleases from "./UserReleases";
 import ActivityLog from "./ActivityLog";
-import cover from "../../img/cover.png";
+import ProfileNav from "../ProfileNav";
 
 function Profile() {
   const { currentUser } = useContext(AuthContext);
@@ -39,7 +38,8 @@ function Profile() {
       <div className="profile-cover desktop">
         <img className="desktop user-photo" src={currentUser.photoURL}></img>
       </div>
-      <ProfileNavProfileDesktop />
+      <ProfileNav className="mobile" />
+      <ProfileNavProfileDesktop className="desktop" />
       <div className="profile-wrapper">
         <div>
           <div className="user info">

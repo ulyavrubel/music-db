@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { AuthContext } from "./Auth/AuthProvider";
 import { firebaseDB } from "./Auth/FirebaseInit";
 import AlbumCard from "./Paths/AlbumCard";
 import { addToDBCollection } from "./Helpers/addToDBCollection";
@@ -60,7 +59,7 @@ function Preview(props) {
           .collection("Users")
           .doc(currentUser.uid)
           .collection("Activity")
-          .add({ log: "added to database", album: result.id, date: new Date() })
+          .add({ log: "added to Database", album: result.id, date: new Date() })
           .then((result) => {
             console.log("Added to activity log", result);
           })

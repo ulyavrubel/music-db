@@ -20,6 +20,12 @@ function Navbar() {
     setQuery(event.target.value);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      navigate(`/search/${query}/all`);
+    }
+  };
+
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpen(false);
@@ -40,6 +46,7 @@ function Navbar() {
             placeholder="Search"
             value={query}
             onChange={handleChange}
+            onKeyPress={handleKeyPress}
           ></input>
           <div
             className="button search"

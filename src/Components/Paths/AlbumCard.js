@@ -11,7 +11,6 @@ function AlbumCard(props) {
     country,
     released,
     genre,
-    id,
   } = props.album;
 
   return (

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, navigate } from "@reach/router";
+import { Link } from "@reach/router";
 import Modal from "../Modal";
 import { AuthContext } from "../Auth/AuthProvider";
 import { removeFromDB } from "../Helpers/removeFromDB";
+import { compareValues } from "../Helpers/compareValues";
 
 function CollectionRows(props) {
   const { currentUser } = useContext(AuthContext);
@@ -45,9 +46,17 @@ function CollectionRows(props) {
 
   let albums = props.collection;
   let sort = props.sort;
-  if (sort !== "newest") {
-    albums.sort((a, b) => (a.sort < b.sort ? 1 : -1));
+
+  if (sort === "artist") {
+    albums.sort(compareValues("artist"));
+  } else if (sort === "album") {
+    albums.sort(compareValues("title"));
+  } else if (sort === "genre") {
+    albums.sort(compareValues("genre"));
+  } else if (sort === "released") {
+    albums.sort(compareValues("released"));
   }
+
   const albumItems = albums.map((album) => {
     return (
       <div className="collection rows album" key={album.id}>
@@ -56,7 +65,6 @@ function CollectionRows(props) {
           type="checkbox"
           id={album.inCollectionId}
           value={album.inCollectionId}
-          onChange={handleChange}
           checked={albumIDs[album.inCollectionId]}
         ></input>
         <Link to={`/albums/${album.id}`}>
@@ -90,7 +98,9 @@ function CollectionRows(props) {
 
   return (
     <div className="collection rows wrapper">
-      <div className="collection rows container">{albumItems}</div>
+      <div className="collection rows container" onChange={handleChange}>
+        {albumItems}
+      </div>
       <button onClick={toggleModal} className="auth submit remove">
         Remove Selected
       </button>

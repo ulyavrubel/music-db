@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import { AuthContext } from "./Auth/AuthProvider";
 import ProfileNav from "./ProfileNav";
 import { Countries } from "./Helpers/Countries";
@@ -7,9 +8,15 @@ import Preview from "./Preview";
 
 function Upload() {
   const { currentUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  }, []);
+
   if (!currentUser) {
     return <h3>Please, login to upload an album</h3>;
   }
+
   return (
     <div>
       <ProfileNav />
@@ -107,7 +114,6 @@ class UploadForm extends React.Component {
         genre,
       });
     } else {
-      console.log(genre);
       genre = {
         Electronic: false,
         Rock: false,
@@ -140,6 +146,7 @@ class UploadForm extends React.Component {
   handlePreview = (event) => {
     event.preventDefault();
     this.setState({ showPreview: true });
+    scroll.scrollMore(355);
   };
 
   render() {

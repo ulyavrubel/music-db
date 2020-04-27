@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import SearchResultsNav from "./SearchResultsNav";
-import AlbumsNav from "../AlbumsNav";
 import "./searchResults.css";
 import Pagination from "../Pagination";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import CollectionGrid from "../Collection/CollectionGrid";
 import NothingFound from "./NothingFound";
+import Sort from "../Sort";
 
 function SearchResultsAll(props) {
   const step = 5;
   const [sort, setSort] = useState("newest");
-  const [grid, setGrid] = useState(true);
-  const [rows, setRows] = useState(false);
   const [indexFrom, setIndexFrom] = useState(1);
   const [indexTo, setIndexTo] = useState(step);
   const [collectionLength, setCollectionLength] = useState(0);
@@ -22,19 +20,14 @@ function SearchResultsAll(props) {
   const [resultLabel, setResultLabel] = useState([]);
   const [resultsToShow, setResultsToShow] = useState([]);
   const [type, setType] = useState("all");
-  const [search, setSearch] = useState("");
+
   const [showNothing, setShowNothing] = useState(false);
 
   useEffect(() => {
-    setSearch(props.q);
     setType(props.location.pathname.split("/")[3]);
   }, [props]);
 
   useEffect(() => {
-    setResultTitle([]);
-    setResultArtist([]);
-    setResultLabel([]);
-    setResultsToShow([]);
     firebaseDB
       .collection("Albums")
       .where("title", "==", props.q)
@@ -119,18 +112,8 @@ function SearchResultsAll(props) {
 
   const handleChange = (event) => {
     event.preventDefault();
+    console.log(event.target.value);
     setSort(event.target.value);
-  };
-  const handleGrid = (event) => {
-    event.preventDefault();
-    setGrid(true);
-    setRows(false);
-  };
-
-  const handleRows = (event) => {
-    event.preventDefault();
-    setGrid(false);
-    setRows(true);
   };
 
   const handlePrev = () => {
@@ -181,11 +164,9 @@ function SearchResultsAll(props) {
       {showNothing ? (
         <NothingFound />
       ) : (
-        <AlbumsNav
-          handleChange={handleChange}
-          handleGrid={handleGrid}
-          handleRows={handleRows}
-        />
+        <div className="collection nav">
+          <Sort onChange={handleChange} />
+        </div>
       )}
 
       <CollectionGrid collection={resultsToShow} sort={sort} />

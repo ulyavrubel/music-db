@@ -13,9 +13,7 @@ function MainPageContent() {
     ref
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot);
         querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
           if (doc.exists) {
             const album = doc.data();
             album.id = doc.id;

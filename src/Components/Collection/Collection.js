@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useCallback } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import ProfileNav from "../ProfileNav";
@@ -30,10 +30,8 @@ function Collection(props) {
       let collectionRef = firebaseDB
         .collection("Users")
         .doc(currentUser.uid)
-        .collection(props.collection);
-      if (sort === "newest") {
-        collectionRef.orderBy("date");
-      }
+        .collection(props.collection)
+        .orderBy("date", "desc");
       collectionRef
         .get()
         .then((querySnapshot) => {
