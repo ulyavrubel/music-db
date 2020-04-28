@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import CollectionGrid from "../Collection/CollectionGrid";
-import ProfileNav from "../ProfileNav";
+import ProfileNav from "../Navs/ProfileNav";
 import "./profile.css";
 
 function AddedBy() {

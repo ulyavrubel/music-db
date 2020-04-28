@@ -122,7 +122,10 @@
   }
   .user-photo {
     position: absolute;
-    top: 258px;
+    top: 158px;
     left: 64px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
   }
 }

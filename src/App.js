@@ -1,14 +1,14 @@
 import React from "react";
 import { Router } from "@reach/router";
 import { AuthProvider } from "./Components/Auth/AuthProvider";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navs/Navbar";
 import MainPageContent from "./Components/Main/MainPageContent";
 import Footer from "./Components/Footer";
 import LogIn from "./Components/Auth/LogIn";
 import SignUp from "./Components/Auth/SignUp";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
 import Collection from "./Components/Collection/Collection";
-import Upload from "./Components/Upload";
+import Upload from "./Components/Upload/Upload";
 import Album from "./Components/Paths/Album";
 import SearchResultsAll from "./Components/Search/SearchResultsAll";
 import Profile from "./Components/Profile/Profile";

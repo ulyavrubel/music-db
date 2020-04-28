@@ -200,7 +200,7 @@ div.hamburger.links a:hover {
 
 .auth span {
   color: tomato;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 12px;
   margin-bottom: 16px;
   text-align: center;
@@ -243,11 +243,9 @@ div.hamburger.links a:hover {
   height: 24px;
   padding: 6px 12px 6px 12px;
   font-size: 12px;
-  /* font-weight: 500; */
 }
 .auth.submit.facebook {
   margin-top: 24px;
-
   background-color: rgba(66, 103, 178, 1);
 }
 
@@ -593,4 +591,99 @@ div.hamburger.links a:hover {
 
 .auth.submit.remove.modal:hover {
   background-color: rgba(146, 146, 146, 1);
+}
+
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .navbar {
+    height: 52px;
+    justify-content: space-around;
+  }
+
+  .form.search {
+    height: 32px;
+    width: 345px;
+  }
+
+  .input.search {
+    height: 32px;
+    width: 306px;
+  }
+
+  .button .search {
+    width: 32px;
+    height: 24px;
+  }
+
+  .navbar.auth.links {
+    position: static;
+    padding-right: 64px;
+  }
+  .navbar.auth.links a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .navbar-account {
+    color: white;
+  }
+  .hamburger.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .hamburger.container img {
+    margin-left: 4px;
+  }
+  div.hamburger.links {
+    top: 46px;
+    right: 30px;
+    width: 192px;
+    background-color: rgba(68, 68, 68, 1);
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  div.hamburger.links a {
+    padding: 12px 12px;
+  }
+  div.hamburger.links a:hover {
+    background-color: rgba(120, 120, 120, 1);
+  }
+
+  #nav-dropdown span {
+    color: white;
+  }
+  .footer.links.desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .footer.links.desktop a {
+    text-decoration: none;
+    color: white;
+    margin-right: 16px;
+  }
+  .footer.links.desktop a:last-child {
+    margin-right: 48px;
+  }
+  .profile.nav.profile-page-desktop {
+    margin: 0;
+    padding-left: 64px;
+    padding-top: 16px;
+    height: 32px;
+    background-color: rgba(31, 31, 31, 1);
+    margin-bottom: 32px;
+  }
+
+  .profile-page-desktop .profile.nav.link:after {
+    background-color: white;
+  }
 }

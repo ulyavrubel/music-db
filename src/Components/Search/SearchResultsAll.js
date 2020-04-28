@@ -107,6 +107,7 @@ function SearchResultsAll(props) {
       setShowNothing(true);
     } else {
       setShowNothing(false);
+      setCollectionLength(resultsToShow.length);
     }
   }, [resultsToShow]);
 

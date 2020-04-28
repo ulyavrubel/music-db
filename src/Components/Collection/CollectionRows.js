@@ -14,12 +14,12 @@ function CollectionRows(props) {
   useEffect(() => {
     if (Object.keys(albumIDs).length === 0) {
       props.collection.map((album) => {
-        setAlbumIDs((prev) => {
+        return setAlbumIDs((prev) => {
           return { ...prev, [album.inCollectionId]: false };
         });
       });
     }
-  }, []);
+  }, [albumIDs, props]);
 
   const handleChange = (event) => {
     let id = event.target.id;
@@ -132,13 +132,12 @@ function CollectionRows(props) {
         <Modal>
           <div>
             <h3>Albums were removed from your {props.collectionName}</h3>
-            <Link
-              to={`/collection/${currentUser.displayName}`}
-              className="profile nav link"
+            <button
+              className="auth submit remove modal"
               onClick={() => setShowMessageModal(false)}
             >
               OK
-            </Link>
+            </button>
           </div>
         </Modal>
       ) : null}

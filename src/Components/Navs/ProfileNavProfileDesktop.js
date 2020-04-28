@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext } from "./Auth/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "@reach/router";
 
 export function NavLink(props) {

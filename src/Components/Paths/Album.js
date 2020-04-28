@@ -34,7 +34,7 @@ function Album(props) {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [props]);
 
   useEffect(() => {
     if (currentUser) {
@@ -74,7 +74,7 @@ function Album(props) {
           setInWishlist(false);
         });
     }
-  }, [album, update]);
+  }, [album, update, currentUser, props]);
 
   const handleRemoveFromCollection = () => {
     removeFromDB(currentUser.uid, "Collection", inCollectionID);

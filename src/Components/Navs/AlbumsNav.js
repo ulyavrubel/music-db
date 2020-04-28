@@ -1,7 +1,7 @@
 import React from "react";
-import Sort from "./Sort";
-import viewGrid from "../img/view-grid.svg";
-import viewRows from "../img/view-rows.svg";
+import Sort from "../Sort";
+import viewGrid from "../../img/view-grid.svg";
+import viewRows from "../../img/view-rows.svg";
 
 function AlbumsNav(props) {
   return (

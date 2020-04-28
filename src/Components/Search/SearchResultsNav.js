@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "../ProfileNav";
+import { NavLink } from "../Navs/ProfileNav";
 
 function SearchResultsNav() {
   return (

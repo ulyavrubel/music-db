@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { AuthContext } from "./Auth/AuthProvider";
-import ProfileNav from "./ProfileNav";
-import { Countries } from "./Helpers/Countries";
-import { storage } from "./Auth/FirebaseInit";
+import { AuthContext } from "../Auth/AuthProvider";
+import ProfileNav from "../Navs/ProfileNav";
+import { Countries } from "../Helpers/Countries";
+import { storage } from "../Auth/FirebaseInit";
 import Preview from "./Preview";
 
 function Upload() {
@@ -54,7 +54,9 @@ class UploadForm extends React.Component {
       img: null,
       url: null,
       showPreview: false,
+      error: "err message",
     };
+    this.formRef = React.createRef();
   }
 
   componentDidMount() {
@@ -145,8 +147,19 @@ class UploadForm extends React.Component {
 
   handlePreview = (event) => {
     event.preventDefault();
-    this.setState({ showPreview: true });
-    scroll.scrollMore(355);
+    let values = Object.values(this.state);
+    if (values.some((item) => item === "" || item === null)) {
+      this.setState({
+        error: "Please fill all fields and try again.",
+      });
+      scroll.scrollToBottom();
+    } else {
+      this.setState({
+        error: "err message",
+      });
+      this.setState({ showPreview: true });
+      scroll.scrollMore(355);
+    }
   };
 
   render() {
@@ -176,6 +189,7 @@ class UploadForm extends React.Component {
             value={genre}
             onChange={this.handleGenreCheck}
             checked={this.state.genre[genre]}
+            required
           ></input>
           <label htmlFor={genre}> {genre}</label>
         </div>
@@ -210,7 +224,7 @@ class UploadForm extends React.Component {
               ) : null}
             </div>
           </form>
-          <form className="upload form album">
+          <form className="upload form album" ref={this.formRef}>
             <div className="album container">
               <label>Artist</label>
               <input
@@ -306,6 +320,9 @@ class UploadForm extends React.Component {
             </button>
           </form>
         </div>
+        {this.state.error !== "err message" ? (
+          <p style={{ textAlign: "center" }}>{this.state.error}</p>
+        ) : null}
         {this.state.showPreview ? <Preview release={this.state} /> : null}
       </div>
     );

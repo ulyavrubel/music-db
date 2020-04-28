@@ -15,7 +15,8 @@ function UserReleases() {
       .collection("Collection")
       .get()
       .then((querySnapshot) => {
-        const collectionLength = querySnapshot.Wv.docChanges.length;
+        console.log(querySnapshot);
+        const collectionLength = querySnapshot.ME.docChanges.length;
         setCollectionLength(collectionLength);
       })
       .catch((err) => {
@@ -28,7 +29,7 @@ function UserReleases() {
       .collection("Wishlist")
       .get()
       .then((querySnapshot) => {
-        const wishlistLength = querySnapshot.Wv.docChanges.length;
+        const wishlistLength = querySnapshot.ME.docChanges.length;
         setWishlistLength(wishlistLength);
       })
       .catch((err) => {
@@ -40,14 +41,14 @@ function UserReleases() {
       .where("addedBy", "==", currentUser.uid)
       .get()
       .then((querySnapshot) => {
-        const addedByLength = querySnapshot.Wv.docChanges.length;
+        const addedByLength = querySnapshot.ME.docChanges.length;
         setAddedByLength(addedByLength);
       })
       .catch((err) => {
         console.log(err.message);
         setAddedByLength(0);
       });
-  }, []);
+  }, [currentUser]);
 
   return (
     <div className="user-releases">

@@ -1,11 +1,11 @@
 import React, { useState, useContext, useRef } from "react";
-import { AuthContext } from "./Auth/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "@reach/router";
-import { firebaseAuth } from "./Auth/FirebaseInit";
-import useOutsideClick from "./Helpers/useOutsideClick";
-import hamburger from "../img/hamburger.svg";
+import { firebaseAuth } from "../Auth/FirebaseInit";
+import useOutsideClick from "../Helpers/useOutsideClick";
+import hamburger from "../../img/hamburger.svg";
 
-function MobileHamburger(props) {
+function MobileHamburger() {
   const { currentUser } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 

@@ -1,14 +1,16 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import "./profile.css";
-import ProfileNavProfileDesktop from "../ProfileNavProfileDesktop";
+import ProfileNavProfileDesktop from "../Navs/ProfileNavProfileDesktop";
 import { AuthContext } from "../Auth/AuthProvider";
 import UserReleases from "./UserReleases";
 import ActivityLog from "./ActivityLog";
-import ProfileNav from "../ProfileNav";
+import ProfileNav from "../Navs/ProfileNav";
 
 function Profile() {
   const { currentUser } = useContext(AuthContext);
   const [signupDate, setSignupDate] = useState("");
+  const [width, setWidth] = useState(null);
+  const ref = useRef();
 
   useEffect(() => {
     if (currentUser) {
@@ -20,6 +22,7 @@ function Profile() {
         .slice(1)
         .join(" ");
       setSignupDate(formatedDate);
+      setWidth(ref.current.offsetWidth);
     }
   }, [currentUser]);
 
@@ -34,16 +37,24 @@ function Profile() {
   }
 
   return (
-    <div className="profile container">
+    <div className="profile container" ref={ref}>
       <div className="profile-cover desktop">
-        <img className="desktop user-photo" src={currentUser.photoURL}></img>
+        <img
+          className="desktop user-photo"
+          src={currentUser.photoURL}
+          alt="..."
+        ></img>
       </div>
-      <ProfileNav className="mobile" />
-      <ProfileNavProfileDesktop className="desktop" />
+      {width > 1024 ? (
+        <ProfileNavProfileDesktop className="desktop" />
+      ) : (
+        <ProfileNav className="mobile" />
+      )}
+
       <div className="profile-wrapper">
         <div>
           <div className="user info">
-            <img className="mobile" src={currentUser.photoURL}></img>
+            <img className="mobile" src={currentUser.photoURL} alt="..."></img>
             <div>
               <p className="user info name">{currentUser.displayName}</p>
               <p className="user info date">Joined {signupDate}</p>

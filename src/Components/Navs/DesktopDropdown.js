@@ -1,9 +1,9 @@
 import React, { useState, useContext, useRef } from "react";
-import { AuthContext } from "./Auth/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "@reach/router";
-import { firebaseAuth } from "./Auth/FirebaseInit";
-import useOutsideClick from "./Helpers/useOutsideClick";
-import dropdown from "../img/dropdown.svg";
+import { firebaseAuth } from "../Auth/FirebaseInit";
+import useOutsideClick from "../Helpers/useOutsideClick";
+import dropdown from "../../img/dropdown.svg";
 
 function DesktopDropdown(props) {
   const { currentUser } = useContext(AuthContext);

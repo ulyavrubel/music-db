@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
-import ProfileNav from "../ProfileNav";
+import ProfileNav from "../Navs/ProfileNav";
 import CollectionGrid from "./CollectionGrid";
 import CollectionRows from "./CollectionRows";
-import AlbumsNav from "../AlbumsNav";
+import AlbumsNav from "../Navs/AlbumsNav";
 import Pagination from "../Pagination";
 
 import "./collection.css";
@@ -26,6 +26,11 @@ function Collection(props) {
   const [rerender, setRerender] = useState(false);
 
   useEffect(() => {
+    setCollection([]);
+    setCollectionToShow([]);
+    setCollectionLength(0);
+    setIndexFrom(1);
+    setIndexTo(step);
     if (currentUser) {
       let collectionRef = firebaseDB
         .collection("Users")
@@ -65,7 +70,7 @@ function Collection(props) {
           console.log(err.message);
         });
     }
-  }, [currentUser, rerender]);
+  }, [currentUser, rerender, props]);
 
   useEffect(() => {
     let newColl = collection.slice(indexFrom - 1, indexTo);
