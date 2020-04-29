@@ -95,7 +95,7 @@ input:focus {
 div.hamburger.links {
   position: fixed;
   -webkit-overflow-scrolling: touch;
-  z-index: 2;
+  /* z-index: 2; */
   top: 48px;
   right: 0px;
   width: 100%;

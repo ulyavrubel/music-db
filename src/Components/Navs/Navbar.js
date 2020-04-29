@@ -5,7 +5,6 @@ import logoD from "../../img/logo-MusicDB.png";
 import icon from "../../img/search-icon.svg";
 import MobileHamburger from "./MobileHamburger";
 import DesktopDropdown from "./DesktopDropdown";
-import ReactBurgerMenu from "./ReactBurgerMenu";
 
 function Navbar() {
   const [query, setQuery] = useState("");
@@ -47,8 +46,8 @@ function Navbar() {
         </form>
       </div>
 
-      {/* <MobileHamburger className="mobile" /> */}
-      <ReactBurgerMenu className="mobile" />
+      <MobileHamburger className="mobile" />
+
       <DesktopDropdown className="desktop" />
     </div>
   );
