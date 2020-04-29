@@ -3,9 +3,9 @@ import React from "react";
 function Subscribe() {
   return (
     <div className="subscribe container">
-      <h2 className="subscribe container header mobile">
+      {/* <h2 className="subscribe container header mobile">
         Join our newsletter, <span>keep up with new updates! </span>
-      </h2>
+      </h2> */}
       <h2 className="subscribe container header desktop">
         Explore new music with us.{" "}
         <span>
