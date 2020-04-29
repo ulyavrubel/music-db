@@ -31,7 +31,7 @@ function Footer() {
             <a href="/">Help</a>
           </div>
         </div>
-        <div className="footer links desktop">
+        <div className="footer links">
           <div className="footer links desktop">
             <a href="/">Terms of Use</a>
             <a href="/">Privacy Policy</a>

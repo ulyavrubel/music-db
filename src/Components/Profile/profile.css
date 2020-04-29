@@ -119,6 +119,8 @@
     background-image: url("../../img/cover.png");
     width: 100vw;
     height: 256px;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
   .user-photo {
     position: absolute;

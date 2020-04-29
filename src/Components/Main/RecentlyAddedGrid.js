@@ -40,8 +40,8 @@ function RecentlyAddedGrid(props) {
 
   return (
     <div className="recentlyAdded container">
-      <h3> Recently added albums</h3>
       <div className="collection grid wrapper">
+        <h3> Recently added albums</h3>
         <div className="collection grid container recentlyAdded">
           {albumItems}
         </div>

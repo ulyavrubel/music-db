@@ -14,7 +14,11 @@ function Upload() {
   }, []);
 
   if (!currentUser) {
-    return <h3>Please, login to upload an album</h3>;
+    return (
+      <h3 style={{ marginTop: "96px", textAlign: "center" }}>
+        Please, <a href="/login">login</a> to upload an album
+      </h3>
+    );
   }
 
   return (
@@ -41,12 +45,12 @@ class UploadForm extends React.Component {
         Rock: false,
         Blues: false,
         Folk: false,
-        Hiphop: false,
+        HipHop: false,
         Latin: false,
         NonMusic: false,
         Pop: false,
         Jazz: false,
-        Funck: false,
+        Funk: false,
         Classical: false,
         Reggae: false,
       },
@@ -121,12 +125,12 @@ class UploadForm extends React.Component {
         Rock: false,
         Blues: false,
         Folk: false,
-        Hiphop: false,
+        HipHop: false,
         Latin: false,
         NonMusic: false,
         Pop: false,
         Jazz: false,
-        Funck: false,
+        Funk: false,
         Classical: false,
         Reggae: false,
       };
@@ -168,12 +172,12 @@ class UploadForm extends React.Component {
       "Rock",
       "Blues",
       "Folk",
-      "Hiphop",
+      "HipHop",
       "Latin",
       "NonMusic",
       "Pop",
       "Jazz",
-      "Funck",
+      "Funk",
       "Classical",
       "Reggae",
     ];
@@ -227,6 +231,7 @@ class UploadForm extends React.Component {
           <form className="upload form album" ref={this.formRef}>
             <div className="album container">
               <label>Artist</label>
+              <br />
               <input
                 className="album input"
                 type="text"
@@ -239,6 +244,7 @@ class UploadForm extends React.Component {
             </div>
             <div className="album container">
               <label>Album</label>
+              <br />
               <input
                 className="album input"
                 type="text"
@@ -251,6 +257,7 @@ class UploadForm extends React.Component {
             </div>
             <div className="album container">
               <label>Label</label>
+              <br />
               <input
                 className="album input"
                 type="text"
@@ -291,10 +298,12 @@ class UploadForm extends React.Component {
             </div>
             <div className="album container contries">
               <label>Country</label>
+              <br />
               <Countries onChange={this.handleChange} />
             </div>
             <div className="album container genres">
               <label>Genres</label>
+              <br />
               <div className="album container genres grid">
                 {genresCheckBoxes}
               </div>

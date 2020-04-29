@@ -12,7 +12,7 @@ function Subscribe() {
           Track your collection and wantlist. Contribute to the catalog.{" "}
         </span>
       </h2>
-      <form className="subscribe form">
+      {/* <form className="subscribe form">
         <input
           className="subscribe input"
           name="subscribe"
@@ -23,7 +23,7 @@ function Subscribe() {
         <button className="subscribe button" type="submit">
           Subscribe
         </button>
-      </form>
+      </form> */}
     </div>
   );
 }

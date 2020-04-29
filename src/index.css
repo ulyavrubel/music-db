@@ -89,11 +89,12 @@ input:focus {
 }
 
 .hamburger.container {
-  position: relative;
+  /* position: fixed; */
 }
 
 div.hamburger.links {
   position: fixed;
+  -webkit-overflow-scrolling: touch;
   z-index: 2;
   top: 48px;
   right: 0px;
@@ -660,6 +661,11 @@ div.hamburger.links a:hover {
 
   #nav-dropdown span {
     color: white;
+  }
+  .footer.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .footer.links.desktop {
     display: flex;
