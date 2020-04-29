@@ -21,7 +21,7 @@ function Footer() {
               open ? { transform: "rotate(180deg)" } : { transform: "none" }
             }
           ></img>
-          <div
+          {/* <div
             className="hamburger links mobile"
             style={open ? { display: "block" } : { display: "none" }}
           >
@@ -29,7 +29,7 @@ function Footer() {
             <a href="/">Privacy Policy</a>
             <a href="/">Copyright</a>
             <a href="/">Help</a>
-          </div>
+          </div> */}
         </div>
         <div className="footer links">
           <div className="footer links desktop">
