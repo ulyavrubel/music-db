@@ -31,6 +31,15 @@ body {
   justify-content: center;
 }
 
+.burger-menu {
+  margin-top: 48px;
+  top: -1px;
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh - 48px);
+  z-index: 1;
+}
+
 .logo-form {
   display: flex;
   flex-direction: row;
@@ -88,17 +97,17 @@ input:focus {
   cursor: pointer;
 }
 
-.hamburger.container {
-  /* position: fixed; */
-}
+/* .hamburger.container {
+  position: fixed;
+} */
 
 div.hamburger.links {
   position: fixed;
-  -webkit-overflow-scrolling: touch;
-  /* z-index: 2; */
+  z-index: 2;
   top: 48px;
   right: 0px;
   width: 100%;
+  height: 100%;
   background-color: rgba(229, 229, 229, 1);
   padding: 0px;
 }
@@ -166,7 +175,7 @@ div.hamburger.links a:hover {
   flex-direction: column;
   margin: auto;
   max-width: 343px;
-  height: 342px;
+  height: 370px;
   background-color: white;
   border: 1px solid rgba(229, 229, 229, 1);
   border-radius: 15px;
@@ -371,7 +380,6 @@ div.hamburger.links a:hover {
 .upload.form.file {
   width: 319px;
   height: 142px;
-
   background-color: white;
 }
 
@@ -408,14 +416,13 @@ div.hamburger.links a:hover {
 
 .file.input.p {
   font-size: 12px;
-
   margin: 8px 0 0 0;
 }
 
 .upload.form.album {
   display: flex;
   flex-direction: column;
-  height: 836px;
+  height: 860px;
   background-color: white;
   margin: auto;
 }
@@ -509,8 +516,8 @@ div.hamburger.links a:hover {
 }
 
 .auth.submit.upload {
-  margin-top: 24px;
-  margin-bottom: 48px;
+  height: 32px;
+  padding: 8px 16px 8px 16px;
 }
 
 .upload.container.preview {
@@ -620,6 +627,9 @@ div.hamburger.links a:hover {
     width: 32px;
     height: 24px;
   }
+  .navbar {
+    position: fixed;
+  }
 
   .navbar.auth.links {
     position: static;
@@ -647,6 +657,7 @@ div.hamburger.links a:hover {
     top: 46px;
     right: 30px;
     width: 192px;
+    height: 168px;
     background-color: rgba(68, 68, 68, 1);
     border-radius: 5px;
     padding-top: 4px;
