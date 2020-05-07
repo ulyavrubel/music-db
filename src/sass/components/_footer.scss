@@ -1,0 +1,57 @@
+.footer-container {
+  background-color: $color-gray-3;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0px 16px 0px 16px;
+  font-size: 12px;
+  color: $color-gray-2;
+}
+
+.footer__hamburger-links {
+  top: calc(100vh - 200px - 64px);
+  height: 200px;
+  padding: 0px;
+  padding-top: 16px;
+  color: $color-white;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 32px;
+  margin-right: 16px;
+}
+
+.footer-createdby {
+  text-decoration: none;
+  color: $color-white;
+}
+
+@media (min-width: 1024px) {
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .footer-links-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__link {
+      text-decoration: none;
+      color: $color-white;
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 48px;
+      }
+    }
+  }
+}

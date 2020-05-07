@@ -19,7 +19,7 @@ function GoogleSignIn(props) {
 
   return (
     <button
-      className="auth submit google"
+      className="btn btn-social btn-social--google"
       type="button"
       onClick={handleGoogleSignUp}
     >

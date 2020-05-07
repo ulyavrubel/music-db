@@ -2,7 +2,12 @@ import React from "react";
 
 export const Countries = (props) => {
   return (
-    <select id="country" onChange={props.onChange} required>
+    <select
+      className="album-form__select album-form__select--contries"
+      id="country"
+      onChange={props.onChange}
+      required
+    >
       <option>Select</option>
       <option value="AF">Afghanistan</option>
       <option value="AX">Åland Islands</option>

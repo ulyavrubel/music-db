@@ -5,15 +5,15 @@ import viewRows from "../../img/view-rows.svg";
 
 function AlbumsNav(props) {
   return (
-    <div className="collection nav">
+    <div className="navbar-albums">
       <Sort onChange={props.handleChange} />
 
-      <div className="view container">
-        <div className="view square" onClick={props.handleGrid}>
-          <img src={viewGrid} alt="..."></img>
+      <div className="view">
+        <div className="view__square" onClick={props.handleGrid}>
+          <img className="view__img" src={viewGrid} alt="..."></img>
         </div>
-        <div className="view square" onClick={props.handleRows} id="rows">
-          <img src={viewRows} alt="..."></img>
+        <div className="view__square" onClick={props.handleRows} id="rows">
+          <img className="view__img" src={viewRows} alt="..."></img>
         </div>
       </div>
     </div>

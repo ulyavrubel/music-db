@@ -6,10 +6,10 @@ function Footer() {
   const [open, setOpen] = useState(false);
   return (
     <footer>
-      <div className="footer container">
-        <div className="icons container">
+      <div className="footer-container">
+        <div className="icons-container">
           <a href="/">
-            <img className="footer logo" src={logo} alt="..."></img>
+            <img className="footer-logo" src={logo} alt="..."></img>
           </a>
 
           <img
@@ -22,25 +22,46 @@ function Footer() {
             }
           ></img>
           <div
-            className="hamburger links mobile"
+            className="footer__hamburger-links hamburger-links mobile"
             style={open ? { display: "block" } : { display: "none" }}
           >
-            <a href="/">Terms of Use</a>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Copyright</a>
-            <a href="/">Help</a>
+            <a className="hamburger-links__link" href="/">
+              Terms of Use
+            </a>
+            <a className="hamburger-links__link" href="/">
+              Privacy Policy
+            </a>
+            <a className="hamburger-links__link" href="/">
+              Copyright
+            </a>
+            <a className="hamburger-links__link" href="/">
+              Help
+            </a>
           </div>
         </div>
-        <div className="footer links">
-          <div className="footer links desktop">
-            <a href="/">Terms of Use</a>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Copyright</a>
-            <a href="/">Help</a>
+        <div className="footer-links">
+          <div className="footer-links-desktop desktop">
+            <a className="footer-links-desktop__link" href="/">
+              Terms of Use
+            </a>
+            <a className="footer-links-desktop__link" href="/">
+              Privacy Policy
+            </a>
+            <a className="footer-links-desktop__link" href="/">
+              Copyright
+            </a>
+            <a className="footer-links-desktop__link" href="/">
+              Help
+            </a>
           </div>
-          <p className="footer p">
+          <p>
             Created by{" "}
-            <a href="https://github.com/ulyavrubel">Ulyana Sichkar</a>
+            <a
+              className="footer-createdby"
+              href="https://github.com/ulyavrubel"
+            >
+              Ulyana Sichkar
+            </a>
           </p>
         </div>
       </div>

@@ -44,11 +44,11 @@ class LogIn extends React.Component {
 
   render() {
     return (
-      <div className="auth container">
-        <form className="auth form" onSubmit={this.handleSubmit}>
-          <h3>Log In to Music-DB</h3>
+      <div className="auth-container">
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          <h3 className="auth-form__header">Log In to Music-DB</h3>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="loginEmail"
             id="loginEmail"
             type="email"
@@ -57,7 +57,7 @@ class LogIn extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="loginPassword"
             id="loginPassword"
             type="password"
@@ -66,15 +66,20 @@ class LogIn extends React.Component {
             onChange={this.handleChange}
           ></input>
           {this.state.error ? (
-            <span className="error">{this.state.error}</span>
+            <span className="auth-error">{this.state.error}</span>
           ) : null}
-          <button className="auth submit" type="submit">
+          <button className="btn btn-black" type="submit">
             Log In
           </button>
-          <p>
-            Don’t have an account? <a href="/signup">Sign Up</a>
+          <p className="auth-form__paragraph">
+            Don’t have an account?{" "}
+            <a className="auth-form__link" href="/signup">
+              Sign Up
+            </a>
           </p>
-          <a href="/forgotPassword">Forgot your password? </a>
+          <a className="auth-form__link" href="/forgotPassword">
+            Forgot your password?{" "}
+          </a>
           <FacebookSignIn sendErr={this.getErr} />
           <GoogleSignIn sendErr={this.getErr} />
         </form>

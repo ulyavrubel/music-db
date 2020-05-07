@@ -1,0 +1,42 @@
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-container {
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 132px);
+  grid-column-gap: 50px;
+}
+
+.grid-album {
+  margin-bottom: 24px;
+
+  &__img {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgba(31, 31, 31, 1);
+  }
+
+  &__paragraph {
+    margin: 8px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(5, 132px);
+  }
+}

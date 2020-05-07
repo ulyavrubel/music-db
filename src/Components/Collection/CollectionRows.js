@@ -59,36 +59,34 @@ function CollectionRows(props) {
 
   const albumItems = albums.map((album) => {
     return (
-      <div className="collection rows album" key={album.id}>
+      <div className="rows-album" key={album.id}>
         <input
-          className="rows album input"
+          className="rows-album__input"
           type="checkbox"
           id={album.inCollectionId}
           value={album.inCollectionId}
           checked={albumIDs[album.inCollectionId]}
         ></input>
         <Link to={`/albums/${album.id}`}>
-          <img src={album.url} alt={`${album.artist} - ${album.title} `}></img>
+          <img
+            className="rows-album__img"
+            src={album.url}
+            alt={`${album.artist} - ${album.title} `}
+          ></img>
         </Link>
-        <div className="rows album info">
-          <Link
-            className="rows album name link"
-            to={`/search/${album.artist}/artist`}
-          >
+        <div className="info">
+          <Link className="info__link" to={`/search/${album.artist}/artist`}>
             {album.artist}
           </Link>
           -
-          <Link className="rows album name link" to={`/albums/${album.id}`}>
+          <Link className="info__link" to={`/albums/${album.id}`}>
             {album.title}
           </Link>
-          <p className="rows album format">{album.format}</p>
-          <Link
-            className="rows album name link"
-            to={`/search/${album.label}/label`}
-          >
+          <p className="info__paragraph">{album.format}</p>
+          <Link className="info__link" to={`/search/${album.label}/label`}>
             {album.label}
           </Link>
-          <p className="rows album year">
+          <p className="info__paragraph">
             {album.released} {album.country}
           </p>
         </div>
@@ -97,11 +95,11 @@ function CollectionRows(props) {
   });
 
   return (
-    <div className="collection rows wrapper">
-      <div className="collection rows container" onChange={handleChange}>
+    <div className="rows-wrapper">
+      <div className="rows-container" onChange={handleChange}>
         {albumItems}
       </div>
-      <button onClick={toggleModal} className="auth submit remove">
+      <button onClick={toggleModal} className="btn btn-black btn-black--remove">
         Remove Selected
       </button>
       {showModal ? (

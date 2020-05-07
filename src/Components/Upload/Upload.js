@@ -15,7 +15,7 @@ function Upload() {
 
   if (!currentUser) {
     return (
-      <h3 style={{ marginTop: "96px", textAlign: "center" }}>
+      <h3 className="not-logged">
         Please, <a href="/login">login</a> to upload an album
       </h3>
     );
@@ -184,9 +184,9 @@ class UploadForm extends React.Component {
 
     const genresCheckBoxes = genres.map((genre) => {
       return (
-        <div key={genre}>
+        <div className="genre-div" key={genre}>
           <input
-            className="input genres checkbox"
+            className="genre-div__checkbox"
             type="checkbox"
             id={genre}
             name={genre}
@@ -195,20 +195,23 @@ class UploadForm extends React.Component {
             checked={this.state.genre[genre]}
             required
           ></input>
-          <label htmlFor={genre}> {genre}</label>
+          <label className="genre-div__label" htmlFor={genre}>
+            {" "}
+            {genre}
+          </label>
         </div>
       );
     });
 
     return (
       <div>
-        <h3 className="upload header">Add release</h3>
-        <div className="upload container">
-          <form className="upload form file">
-            <div className="album container file">
-              <label className="file label">Upload image</label>
+        <h3 className="upload-header">Add release</h3>
+        <div className="upload-container">
+          <form className="file-form">
+            <div className="file-form__container">
+              <label className="file-form__label">Upload image</label>
               <input
-                className="album container file input"
+                className="file-form__input"
                 type="file"
                 id="img"
                 name="img"
@@ -216,24 +219,24 @@ class UploadForm extends React.Component {
                 onChange={this.handleChangeFile}
               ></input>
               <button
-                className="auth submit file"
+                className="btn btn-submit-file"
                 onClick={this.handleUploadFile}
               >
                 Upload
               </button>
               {this.state.url ? (
-                <p className="file input p">
+                <p className="file-form__paragraph">
                   {this.state.img.name} was uploaded
                 </p>
               ) : null}
             </div>
           </form>
-          <form className="upload form album" ref={this.formRef}>
-            <div className="album container">
-              <label>Artist</label>
+          <form className="album-form" ref={this.formRef}>
+            <div className="album-form__container">
+              <label className="album-form__label">Artist</label>
               <br />
               <input
-                className="album input"
+                className="album-form__input"
                 type="text"
                 name="artist"
                 id="artist"
@@ -242,11 +245,11 @@ class UploadForm extends React.Component {
                 onChange={this.handleChange}
               ></input>
             </div>
-            <div className="album container">
-              <label>Album</label>
+            <div className="album-form__container">
+              <label className="album-form__label">Album</label>
               <br />
               <input
-                className="album input"
+                className="album-form__input"
                 type="text"
                 name="title"
                 id="title"
@@ -255,11 +258,11 @@ class UploadForm extends React.Component {
                 onChange={this.handleChange}
               ></input>
             </div>
-            <div className="album container">
-              <label>Label</label>
+            <div className="album-form__container">
+              <label className="album-form__label">Label</label>
               <br />
               <input
-                className="album input"
+                className="album-form__input"
                 type="text"
                 name="label"
                 id="label"
@@ -268,10 +271,15 @@ class UploadForm extends React.Component {
                 onChange={this.handleChange}
               ></input>
             </div>
-            <div className="album container format">
-              <label>Format</label>
+            <div className="album-form__container album-form__container--format">
+              <label className="album-form__label">Format</label>
               <br />
-              <select id="format" onChange={this.handleChange} required>
+              <select
+                className="album-form__select"
+                id="format"
+                onChange={this.handleChange}
+                required
+              >
                 <option value="">Select</option>
                 <option value="Vinyl">Vinyl</option>
                 <option value="CD">CD</option>
@@ -280,11 +288,11 @@ class UploadForm extends React.Component {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="album container year">
-              <label>Released</label>
+            <div className="album-form__container album-form__container--year">
+              <label className="album-form__label">Released</label>
               <br />
               <input
-                className="album input year"
+                className="album-form__input album-form__input--year"
                 type="number"
                 name="year"
                 id="released"
@@ -296,24 +304,22 @@ class UploadForm extends React.Component {
                 onChange={this.handleChange}
               ></input>
             </div>
-            <div className="album container contries">
-              <label>Country</label>
+            <div className="album-form__container album-form__container--contries">
+              <label className="album-form__label">Country</label>
               <br />
               <Countries onChange={this.handleChange} />
             </div>
-            <div className="album container genres">
-              <label>Genres</label>
+            <div className="album-form__container album-form__container--genres">
+              <label className="album-form__label">Genres</label>
               <br />
-              <div className="album container genres grid">
-                {genresCheckBoxes}
-              </div>
+              <div className="album-form__genres-grid">{genresCheckBoxes}</div>
             </div>
-            <div className="album container myCollection">
-              <label>Collection</label>
+            <div className="album-form__container album-form__container--myCollection">
+              <label className="album-form__label">Collection</label>
               <br />
-              <div>
+              <div className="myCollection">
                 <input
-                  className="input genres checkbox"
+                  className="genre-div__checkbox"
                   type="checkbox"
                   id="addCollection"
                   name="addCollection"
@@ -321,10 +327,16 @@ class UploadForm extends React.Component {
                   checked={this.state.genre.addCollection}
                   onChange={this.handleCollectionCheck}
                 ></input>
-                <label htmlFor="addCollection"> Add to my collection</label>
+                <label className="myCollection__label" htmlFor="addCollection">
+                  {" "}
+                  Add to my collection
+                </label>
               </div>
             </div>
-            <button className="auth submit upload" onClick={this.handlePreview}>
+            <button
+              className="btn btn-black btn-black--upload"
+              onClick={this.handlePreview}
+            >
               Preview/Submit
             </button>
           </form>

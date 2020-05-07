@@ -13,22 +13,22 @@ function Pagination(props) {
   } = props;
 
   return (
-    <div className="pagination container">
+    <div className="pagination-container">
       {collectionLength > step ? (
-        <div className="collection navigation">
-          <p>
+        <div className="pagination-navigation">
+          <p className="pagination-navigation__paragraph">
             {indexFrom} - {indexTo} of {collectionLength}
           </p>
-          <div className="collection navigation buttons">
+          <div className="pagination-navigation__buttons">
             {showPrev ? (
               <button
-                className="auth submit navigation"
+                className="btn btn-pagination"
                 onClick={handlePrev}
               >{`< Previous`}</button>
             ) : null}
             {showNext ? (
               <button
-                className="auth submit navigation"
+                className="btn btn-pagination"
                 onClick={handleNext}
               >{`Next >`}</button>
             ) : null}

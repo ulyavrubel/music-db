@@ -1,0 +1,158 @@
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 48px;
+  background-color: $color-gray-6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    height: 32px;
+    margin: 8px 16px 8px 16px;
+  }
+}
+
+.logo-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+//change for all other forms
+form {
+  width: 252px;
+  height: 24px;
+  background-color: $color-gray-1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 12px;
+}
+
+//change for all other inputs
+input {
+  width: 204px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  font-family: $font-default;
+  color: $color-gray-5;
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar__form {
+  width: 252px;
+  height: 24px;
+  background-color: $color-gray-1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.navbar__input {
+  width: 204px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  font-family: $font-default;
+  color: $color-gray-5;
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar__button {
+  width: 24px;
+  height: 16px;
+  background-color: $color-gray-6;
+  border-radius: 15px;
+  margin: 4px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.navbar__button-img {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    height: 52px;
+    justify-content: space-around;
+  }
+
+  .navbar__form {
+    height: 32px;
+    width: 345px;
+  }
+
+  .navbar__input {
+    height: 32px;
+    width: 306px;
+  }
+
+  .navbar__button {
+    width: 32px;
+    height: 24px;
+  }
+
+  .navbar__button-img {
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+  }
+
+  .auth-links {
+    position: static;
+    padding-right: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__link {
+      text-decoration: none;
+      color: $color-white;
+      cursor: pointer;
+      font-size: 16px;
+      &:first-child {
+        margin-right: 48px;
+      }
+    }
+  }
+
+  .navbar-account {
+    color: $color-white;
+  }
+
+  .dropdown-links__link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+    & span {
+      color: $color-white;
+      font-size: 12px;
+    }
+    &:hover {
+      background-color: $color-gray-4;
+    }
+  }
+}

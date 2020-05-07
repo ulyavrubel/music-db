@@ -21,29 +21,29 @@ function ProfileNavProfileDesktop() {
   const { currentUser } = useContext(AuthContext);
 
   if (!currentUser) {
-    return <h3>Please, login to your profile</h3>;
+    return <h3 className="not-logged">Please, login to your profile</h3>;
   }
 
   return (
-    <div className="profile nav profile-page-desktop desktop">
+    <div className="navbar-profile-desktop desktop">
       <NavLink
         to={`/collection/${currentUser.displayName}`}
-        className="profile nav link"
+        className="navbar-profile__link"
       >
         Collection
       </NavLink>
       <NavLink
         to={`/wishlist/${currentUser.displayName}`}
-        className="profile nav link"
+        className="navbar-profile__link"
       >
         Wishlist
       </NavLink>
-      <NavLink to="/upload" className="profile nav link">
+      <NavLink to="/upload" className="navbar-profile__link">
         Upload
       </NavLink>
       <NavLink
         to={`/profile/${currentUser.displayName}`}
-        className="profile nav link"
+        className="navbar-profile__link"
       >
         Profile
       </NavLink>

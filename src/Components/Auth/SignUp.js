@@ -55,11 +55,14 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="auth container">
-        <form className="auth form signup" onSubmit={this.handleSubmit}>
-          <h3>Create new MusicDB account</h3>
+      <div className="auth-container">
+        <form
+          className="auth-form auth-form--signup"
+          onSubmit={this.handleSubmit}
+        >
+          <h3 className="auth-form__header">Create new MusicDB account</h3>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="signup-username"
             id="signupUsername"
             type="text"
@@ -68,7 +71,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="signup-email"
             id="signupEmail"
             type="email"
@@ -77,7 +80,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="signup-password"
             id="signupPassword"
             type="password"
@@ -86,7 +89,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth input"
+            className="auth-form__input"
             name="signup-confirm-password"
             id="signupConfirmPassword"
             type="password"
@@ -95,15 +98,18 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           {this.state.showErr ? (
-            <span className="error">Passwords do not match</span>
+            <span className="auth-error">Passwords do not match</span>
           ) : null}
           {this.state.error ? <span>{this.state.error}</span> : null}
-          <button className="auth submit" type="submit">
+          <button className="btn btn-black" type="submit">
             Create account
           </button>
 
-          <p>
-            Already have an account? <a href="/login">Log In</a>
+          <p className="auth-form__paragraph">
+            Already have an account?{" "}
+            <a className="auth-form__link" href="/login">
+              Log In
+            </a>
           </p>
 
           <FacebookSignIn sendErr={this.getErr} />

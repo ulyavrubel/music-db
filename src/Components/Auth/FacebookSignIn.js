@@ -18,7 +18,7 @@ function FacebookSignIn(props) {
   };
   return (
     <button
-      className="auth submit facebook"
+      className="btn btn-social btn-social--facebook"
       type="button"
       onClick={handleFacebookSignIn}
     >

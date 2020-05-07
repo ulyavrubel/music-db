@@ -1,0 +1,71 @@
+.auth-container {
+  margin-top: 96px;
+  padding-bottom: 32px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 343px;
+  height: 370px;
+  background-color: $color-white;
+  border: 1px solid $color-gray-1;
+  border-radius: 15px;
+  color: $color-gray-6;
+  padding: 24px 24px 48px 24px;
+
+  &__header {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    border: 1px solid $color-gray-1;
+    border-radius: 15px;
+    height: 16px;
+    font-size: 14px;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      margin-bottom: 24px;
+    }
+    &:focus:valid {
+      border-color: $color-gray-3;
+    }
+    &:focus:invalid {
+      border-color: $color-tomato;
+    }
+  }
+
+  &__paragraph {
+    font-size: 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    font-size: 12px;
+    text-decoration: none;
+    color: $color-gray-3;
+  }
+
+  &--signup {
+    height: 442px;
+  }
+
+  &__forgot {
+    margin-bottom: 24px;
+    font-size: 12px;
+    text-align: center;
+    color: $color-gray-5;
+    line-height: 1.5;
+  }
+}
+
+.auth-error {
+  color: $color-tomato;
+  font-size: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+}

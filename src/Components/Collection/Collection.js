@@ -7,8 +7,6 @@ import CollectionRows from "./CollectionRows";
 import AlbumsNav from "../Navs/AlbumsNav";
 import Pagination from "../Pagination";
 
-import "./collection.css";
-
 function Collection(props) {
   const step = 10;
 

@@ -45,12 +45,20 @@ function Navbar() {
       <div className="navbar">
         <div className="logo-form">
           <a href="/">
-            <img className="logo mobile" src={logo} alt="musicdb logo"></img>
-            <img className="logo desktop" src={logoD} alt="musicdb logo"></img>
+            <img
+              className="navbar__logo mobile"
+              src={logo}
+              alt="musicdb logo"
+            ></img>
+            <img
+              className="navbar__logo desktop"
+              src={logoD}
+              alt="musicdb logo"
+            ></img>
           </a>
-          <form className="form search">
+          <form className="navbar__form">
             <input
-              className="input search"
+              className="navbar__input"
               name="search"
               id="search"
               placeholder="Search"
@@ -59,10 +67,10 @@ function Navbar() {
               onKeyPress={handleKeyPress}
             ></input>
             <div
-              className="button search"
+              className="navbar__button"
               onClick={() => navigate(`/search/${query}/all`)}
             >
-              <img className="img search" src={icon} alt="..."></img>
+              <img className="navbar__button-img" src={icon} alt="..."></img>
             </div>
           </form>
         </div>
@@ -75,33 +83,54 @@ function Navbar() {
         <DesktopDropdown className="desktop" />
       </div>
       <div
-        className="burger-menu mobile"
+        className="hamburger-menu mobile"
         style={open ? { left: "0px" } : { left: "-100vw" }}
       >
         {!currentUser ? (
           <div
-            className="hamburger links"
+            className="hamburger-links"
             style={open ? { display: "block" } : { display: "none" }}
             onClick={() => setOpen(false)}
           >
-            <a href="/login">Log In</a>
-            <a href="/signup">Sign Up</a>
+            <a className="hamburger-links__link" href="/login">
+              Log In
+            </a>
+            <a className="hamburger-links__link" href="/signup">
+              Sign Up
+            </a>
           </div>
         ) : (
           <div
-            className="hamburger links mobile"
+            className="hamburger-links mobile"
             style={open ? { display: "block" } : { display: "none" }}
             onClick={() => setOpen(false)}
           >
-            <Link to={`/profile/${currentUser.displayName}`}>
+            <Link
+              className="hamburger-links__link"
+              to={`/profile/${currentUser.displayName}`}
+            >
               Profile: <span>{currentUser.displayName}</span>
             </Link>
-            <Link to={`/collection/${currentUser.displayName}`}>
+            <Link
+              className="hamburger-links__link"
+              to={`/collection/${currentUser.displayName}`}
+            >
               Collection
             </Link>
-            <Link to={`/wishlist/${currentUser.displayName}`}>Wishlist</Link>
-            <Link to="/upload">Upload</Link>
-            <a className="logout" href="/" onClick={logout}>
+            <Link
+              className="hamburger-links__link"
+              to={`/wishlist/${currentUser.displayName}`}
+            >
+              Wishlist
+            </Link>
+            <Link className="hamburger-links__link" to="/upload">
+              Upload
+            </Link>
+            <a
+              className="hamburger-links__link logout"
+              href="/"
+              onClick={logout}
+            >
               Log Out
             </a>
           </div>

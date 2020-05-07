@@ -18,25 +18,29 @@ function DesktopDropdown(props) {
     setOpen(false);
   });
   return (
-    <div>
+    <div className="desktop">
       {!currentUser ? (
-        <div className="navbar auth links">
-          <a href="/login">Log In</a>
-          <a href="/signup">Sign Up</a>
+        <div className="auth-links">
+          <a className="auth-links__link" href="/login">
+            Log In
+          </a>
+          <a className="auth-links__link" href="/signup">
+            Sign Up
+          </a>
         </div>
       ) : (
-        <div className="navbar auth links">
-          <a className="logout" href="/" onClick={logout}>
+        <div className="auth-links">
+          <a className="auth-links__link logout" href="/" onClick={logout}>
             Log Out
           </a>
           <div
-            className="hamburger container"
+            className="hamburger-container"
             ref={ref}
             onClick={() => (open ? setOpen(false) : setOpen(true))}
           >
             <p className="navbar-account">Account</p>
             <img
-              className="hamburger"
+              className="hamburger-container__img"
               src={dropdown}
               style={
                 open ? { transform: "none" } : { transform: "rotate(180deg)" }
@@ -44,30 +48,29 @@ function DesktopDropdown(props) {
               alt="..."
             ></img>
             <div
-              className="hamburger links"
+              className="hamburger-links"
               style={open ? { display: "block" } : { display: "none" }}
               onClick={() => setOpen(false)}
-              id="nav-dropdown"
             >
               <Link
-                className="desktop dropdown item link"
+                className="dropdown-links__link"
                 to={`/profile/${currentUser.displayName}`}
               >
                 Profile: <span>{currentUser.displayName}</span>
               </Link>
               <Link
-                className="desktop dropdown item link"
+                className="dropdown-links__link"
                 to={`/collection/${currentUser.displayName}`}
               >
                 Collection
               </Link>
               <Link
-                className="desktop dropdown item link"
+                className="dropdown-links__link"
                 to={`/wishlist/${currentUser.displayName}`}
               >
                 Wishlist
               </Link>
-              <Link className="desktop dropdown item link" to="/upload">
+              <Link className="dropdown-links__link" to="/upload">
                 Upload
               </Link>
             </div>

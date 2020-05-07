@@ -18,21 +18,32 @@ function CollectionGrid(props) {
 
   const albumItems = albums.map((album) => {
     return (
-      <div className="collection grid album" key={album.id}>
-        <Link to={`/albums/${album.id}`}>
-          <img src={album.url} alt={`${album.artist} - ${album.title} `}></img>
+      <div className="grid-album" key={album.id}>
+        <Link className="grid-album__link" to={`/albums/${album.id}`}>
+          <img
+            className="grid-album__img"
+            src={album.url}
+            alt={`${album.artist} - ${album.title} `}
+          ></img>
         </Link>
-        <p>
-          <Link to={`/search/${album.artist}/artist`}>{album.artist}</Link>
+        <p className="grid-album__paragraph">
+          <Link
+            className="grid-album__link"
+            to={`/search/${album.artist}/artist`}
+          >
+            {album.artist}
+          </Link>
           <br />
-          <Link to={`/albums/${album.id}`}>{album.title}</Link>
+          <Link className="grid-album__link" to={`/albums/${album.id}`}>
+            {album.title}
+          </Link>
         </p>
       </div>
     );
   });
   return (
-    <div className="collection grid wrapper">
-      <div className="collection grid container">{albumItems}</div>
+    <div className="grid-wrapper">
+      <div className="grid-container">{albumItems}</div>
     </div>
   );
 }

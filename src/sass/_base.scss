@@ -1,0 +1,31 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-default;
+}
+
+.content {
+  min-height: calc(100vh - 96px - 48px);
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+.not-logged {
+  margin-top: 96px;
+}
+
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
