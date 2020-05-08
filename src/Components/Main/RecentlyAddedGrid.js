@@ -10,7 +10,7 @@ function RecentlyAddedGrid(props) {
   useEffect(() => {
     let albumsToShow = props.albums.slice(0, itemsShow).map((album) => {
       return (
-        <div className="grid-album" key={album.id}>
+        <div className="grid-album marg-b-s" key={album.id}>
           <Link
             className="grid-album__link grid-album__link--recentlyAdded"
             to={`/albums/${album.id}`}
@@ -56,7 +56,7 @@ function RecentlyAddedGrid(props) {
     <div className="recentlyAdded">
       <div className="grid-wrapper">
         <h3 className="recentlyAdded__header"> Recently added albums</h3>
-        <div className="grid-container grid-container--recentlyAdded">
+        <div className="marg-t-s marg-b-zero grid-container grid-container--recentlyAdded">
           {albumItems}
         </div>
         {showMore ? (

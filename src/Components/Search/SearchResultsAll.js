@@ -155,7 +155,7 @@ function SearchResultsAll(props) {
   };
 
   return (
-    <div className="search">
+    <div className="search marg-t-xxl">
       <SearchResultsNav q={props.q} />
       <h3 className="search__header">
         Results for <span className="search__header--span">{props.q}</span>

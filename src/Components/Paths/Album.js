@@ -119,7 +119,7 @@ function Album(props) {
   }
 
   return (
-    <div className="album-page">
+    <div className="album-page marg-t-xxl">
       <AlbumCard album={album} />
 
       {inCollection ? (
@@ -155,7 +155,7 @@ function Album(props) {
 
       {showModal ? (
         <Modal>
-          <div className="modal__div">
+          <div className="modal__div marg-zero">
             <h3>Do you want to remove this album from your collection?</h3>
             <div>
               <button
@@ -176,7 +176,7 @@ function Album(props) {
       ) : null}
       {showModalWishlist ? (
         <Modal>
-          <div className="modal__div">
+          <div className="modal__div marg-zero">
             <h3>Do you want to remove this album from your wishlist?</h3>
             <div>
               <button

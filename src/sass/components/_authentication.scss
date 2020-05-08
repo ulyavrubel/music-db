@@ -1,5 +1,4 @@
 .auth-container {
-  margin-top: 96px;
   padding-bottom: 32px;
 }
 
@@ -17,7 +16,6 @@
 
   &__header {
     font-size: 18px;
-    margin-bottom: 24px;
   }
 
   &__input {
@@ -25,11 +23,7 @@
     border-radius: 15px;
     height: 16px;
     font-size: 14px;
-    margin-bottom: 16px;
 
-    &:last-of-type {
-      margin-bottom: 24px;
-    }
     &:focus:valid {
       border-color: $color-gray-3;
     }
@@ -40,8 +34,6 @@
 
   &__paragraph {
     font-size: 12px;
-    margin-top: 24px;
-    margin-bottom: 12px;
   }
 
   &__link {
@@ -55,7 +47,6 @@
   }
 
   &__forgot {
-    margin-bottom: 24px;
     font-size: 12px;
     text-align: center;
     color: $color-gray-5;
@@ -66,6 +57,5 @@
 .auth-error {
   color: $color-tomato;
   font-size: 12px;
-  margin-bottom: 16px;
   text-align: center;
 }

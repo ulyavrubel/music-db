@@ -1,8 +1,6 @@
 .search {
-  margin-top: 96px;
   &__header {
-    margin-top: 96px;
-    margin: 0;
+    margin: 96px 0 0 0;
     padding: 0px 16px 32px 16px;
     font-size: 18px;
     &--span {
@@ -13,12 +11,7 @@
 
 .nothingFound {
   text-align: center;
-  margin-top: 64px;
   &__paragraph {
-    margin-top: 14px;
-    &--bottom {
-      margin-bottom: 96px;
-    }
     &--link {
       color: $color-gray-4;
       text-decoration: none;
@@ -29,11 +22,8 @@
     width: 343px;
     display: flex;
     flex-direction: row;
-
-    margin: auto;
-
-    margin-top: 24px;
-    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: $color-white;
   }
   &__input {
@@ -42,7 +32,6 @@
     height: 32px;
     text-align: left;
     margin-right: 8px;
-    margin-top: 0px;
     padding: 0 0 0 8px;
   }
 }

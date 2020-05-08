@@ -14,13 +14,13 @@ function AlbumCard(props) {
   } = props.album;
 
   return (
-    <div className="album-card">
+    <div className="album-card marg-t-s">
       <img className="album-card__img" src={url} alt=".."></img>
       <div className="album-card__info">
-        <h5 className="album-card__info__header">
+        <h5 className="album-card__info__header marg-t-zero marg-b-xxs">
           <Link to={`/search/${artist}/artist`}>{artist}</Link> - {title}
         </h5>
-        <p className="album-card__info__paragraph">
+        <p className="album-card__info__paragraph marg-t-zero marg-b-xxs">
           <span className="album-card__info__span">Label </span>
           <Link to={`/search/${label}/label`}>{label}</Link>
         </p>

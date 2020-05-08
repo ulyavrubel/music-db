@@ -73,7 +73,7 @@ function ActivityLog() {
     let addedDate = new Date(log.addedDate);
     let formatedDate = addedDate.toDateString().split(" ").slice(1).join(" ");
     return (
-      <div className="activity-item" key={log.logID}>
+      <div className="activity-item marg-t-xxs" key={log.logID}>
         <Link to={`/albums/${log.id}`}>
           <img
             className="activity-item__img"

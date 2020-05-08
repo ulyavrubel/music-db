@@ -55,14 +55,16 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="auth-container">
+      <div className="auth-container marg-t-xxl">
         <form
           className="auth-form auth-form--signup"
           onSubmit={this.handleSubmit}
         >
-          <h3 className="auth-form__header">Create new MusicDB account</h3>
+          <h3 className="auth-form__header marg-b-s">
+            Create new MusicDB account
+          </h3>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-xs"
             name="signup-username"
             id="signupUsername"
             type="text"
@@ -71,7 +73,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-xs"
             name="signup-email"
             id="signupEmail"
             type="email"
@@ -80,7 +82,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-xs"
             name="signup-password"
             id="signupPassword"
             type="password"
@@ -89,7 +91,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-s"
             name="signup-confirm-password"
             id="signupConfirmPassword"
             type="password"
@@ -98,14 +100,14 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
           ></input>
           {this.state.showErr ? (
-            <span className="auth-error">Passwords do not match</span>
+            <span className="auth-error marg-b-xs">Passwords do not match</span>
           ) : null}
           {this.state.error ? <span>{this.state.error}</span> : null}
           <button className="btn btn-black" type="submit">
             Create account
           </button>
 
-          <p className="auth-form__paragraph">
+          <p className="auth-form__paragraph marg-t-s marg-b-xxs ">
             Already have an account?{" "}
             <a className="auth-form__link" href="/login">
               Log In

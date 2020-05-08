@@ -3,7 +3,7 @@ import React from "react";
 export const Countries = (props) => {
   return (
     <select
-      className="album-form__select album-form__select--contries"
+      className="album-form__select album-form__select--contries marg-t-xs"
       id="country"
       onChange={props.onChange}
       required

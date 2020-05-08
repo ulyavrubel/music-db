@@ -1,16 +1,12 @@
 .hero-container {
-  margin-top: 96px;
-  margin-bottom: 48px;
   text-align: center;
 
   &__header {
-    margin: 0;
+    margin: 0 0 12px 0;
     font-size: 24px;
-    margin-bottom: 12px;
 
     &--h5 {
       font-size: 12px;
-      margin-bottom: 48px;
     }
   }
 }
@@ -19,7 +15,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 48px;
 
   &__hero {
     width: 256px;

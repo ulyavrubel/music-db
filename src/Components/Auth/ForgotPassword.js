@@ -23,15 +23,15 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container marg-t-xxl">
       <form className="auth-form" onSubmit={handleSubmit}>
-        <h3 className="auth-form__header">Forgot your password?</h3>
-        <p className="auth-form__forgot">
+        <h3 className="auth-form__header marg-b-s">Forgot your password?</h3>
+        <p className="auth-form__forgot marg-b-s">
           Enter your account e-mail <br />
           and we will send you the instructions
         </p>
         <input
-          className="auth-form__input"
+          className="auth-form__input marg-b-s"
           name="resetPasswordEmail"
           id="resetPasswordEmail"
           type="email"
@@ -43,7 +43,7 @@ function ForgotPassword() {
         <button className="btn btn-black btn-black--reset" type="submit">
           Reset Password
         </button>
-        <p className="auth-form__paragraph">
+        <p className="auth-form__paragraph marg-t-s marg-b-xxs ">
           Don’t have an account?{" "}
           <a className="auth-form__link" href="/signup">
             Sign Up

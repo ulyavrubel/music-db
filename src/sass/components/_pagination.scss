@@ -1,7 +1,3 @@
-.pagination-container {
-  margin-top: 24px;
-}
-
 .pagination-navigation {
   margin: auto;
   display: flex;
@@ -11,11 +7,9 @@
   &__buttons {
     display: flex;
     flex-direction: row;
-    margin-bottom: 48px;
   }
 
   &__paragraph {
-    margin: 0px;
     font-size: 14px;
     color: $color-gray-3;
   }

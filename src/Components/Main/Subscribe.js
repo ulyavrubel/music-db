@@ -3,10 +3,10 @@ import React from "react";
 function Subscribe() {
   return (
     <div className="subscribe">
-      <h2 className="subscribe__header mobile">
-        Join our newsletter, <span>keep up with new updates! </span>
+      <h2 className="subscribe__header mobile marg-b-m">
+        Join our newsletter, <br /> <span>keep up with new updates! </span>
       </h2>
-      <h2 className="subscribe__header desktop">
+      <h2 className="subscribe__header desktop marg-b-m">
         Explore new music with us.{" "}
         <span className="subscribe__header--span">
           Track your collection and wantlist. Contribute to the catalog.{" "}

@@ -13,13 +13,13 @@ function Pagination(props) {
   } = props;
 
   return (
-    <div className="pagination-container">
+    <div className="marg-t-s">
       {collectionLength > step ? (
         <div className="pagination-navigation">
-          <p className="pagination-navigation__paragraph">
+          <p className="pagination-navigation__paragraph marg-zero ">
             {indexFrom} - {indexTo} of {collectionLength}
           </p>
-          <div className="pagination-navigation__buttons">
+          <div className="pagination-navigation__buttons marg-b-l">
             {showPrev ? (
               <button
                 className="btn btn-border"

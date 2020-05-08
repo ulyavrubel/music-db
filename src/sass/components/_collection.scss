@@ -29,7 +29,6 @@
   align-items: center;
 }
 .rows-container {
-  margin: 0;
   padding-left: 12px;
   border-bottom: 1px solid $color-gray-2;
 }
@@ -66,7 +65,6 @@
     line-height: 16px;
   }
   &__paragraph {
-    margin: 0;
     color: $color-gray-6;
     font-size: 12px;
     line-height: 16px;

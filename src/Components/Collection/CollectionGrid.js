@@ -18,7 +18,7 @@ function CollectionGrid(props) {
 
   const albumItems = albums.map((album) => {
     return (
-      <div className="grid-album" key={album.id}>
+      <div className="grid-album marg-b-s" key={album.id}>
         <Link className="grid-album__link" to={`/albums/${album.id}`}>
           <img
             className="grid-album__img"
@@ -42,7 +42,7 @@ function CollectionGrid(props) {
     );
   });
   return (
-    <div className="grid-wrapper">
+    <div className="grid-wrapper marg-t-s ">
       <div className="grid-container">{albumItems}</div>
     </div>
   );

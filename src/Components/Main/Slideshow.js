@@ -89,7 +89,7 @@ function SlideShow() {
     });
   }
   return (
-    <div className="slideshow">
+    <div className="slideshow marg-b-l">
       <img
         className="slideshow__navigation"
         src={left}

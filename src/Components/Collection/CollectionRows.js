@@ -82,11 +82,11 @@ function CollectionRows(props) {
           <Link className="info__link" to={`/albums/${album.id}`}>
             {album.title}
           </Link>
-          <p className="info__paragraph">{album.format}</p>
+          <p className="info__paragraph marg-zero ">{album.format}</p>
           <Link className="info__link" to={`/search/${album.label}/label`}>
             {album.label}
           </Link>
-          <p className="info__paragraph">
+          <p className="info__paragraph marg-zero ">
             {album.released} {album.country}
           </p>
         </div>
@@ -96,7 +96,7 @@ function CollectionRows(props) {
 
   return (
     <div className="rows-wrapper">
-      <div className="rows-container" onChange={handleChange}>
+      <div className="rows-container marg-zero" onChange={handleChange}>
         {albumItems}
       </div>
       <button onClick={toggleModal} className="btn btn-black btn-black--remove">
@@ -104,7 +104,7 @@ function CollectionRows(props) {
       </button>
       {showModal ? (
         <Modal>
-          <div className="modal__div">
+          <div className="modal__div marg-zero">
             <h3>
               Do you want to remove selected albums from your{" "}
               {props.collectionName}?
@@ -128,7 +128,7 @@ function CollectionRows(props) {
       ) : null}
       {showMessageModal ? (
         <Modal>
-          <div className="modal__div">
+          <div className="modal__div marg-zero">
             <h3>Albums were removed from your {props.collectionName}</h3>
             <button
               className="btn btn-black btn-black--modal"

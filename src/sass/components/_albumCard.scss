@@ -1,7 +1,6 @@
 .album-card {
   display: flex;
   flex-direction: row;
-  margin-top: 24px;
 
   &__img {
     height: 145px;
@@ -15,14 +14,18 @@
 
     &__header {
       font-size: 14px;
-      margin-top: 0px;
-      margin-bottom: 12px;
+      & a {
+        text-decoration: none;
+        color: $color-gray-6;
+      }
     }
 
     &__paragraph {
       font-size: 12px;
-      margin-top: 0;
-      margin-bottom: 12px;
+      & a {
+        text-decoration: none;
+        color: $color-gray-6;
+      }
     }
 
     &__span {

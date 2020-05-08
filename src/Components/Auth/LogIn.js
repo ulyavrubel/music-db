@@ -44,11 +44,11 @@ class LogIn extends React.Component {
 
   render() {
     return (
-      <div className="auth-container">
+      <div className="auth-container marg-t-xxl">
         <form className="auth-form" onSubmit={this.handleSubmit}>
-          <h3 className="auth-form__header">Log In to Music-DB</h3>
+          <h3 className="auth-form__header marg-b-s">Log In to Music-DB</h3>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-xs"
             name="loginEmail"
             id="loginEmail"
             type="email"
@@ -57,7 +57,7 @@ class LogIn extends React.Component {
             onChange={this.handleChange}
           ></input>
           <input
-            className="auth-form__input"
+            className="auth-form__input marg-b-s"
             name="loginPassword"
             id="loginPassword"
             type="password"
@@ -66,12 +66,12 @@ class LogIn extends React.Component {
             onChange={this.handleChange}
           ></input>
           {this.state.error ? (
-            <span className="auth-error">{this.state.error}</span>
+            <span className="auth-error marg-b-xs">{this.state.error}</span>
           ) : null}
           <button className="btn btn-black" type="submit">
             Log In
           </button>
-          <p className="auth-form__paragraph">
+          <p className="auth-form__paragraph marg-t-s marg-b-xxs ">
             Don’t have an account?{" "}
             <a className="auth-form__link" href="/signup">
               Sign Up

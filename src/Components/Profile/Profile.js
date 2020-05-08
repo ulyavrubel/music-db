@@ -36,7 +36,7 @@ function Profile() {
   }
 
   return (
-    <div className="profile-container" ref={ref}>
+    <div className="profile-container marg-t-xxl " ref={ref}>
       <div className="profile-cover desktop">
         <img
           className="desktop user-photo"
@@ -59,7 +59,9 @@ function Profile() {
               alt="..."
             ></img>
             <div>
-              <p className="user-info__name">{currentUser.displayName}</p>
+              <p className="user-info__name marg-zero">
+                {currentUser.displayName}
+              </p>
               <p className="user-info__date">Joined {signupDate}</p>
             </div>
           </div>

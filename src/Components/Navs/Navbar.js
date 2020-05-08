@@ -83,7 +83,7 @@ function Navbar() {
         <DesktopDropdown className="desktop" />
       </div>
       <div
-        className="hamburger-menu mobile"
+        className="hamburger-menu mobile marg-t-l"
         style={open ? { left: "0px" } : { left: "-100vw" }}
       >
         {!currentUser ? (
@@ -127,7 +127,7 @@ function Navbar() {
               Upload
             </Link>
             <a
-              className="hamburger-links__link logout"
+              className="hamburger-links__link logout marg-t-xs "
               href="/"
               onClick={logout}
             >
