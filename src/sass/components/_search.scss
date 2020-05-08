@@ -1,0 +1,48 @@
+.search {
+  margin-top: 96px;
+  &__header {
+    margin-top: 96px;
+    margin: 0;
+    padding: 0px 16px 32px 16px;
+    font-size: 18px;
+    &--span {
+      color: $color-gray-3;
+    }
+  }
+}
+
+.nothingFound {
+  text-align: center;
+  margin-top: 64px;
+  &__paragraph {
+    margin-top: 14px;
+    &--bottom {
+      margin-bottom: 96px;
+    }
+    &--link {
+      color: $color-gray-4;
+      text-decoration: none;
+    }
+  }
+  &__form {
+    height: 32px;
+    width: 343px;
+    display: flex;
+    flex-direction: row;
+
+    margin: auto;
+
+    margin-top: 24px;
+    margin-bottom: 48px;
+    background-color: $color-white;
+  }
+  &__input {
+    background-color: $color-gray-1;
+    width: 239px;
+    height: 32px;
+    text-align: left;
+    margin-right: 8px;
+    margin-top: 0px;
+    padding: 0 0 0 8px;
+  }
+}

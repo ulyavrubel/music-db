@@ -14,30 +14,30 @@ function AlbumCard(props) {
   } = props.album;
 
   return (
-    <div className="preview box">
-      <img className="preview img" src={url} alt=".."></img>
-      <div className="preview info">
-        <h5>
+    <div className="album-card">
+      <img className="album-card__img" src={url} alt=".."></img>
+      <div className="album-card__info">
+        <h5 className="album-card__info__header">
           <Link to={`/search/${artist}/artist`}>{artist}</Link> - {title}
         </h5>
-        <p>
-          <span>Label </span>
+        <p className="album-card__info__paragraph">
+          <span className="album-card__info__span">Label </span>
           <Link to={`/search/${label}/label`}>{label}</Link>
         </p>
-        <p>
-          <span>Format </span>
+        <p className="album-card__info__paragraph">
+          <span className="album-card__info__span">Format </span>
           {format}
         </p>
-        <p>
-          <span>Country </span>
+        <p className="album-card__info__paragraph">
+          <span className="album-card__info__span">Country </span>
           {country}
         </p>
-        <p>
-          <span>Year </span>
+        <p className="album-card__info__paragraph">
+          <span className="album-card__info__span">Year </span>
           {released}
         </p>
-        <p>
-          <span>Genre </span>
+        <p className="album-card__info__paragraph">
+          <span className="album-card__info__span">Genre </span>
           {genre}
         </p>
       </div>

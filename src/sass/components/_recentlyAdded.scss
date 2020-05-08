@@ -1,0 +1,34 @@
+.recentlyAdded {
+  background-color: $color-gray-6;
+  color: $color-white;
+  padding: 0px 16px 48px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin: 0px 0px 12px 12px;
+    font-size: 18px;
+    align-self: start;
+  }
+}
+
+.grid-album__link--recentlyAdded {
+  color: $color-gray-1;
+}
+
+.showmore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  &__paragraph {
+    margin: 24px 0px 8px 0px;
+    color: $color-gray-1;
+    font-size: 16px;
+  }
+  &__img {
+    margin: auto;
+  }
+}

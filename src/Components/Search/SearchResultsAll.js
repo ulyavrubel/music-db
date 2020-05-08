@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SearchResultsNav from "./SearchResultsNav";
-import "./searchResults.css";
 import Pagination from "../Pagination";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import CollectionGrid from "../Collection/CollectionGrid";
@@ -156,16 +155,16 @@ function SearchResultsAll(props) {
   };
 
   return (
-    <div className="serachResults container">
+    <div className="search">
       <SearchResultsNav q={props.q} />
-      <h3 className="search header">
-        Results for <span>{props.q}</span>
+      <h3 className="search__header">
+        Results for <span className="search__header--span">{props.q}</span>
       </h3>
 
       {showNothing ? (
         <NothingFound />
       ) : (
-        <div className="collection nav">
+        <div className="navbar-albums">
           <Sort onChange={handleChange} />
         </div>
       )}

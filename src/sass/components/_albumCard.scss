@@ -1,0 +1,32 @@
+.album-card {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+
+  &__img {
+    height: 145px;
+    width: 145px;
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-left: 24px;
+    max-width: 150px;
+
+    &__header {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 12px;
+    }
+
+    &__paragraph {
+      font-size: 12px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    &__span {
+      color: $color-gray-2;
+    }
+  }
+}

@@ -104,20 +104,20 @@ function CollectionRows(props) {
       </button>
       {showModal ? (
         <Modal>
-          <div>
+          <div className="modal__div">
             <h3>
               Do you want to remove selected albums from your{" "}
               {props.collectionName}?
             </h3>
             <div>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={handleRemove}
               >
                 Yes
               </button>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={toggleModal}
               >
                 No
@@ -128,10 +128,10 @@ function CollectionRows(props) {
       ) : null}
       {showMessageModal ? (
         <Modal>
-          <div>
+          <div className="modal__div">
             <h3>Albums were removed from your {props.collectionName}</h3>
             <button
-              className="auth submit remove modal"
+              className="btn btn-black btn-black--modal"
               onClick={() => setShowMessageModal(false)}
             >
               OK

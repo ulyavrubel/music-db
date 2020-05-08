@@ -22,13 +22,13 @@ function Pagination(props) {
           <div className="pagination-navigation__buttons">
             {showPrev ? (
               <button
-                className="btn btn-pagination"
+                className="btn btn-border"
                 onClick={handlePrev}
               >{`< Previous`}</button>
             ) : null}
             {showNext ? (
               <button
-                className="btn btn-pagination"
+                className="btn btn-border"
                 onClick={handleNext}
               >{`Next >`}</button>
             ) : null}

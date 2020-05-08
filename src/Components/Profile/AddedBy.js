@@ -3,7 +3,6 @@ import { AuthContext } from "../Auth/AuthProvider";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import CollectionGrid from "../Collection/CollectionGrid";
 import ProfileNav from "../Navs/ProfileNav";
-import "./profile.css";
 
 function AddedBy() {
   const { currentUser } = useContext(AuthContext);
@@ -32,7 +31,7 @@ function AddedBy() {
   }, [currentUser]);
   if (!currentUser) {
     return (
-      <h3>
+      <h3 className="not-logged">
         Please, <a href="/login">login</a> to see albums uploaded by you.
       </h3>
     );
@@ -41,7 +40,7 @@ function AddedBy() {
   return (
     <div>
       <ProfileNav />
-      <div className="addedBy container">
+      <div className="addedBy">
         <h3>Your uploads</h3>
         <CollectionGrid collection={albums} sort="newest" />
       </div>

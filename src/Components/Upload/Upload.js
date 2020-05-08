@@ -342,7 +342,7 @@ class UploadForm extends React.Component {
           </form>
         </div>
         {this.state.error !== "err message" ? (
-          <p style={{ textAlign: "center" }}>{this.state.error}</p>
+          <p className="upload-error">{this.state.error}</p>
         ) : null}
         {this.state.showPreview ? <Preview release={this.state} /> : null}
       </div>

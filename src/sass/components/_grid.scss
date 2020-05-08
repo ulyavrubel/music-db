@@ -11,6 +11,10 @@
   display: grid;
   grid-template-columns: repeat(2, 132px);
   grid-column-gap: 50px;
+
+  &--recentlyAdded {
+    margin-bottom: 0px;
+  }
 }
 
 .grid-album {
@@ -24,7 +28,7 @@
 
   &__link {
     text-decoration: none;
-    color: rgba(31, 31, 31, 1);
+    color: $color-gray-6;
   }
 
   &__paragraph {

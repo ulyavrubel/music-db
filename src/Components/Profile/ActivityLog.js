@@ -76,25 +76,25 @@ function ActivityLog() {
       <div className="activity-item" key={log.logID}>
         <Link to={`/albums/${log.id}`}>
           <img
-            className="activity-img"
+            className="activity-item__img"
             src={log.url}
             alt={`${log.artist} - ${log.title}`}
           ></img>
         </Link>
-        <div className="activity-text">
-          <p className="activity-info">
+        <div>
+          <p className="activity-item__info">
             {log.title} by {log.artist} {log.log}
           </p>
-          <p className="activity-date">{formatedDate}</p>
+          <p className="activity-item__date">{formatedDate}</p>
         </div>
       </div>
     );
   });
 
   return (
-    <div className="activity-container">
-      <p className="activity-header">Recent activity</p>
-      <div className="activity-logs">{activityLogs}</div>
+    <div className="activity">
+      <p className="activity__header">Recent activity</p>
+      <div>{activityLogs}</div>
     </div>
   );
 }

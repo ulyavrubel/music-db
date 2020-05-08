@@ -1,0 +1,113 @@
+.profile-container {
+  margin-top: 96px;
+  color: $color-gray-6;
+}
+
+.user-info {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: row;
+  &__img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  &__name {
+    font-size: 16px;
+    margin: 0;
+  }
+  &__date {
+    margin: 12px 0 0 0;
+    font-size: 12px;
+    color: $color-gray-4;
+  }
+}
+
+.user-releases {
+  margin: 32px 0 0 12px;
+
+  &__header {
+    font-size: 16px;
+    margin: 0 0 24px 0;
+  }
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: 128px 24px;
+
+  &__link {
+    text-decoration: none;
+    font-size: 14px;
+    color: $color-gray-6;
+    margin-bottom: 16px;
+
+    &:hover {
+      color: $color-gray-4;
+    }
+    &--number {
+      text-align: end;
+    }
+  }
+}
+
+.addedBy {
+  font-size: 16px;
+  margin-left: 12px;
+}
+
+.activity {
+  margin: 32px 12px 48px 12px;
+  &__header {
+    font-size: 16px;
+    margin: 0 0 24px 0;
+  }
+}
+
+.activity-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  &__img {
+    width: 64px;
+    height: 64px;
+  }
+  &__info {
+    font-size: 14px;
+    margin: 0 0 8px 8px;
+  }
+  &__date {
+    font-size: 12px;
+    margin: 0 0 0 8px;
+    color: $color-gray-4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-container {
+    margin-top: 52px;
+  }
+  .profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-left: 52px;
+  }
+  .activity {
+    margin: 0px 12px 48px 64px;
+  }
+  .profile-cover {
+    background-image: url("./img/cover.png");
+    height: 256px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .user-photo {
+    position: absolute;
+    top: 158px;
+    left: 64px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+}

@@ -3,11 +3,11 @@ import Slideshow from "./Slideshow";
 
 function Hero() {
   return (
-    <div className="hero container">
+    <div className="hero-container">
       <div className="mobile">
-        <h1>Explore new music with us</h1>
+        <h1 className="hero-container__header">Explore new music with us</h1>
         <br />
-        <h5>
+        <h5 className="hero-container__header hero-container__header--h5">
           Track your collection and wantlist <br />
           Contribute to the catalog
         </h5>

@@ -39,8 +39,11 @@
     background-color: $color-gray-6;
     margin-bottom: 32px;
   }
+  .navbar-profile__link {
+    text-decoration: none;
 
-  .navbar-profile__link:after {
-    background-color: $color-white;
+    &:after {
+      background-color: $color-white;
+    }
   }
 }

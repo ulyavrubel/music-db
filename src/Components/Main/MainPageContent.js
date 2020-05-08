@@ -3,7 +3,6 @@ import Hero from "./Hero";
 import Subscribe from "./Subscribe";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import RecentlyAddedGrid from "./RecentlyAddedGrid";
-import "./main.css";
 
 function MainPageContent() {
   const [recentlyAdded, setRecentlyAdded] = useState([]);

@@ -1,0 +1,26 @@
+.modal {
+  background-color: rgba($color-gray-6, 0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:empty {
+    display: none;
+  }
+
+  &__div {
+    background-color: $color-white;
+    width: 80%;
+    max-width: 375px;
+    padding: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
-import "./profile.css";
 import ProfileNavProfileDesktop from "../Navs/ProfileNavProfileDesktop";
 import { AuthContext } from "../Auth/AuthProvider";
 import UserReleases from "./UserReleases";
@@ -28,8 +27,8 @@ function Profile() {
 
   if (!currentUser) {
     return (
-      <div className="profile container">
-        <h3>
+      <div className="profile-container">
+        <h3 className="not-logged">
           Please, <a href="/login">login</a>.
         </h3>
       </div>
@@ -37,7 +36,7 @@ function Profile() {
   }
 
   return (
-    <div className="profile container" ref={ref}>
+    <div className="profile-container" ref={ref}>
       <div className="profile-cover desktop">
         <img
           className="desktop user-photo"
@@ -53,11 +52,15 @@ function Profile() {
 
       <div className="profile-wrapper">
         <div>
-          <div className="user info">
-            <img className="mobile" src={currentUser.photoURL} alt="..."></img>
+          <div className="user-info">
+            <img
+              className="user-info__img mobile"
+              src={currentUser.photoURL}
+              alt="..."
+            ></img>
             <div>
-              <p className="user info name">{currentUser.displayName}</p>
-              <p className="user info date">Joined {signupDate}</p>
+              <p className="user-info__name">{currentUser.displayName}</p>
+              <p className="user-info__date">Joined {signupDate}</p>
             </div>
           </div>
           <UserReleases />

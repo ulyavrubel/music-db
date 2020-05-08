@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { firebaseDB } from "../Auth/FirebaseInit";
 import AlbumCard from "./AlbumCard";
 import { AuthContext } from "../Auth/AuthProvider";
-import "./album.css";
 import { removeFromDB } from "../Helpers/removeFromDB";
 import { addToDBCollection } from "../Helpers/addToDBCollection";
 import Modal from "../Modal";
@@ -110,9 +109,9 @@ function Album(props) {
 
   if (!currentUser) {
     return (
-      <div className="upload container preview album">
+      <div className="album-page">
         <AlbumCard album={album} />
-        <p>
+        <p className="not-logged">
           <a href="/login">Login</a> to add to your collection, wishlist
         </p>
       </div>
@@ -120,16 +119,19 @@ function Album(props) {
   }
 
   return (
-    <div className="upload container preview album">
+    <div className="album-page">
       <AlbumCard album={album} />
 
       {inCollection ? (
-        <button className="auth submit navigation" onClick={toggleModal}>
+        <button
+          className="btn btn-border btn-border--album"
+          onClick={toggleModal}
+        >
           Remove from my Collection
         </button>
       ) : (
         <button
-          className="auth submit navigation"
+          className="btn btn-border btn-border--album"
           onClick={handleAddToCollection}
         >
           Add to my Collection
@@ -137,14 +139,14 @@ function Album(props) {
       )}
       {inWishlist ? (
         <button
-          className="auth submit navigation"
+          className="btn btn-border btn-border--album"
           onClick={toggleModalWishlist}
         >
           Remove from my Wishlist
         </button>
       ) : (
         <button
-          className="auth submit navigation"
+          className="btn btn-border btn-border--album"
           onClick={handleAddToWishlist}
         >
           Add to my Wishlist
@@ -153,17 +155,17 @@ function Album(props) {
 
       {showModal ? (
         <Modal>
-          <div>
+          <div className="modal__div">
             <h3>Do you want to remove this album from your collection?</h3>
             <div>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={handleRemoveFromCollection}
               >
                 Yes
               </button>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={toggleModal}
               >
                 No
@@ -174,17 +176,17 @@ function Album(props) {
       ) : null}
       {showModalWishlist ? (
         <Modal>
-          <div>
+          <div className="modal__div">
             <h3>Do you want to remove this album from your wishlist?</h3>
             <div>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={handleRemoveFromWishlist}
               >
                 Yes
               </button>
               <button
-                className="auth submit remove modal"
+                className="btn btn-black btn-black--modal"
                 onClick={toggleModalWishlist}
               >
                 No

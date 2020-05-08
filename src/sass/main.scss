@@ -1,5 +1,6 @@
 @import "variables";
 @import "base";
+
 @import "components/navbar";
 @import "components/hamburger";
 @import "components/footer";
@@ -11,84 +12,19 @@
 @import "components/grid";
 @import "components/pagination";
 @import "components/upload";
+@import "components/albumCard";
+@import "components/modal";
 
-.upload.container.preview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+//main page
+@import "components/hero";
+@import "components/subscribe";
+@import "components/recentlyAdded";
 
-.preview.box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 24px;
-}
+//album page
+@import "components/albumPage";
 
-.preview.img {
-  height: 145px;
-  width: 145px;
-  object-fit: cover;
-}
+//profile page
+@import "components/profile";
 
-.preview.info {
-  margin-left: 24px;
-  max-width: 150px;
-}
-
-.preview.info h5 {
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.preview.info p {
-  font-size: 12px;
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-.preview.info p span {
-  color: $color-gray-2;
-}
-
-.auth.submit.preview {
-  margin-top: 24px;
-}
-
-.upload.success {
-  text-align: center;
-  margin: 48px;
-}
-
-#modal {
-  background-color: rgba($color-gray-6, 0.5);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#modal:empty {
-  display: none;
-}
-
-#modal > div {
-  background-color: $color-white;
-  width: 80%;
-  max-width: 375px;
-  padding: 16px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.auth.submit.remove.modal {
-  margin: 0px 4px 1em 4px;
-}
-
-.auth.submit.remove.modal:hover {
-  background-color: $color-gray-3;
-}
+//search
+@import "components/search";

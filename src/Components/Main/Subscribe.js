@@ -2,28 +2,28 @@ import React from "react";
 
 function Subscribe() {
   return (
-    <div className="subscribe container">
-      {/* <h2 className="subscribe container header mobile">
+    <div className="subscribe">
+      <h2 className="subscribe__header mobile">
         Join our newsletter, <span>keep up with new updates! </span>
-      </h2> */}
-      <h2 className="subscribe container header desktop">
+      </h2>
+      <h2 className="subscribe__header desktop">
         Explore new music with us.{" "}
-        <span>
+        <span className="subscribe__header--span">
           Track your collection and wantlist. Contribute to the catalog.{" "}
         </span>
       </h2>
-      {/* <form className="subscribe form">
+      <form className="subscribe__form">
         <input
-          className="subscribe input"
+          className="subscribe__input"
           name="subscribe"
           id="subscribe"
           placeholder="Enter your e-mail"
           type="email"
         ></input>
-        <button className="subscribe button" type="submit">
+        <button className="btn btn-white  btn-white--subscribe" type="submit">
           Subscribe
         </button>
-      </form> */}
+      </form>
     </div>
   );
 }

@@ -91,17 +91,20 @@ function Preview(props) {
 
   if (uploaded) {
     return (
-      <div className="upload success">
+      <div className="upload-success">
         <h2>Your album was successfully uploaded!</h2>
       </div>
     );
   } else {
     return (
       <div style={uploaded ? { display: "none" } : { display: "block" }}>
-        <h3 className="upload header">Preview</h3>
-        <div className="upload container preview">
+        <h3 className="upload-header">Preview</h3>
+        <div className="upload-container upload-container--preview">
           <AlbumCard album={album} />
-          <button className="auth submit preview" onClick={handleSubmit}>
+          <button
+            className="btn btn-black btn-black--preview"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
         </div>

@@ -10,28 +10,32 @@ function NothingFound() {
   return (
     <div className="nothingFound">
       <p>
-        Sorry, but nothing matched <br />
+        Sorry, but nothing matched <br className="mobile" />
         your search terms.
       </p>
-      <p className="nothingFound please">Please, try again.</p>
+      <p className="nothingFound__paragraph">Please, try again.</p>
       <form
-        className="subscribe form nothingFound"
+        className="nothingFound__form"
         onSubmit={() => navigate(`/search/${query}/all`)}
       >
         <input
-          className="nothingFound input search"
+          className="nothingFound__input"
           name="search"
           id="search"
           placeholder="Artist, Album, Label"
           type="text"
           onChange={handleChange}
         ></input>
-        <button className="nothingFound button search" type="submit">
+        <button className="btn btn-black btn-black-search" type="submit">
           Search
         </button>
       </form>
-      <p className="nothingFound link">
-        Or <Link to="/upload">add new album</Link> to the database.
+      <p className="nothingFound__paragraph--bottom">
+        Or{" "}
+        <Link className="nothingFound__paragraph--link" to="/upload">
+          add new album
+        </Link>{" "}
+        to the database.
       </p>
     </div>
   );

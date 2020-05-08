@@ -66,13 +66,20 @@ function SlideShow() {
           key={image.title}
           className={
             index === 2
-              ? "slideshow img container center"
-              : "slideshow img container"
+              ? "slideshow__img-container slideshow__img-container--center"
+              : "slideshow__img-container slideshow__img-container--side"
           }
         >
           <a href={image.href}>
-            <img className="hero" src={image.img} alt={image.title}></img>
-            <div className="img text" style={{ color: image.textColor }}>
+            <img
+              className="slideshow__hero"
+              src={image.img}
+              alt={image.title}
+            ></img>
+            <div
+              className="slideshow__img-text"
+              style={{ color: image.textColor }}
+            >
               {image.title} <br />
               {image.artist}
             </div>
@@ -82,16 +89,16 @@ function SlideShow() {
     });
   }
   return (
-    <div className="slideshow box">
+    <div className="slideshow">
       <img
-        className="navigation"
+        className="slideshow__navigation"
         src={left}
         onClick={handlePrev}
         alt=".."
       ></img>
       {makeSlides(orders[index])}
       <img
-        className="navigation"
+        className="slideshow__navigation"
         src={right}
         onClick={handleNext}
         alt=".."

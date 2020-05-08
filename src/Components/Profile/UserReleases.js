@@ -52,25 +52,40 @@ function UserReleases() {
 
   return (
     <div className="user-releases">
-      <p className="user-releases header">Releases</p>
-      <div className="releases-statistics">
-        <a href={`/collection/${currentUser.displayName}`}>In Collection</a>
+      <p className="user-releases__header">Releases</p>
+      <div className="statistics">
         <a
-          className="statistics-number"
+          className="statistics__link"
+          href={`/collection/${currentUser.displayName}`}
+        >
+          In Collection
+        </a>
+        <a
+          className="statistics__link statistics__link--number"
           href={`/collection/${currentUser.displayName}`}
         >
           {collectionLength}
         </a>
-        <a href={`/wishlist/${currentUser.displayName}`}>In Wishlist</a>
         <a
-          className="statistics-number"
+          className="statistics__link"
+          href={`/wishlist/${currentUser.displayName}`}
+        >
+          In Wishlist
+        </a>
+        <a
+          className="statistics__link statistics__link--number"
           href={`/wishlist/${currentUser.displayName}`}
         >
           {wishlistLength}
         </a>
-        <a href={`/addedBy/${currentUser.displayName}`}>Uploaded</a>
         <a
-          className="statistics-number"
+          className="statistics__link"
+          href={`/addedBy/${currentUser.displayName}`}
+        >
+          Uploaded
+        </a>
+        <a
+          className="statistics__link statistics__link--number"
           href={`/addedBy/${currentUser.displayName}`}
         >
           {addedByLength}

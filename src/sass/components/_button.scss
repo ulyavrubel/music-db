@@ -7,6 +7,9 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-black {
@@ -15,6 +18,7 @@
   &:hover {
     background-color: $color-gray-5;
   }
+
   &--reset {
     margin-bottom: 24px;
   }
@@ -25,6 +29,15 @@
   &--upload {
     height: 32px;
     padding: 8px 16px 8px 16px;
+  }
+  &--preview {
+    margin-top: 24px;
+  }
+  &--modal {
+    margin: 0px 4px 1em 4px;
+  }
+  &--search {
+    width: 75px;
   }
 }
 
@@ -60,7 +73,7 @@
   }
 }
 
-.btn-pagination {
+.btn-border {
   width: 96px;
   padding: 8px;
   background-color: $color-white;
@@ -70,6 +83,24 @@
   margin: 12px 0px 0px 8px;
   &:hover {
     background-color: $color-gray-1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--album {
+    margin: 0;
+    width: 210px;
+
+    &:first-of-type {
+      margin-top: 32px;
+      width: 240px;
+    }
+
+    &:last-of-type {
+      margin-top: 12px;
+    }
   }
 }
 

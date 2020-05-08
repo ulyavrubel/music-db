@@ -1,0 +1,22 @@
+.album-page {
+  display: block;
+  margin: auto;
+  margin-top: 96px;
+  border: solid 1px $color-gray-1;
+  border-radius: 15px;
+  width: 319px;
+  padding: 12px 12px 48px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & a {
+    text-decoration: none;
+    color: rgba(31, 31, 31, 1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .album-page {
+    width: 384px;
+  }
+}

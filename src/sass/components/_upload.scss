@@ -12,11 +12,16 @@
   margin: auto;
   margin-bottom: 48px;
   display: block;
+  &--preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .file-form {
   width: 319px;
-  height: 98px;
+  height: 117px;
   background-color: $color-white;
   margin-bottom: 32px;
 
@@ -139,4 +144,15 @@
     margin-bottom: 12px;
     font-size: 12px;
   }
+}
+
+.upload-error {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+.upload-success {
+  text-align: center;
+  margin: 48px;
 }

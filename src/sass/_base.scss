@@ -19,6 +19,10 @@ body {
 
 .not-logged {
   margin-top: 96px;
+  & a {
+    text-decoration: none;
+    color: $color-gray-4;
+  }
 }
 
 @media (min-width: 1024px) {
