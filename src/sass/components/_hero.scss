@@ -2,11 +2,11 @@
   text-align: center;
 
   &__header {
-    margin: 0 0 12px 0;
-    font-size: 24px;
+    margin: 0 0 1.2rem 0;
+    font-size: 2.4rem;
 
     &--h5 {
-      font-size: 12px;
+      font-size: 1.2rem;
     }
   }
 }
@@ -17,13 +17,13 @@
   justify-content: center;
 
   &__hero {
-    width: 256px;
-    margin-left: 16px;
-    margin-right: 16px;
+    width: 25.6rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
   }
 
   &__navigation {
-    height: 64px;
+    height: 6.4rem;
     align-self: center;
   }
 
@@ -39,27 +39,27 @@
 
   &__img-text {
     position: absolute;
-    bottom: 8px;
-    right: 24px;
+    bottom: 0.8rem;
+    right: 2.4rem;
     display: block;
-    font-size: 10px;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .slideshow {
-    margin-bottom: 32px;
+    margin-bottom: 3.2rem;
 
     &__hero {
-      width: 192px;
+      width: 19.2rem;
     }
 
     &__img-container {
       align-self: center;
 
       &--center img {
-        width: 364px;
-        height: 364px;
+        width: 36.4rem;
+        height: 36.4rem;
       }
 
       &--side {

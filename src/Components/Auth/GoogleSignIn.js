@@ -19,7 +19,7 @@ function GoogleSignIn(props) {
 
   return (
     <button
-      className="btn btn-social btn-social--google"
+      className="btn btn-social btn-social--google marg-t-xxs"
       type="button"
       onClick={handleGoogleSignUp}
     >

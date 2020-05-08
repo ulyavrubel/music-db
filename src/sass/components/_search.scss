@@ -1,8 +1,8 @@
 .search {
   &__header {
-    margin: 96px 0 0 0;
-    padding: 0px 16px 32px 16px;
-    font-size: 18px;
+    margin: 4.8rem 0 0 0;
+    padding: 0 1.6rem 3.2rem 1.6rem;
+    font-size: 1.8rem;
     &--span {
       color: $color-gray-3;
     }
@@ -11,6 +11,7 @@
 
 .nothingFound {
   text-align: center;
+  font-size: 1.6rem;
   &__paragraph {
     &--link {
       color: $color-gray-4;
@@ -18,8 +19,8 @@
     }
   }
   &__form {
-    height: 32px;
-    width: 343px;
+    height: 3.2rem;
+    width: 34.3rem;
     display: flex;
     flex-direction: row;
     margin-left: auto;
@@ -28,10 +29,10 @@
   }
   &__input {
     background-color: $color-gray-1;
-    width: 239px;
-    height: 32px;
+    width: 23.9rem;
+    height: 3.2rem;
     text-align: left;
-    margin-right: 8px;
-    padding: 0 0 0 8px;
+    margin-right: 0.8rem;
+    padding: 0 0 0 0.8rem;
   }
 }

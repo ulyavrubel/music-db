@@ -3,41 +3,41 @@
 }
 
 .user-info {
-  margin-left: 12px;
+  margin-left: 1.2rem;
   display: flex;
   flex-direction: row;
   &__img {
-    width: 64px;
-    height: 64px;
+    width: 6.4rem;
+    height: 6.4rem;
     object-fit: cover;
-    margin-right: 12px;
+    margin-right: 1.2rem;
   }
   &__name {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
   &__date {
-    margin: 12px 0 0 0;
-    font-size: 12px;
+    margin: 1.2rem 0 0 0;
+    font-size: 1.2rem;
     color: $color-gray-4;
   }
 }
 
 .user-releases {
-  margin: 32px 0 0 12px;
+  margin: 3.2rem 0 0 1.2rem;
 
   &__header {
-    font-size: 16px;
-    margin: 0 0 24px 0;
+    font-size: 1.6rem;
+    margin: 0 0 2.4rem 0;
   }
 }
 
 .statistics {
   display: grid;
-  grid-template-columns: 128px 24px;
+  grid-template-columns: 12.8rem 2.4rem;
 
   &__link {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: $color-gray-6;
 
     &:hover {
@@ -50,15 +50,15 @@
 }
 
 .addedBy {
-  font-size: 16px;
-  margin-left: 12px;
+  font-size: 1.6rem;
+  margin-left: 1.2rem;
 }
 
 .activity {
-  margin: 32px 12px 48px 12px;
+  margin: 3.2rem 1.2rem 4.8rem 1.2rem;
   &__header {
-    font-size: 16px;
-    margin: 0 0 24px 0;
+    font-size: 1.6rem;
+    margin: 0 0 2.4rem 0;
   }
 }
 
@@ -67,44 +67,44 @@
   flex-direction: row;
 
   &__img {
-    width: 64px;
-    height: 64px;
+    width: 6.4rem;
+    height: 6.4rem;
   }
   &__info {
-    font-size: 14px;
-    margin: 0 0 8px 8px;
+    font-size: 1.4rem;
+    margin: 0 0 0.8rem 0.8rem;
   }
   &__date {
-    font-size: 12px;
-    margin: 0 0 0 8px;
+    font-size: 1.2rem;
+    margin: 0 0 0 0.8rem;
     color: $color-gray-4;
   }
 }
 
 @media (min-width: 1024px) {
   .profile-container {
-    margin-top: 52px;
+    margin-top: 5.2rem;
   }
   .profile-wrapper {
     display: flex;
     flex-direction: row;
-    margin-left: 52px;
+    margin-left: 5.2rem;
   }
   .activity {
-    margin: 0px 12px 48px 64px;
+    margin: 0 1.2rem 4.8rem 6.4rem;
   }
   .profile-cover {
     background-image: url("./img/cover.png");
-    height: 256px;
+    height: 25.6rem;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .user-photo {
     position: absolute;
-    top: 158px;
-    left: 64px;
-    width: 150px;
-    height: 150px;
+    top: 15.8rem;
+    left: 6.4rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: cover;
   }
 }

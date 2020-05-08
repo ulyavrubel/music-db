@@ -3,17 +3,17 @@
   flex-direction: row;
 
   &__img {
-    height: 145px;
-    width: 145px;
+    height: 14.5rem;
+    width: 14.5rem;
     object-fit: cover;
   }
 
   &__info {
-    margin-left: 24px;
-    max-width: 150px;
+    margin-left: 2.4rem;
+    max-width: 15rem;
 
     &__header {
-      font-size: 14px;
+      font-size: 1.4rem;
       & a {
         text-decoration: none;
         color: $color-gray-6;
@@ -21,7 +21,7 @@
     }
 
     &__paragraph {
-      font-size: 12px;
+      font-size: 1.2rem;
       & a {
         text-decoration: none;
         color: $color-gray-6;

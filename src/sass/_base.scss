@@ -3,10 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-default;
+  font-size: 62.5%; //10px
 }
 
 .content {
-  min-height: calc(100vh - 96px - 48px);
+  min-height: calc(100vh - 9.6rem - 4.8rem);
 }
 
 .mobile {
@@ -18,7 +19,7 @@ body {
 }
 
 .not-logged {
-  margin-top: 96px;
+  margin-top: 9.6rem;
   & a {
     text-decoration: none;
     color: $color-gray-4;

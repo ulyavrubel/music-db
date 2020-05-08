@@ -1,15 +1,15 @@
 .upload-header {
-  margin: 0px 0px 12px 16px;
+  margin: 0 0 1.2rem 1.6rem;
   color: $color-gray-6;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .upload-container {
-  width: 319px;
-  padding: 12px 12px 48px 12px;
-  border: solid 1px $color-gray-1;
-  border-radius: 4px;
-  margin: 0 auto 48px auto;
+  width: 31.9rem;
+  padding: 1.2rem 1.2rem 4.8rem 1.2rem;
+  border: solid 0.1rem $color-gray-1;
+  border-radius: 0.4rem;
+  margin: 0 auto 4.8rem auto;
   display: block;
   &--preview {
     display: flex;
@@ -19,8 +19,8 @@
 }
 
 .file-form {
-  width: 319px;
-  height: 117px;
+  width: 31.9rem;
+  height: 11.7rem;
   background-color: $color-white;
 
   &__container {
@@ -29,29 +29,29 @@
   }
 
   &__label {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 
   &__input {
     border: none;
-    height: 16px;
-    min-width: 294px;
+    height: 1.6rem;
+    min-width: 29.4rem;
     background-color: $color-white;
-    padding: 8px 12px 8px 0px;
-    font-size: 12px;
-    border-radius: 4px;
+    padding: 0.8rem 1.2rem 0.8rem 0;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
     font-family: $font-default;
   }
   &__paragraph {
-    font-size: 12px;
-    margin: 8px 0 0 0;
+    font-size: 1.2rem;
+    margin: 0.8rem 0 0 0;
   }
 }
 
 .album-form {
   display: flex;
   flex-direction: column;
-  height: 860px;
+  height: 86rem;
   background-color: $color-white;
   margin: auto;
   &__container {
@@ -61,37 +61,37 @@
     &--contries,
     &--genres,
     &--myCollection {
-      min-width: 318px;
+      min-width: 31.8rem;
     }
   }
 
   &__label {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 
   &__input {
-    height: 16px;
-    min-width: 294px;
+    height: 1.6rem;
+    min-width: 29.4rem;
     background-color: $color-gray-1;
-    padding: 8px 12px 8px 12px;
-    font-size: 12px;
-    border-radius: 4px;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
     &--year {
-      min-width: 96px;
+      min-width: 9.6rem;
     }
   }
 
   &__select {
-    width: 256px;
-    height: 32px;
+    width: 25.6rem;
+    height: 3.2rem;
     font-family: "Josefin Sans", sans-serif;
     background-color: $color-gray-2;
     color: $color-gray-5;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
 
     &--contries {
-      min-width: 318px;
+      min-width: 31.8rem;
     }
 
     &:focus {
@@ -111,14 +111,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
   &__label {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
   &__checkbox {
-    width: 12px;
+    width: 1.2rem;
     padding: 0;
-    margin: 0 8px 0 0;
+    margin: 0 0.8rem 0 0;
   }
 }
 
@@ -127,7 +127,7 @@
   flex-direction: row;
   align-items: center;
   &__label {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 }
 
@@ -137,5 +137,5 @@
 
 .upload-success {
   text-align: center;
-  margin: 48px;
+  margin: 4.8rem;
 }

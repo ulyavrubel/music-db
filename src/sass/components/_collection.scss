@@ -1,5 +1,5 @@
 .navbar-albums {
-  margin: 0px 16px 24px 16px;
+  margin: 0 1.6rem 2.4rem 1.6rem;
   color: $color-gray-6;
   display: flex;
   flex-direction: row;
@@ -11,15 +11,15 @@
   flex-direction: row;
 
   &__square {
-    width: 24px;
-    height: 24px;
-    border-radius: 2px;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.2rem;
     background-color: $color-gray-3;
-    margin-right: 8px;
+    margin-right: 0.8rem;
     cursor: pointer;
   }
   &__img {
-    margin: 4px;
+    margin: 0.4rem;
   }
 }
 
@@ -29,51 +29,51 @@
   align-items: center;
 }
 .rows-container {
-  padding-left: 12px;
-  border-bottom: 1px solid $color-gray-2;
+  padding-left: 1.2rem;
+  border-bottom: 0.1rem solid $color-gray-2;
 }
 
 .rows-album {
   display: flex;
   width: 100vw;
   flex-direction: row;
-  padding: 12px 0px 12px 0px;
-  border-top: 1px solid $color-gray-2;
+  padding: 1.2rem 0 1.2rem 0;
+  border-top: 0.1rem solid $color-gray-2;
 
   &__input {
-    min-width: 12px;
-    width: 12px;
-    height: 12px;
-    margin: 0px 12px 0px 12px;
+    min-width: 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 1.2rem 0 1.2rem;
   }
 
   &__img {
-    width: 64px;
-    height: 64px;
+    width: 6.4rem;
+    height: 6.4rem;
     object-fit: cover;
   }
 }
 
 .info {
-  margin-left: 12px;
-  max-width: 228px;
+  margin-left: 1.2rem;
+  max-width: 22.8rem;
   &__link {
     text-decoration: none;
     color: $color-gray-6;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 16px;
+    line-height: 1.6rem;
   }
   &__paragraph {
     color: $color-gray-6;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     color: $color-gray-3;
   }
 }
 
 @media (min-width: 1024px) {
   .info {
-    max-width: 600px;
+    max-width: 60rem;
   }
 }

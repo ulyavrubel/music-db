@@ -1,28 +1,28 @@
 .auth-container {
-  padding-bottom: 32px;
+  padding-bottom: 3.2rem;
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 343px;
-  height: 370px;
+  max-width: 34.3rem;
+  height: 37rem;
   background-color: $color-white;
-  border: 1px solid $color-gray-1;
-  border-radius: 15px;
+  border: 0.1rem solid $color-gray-1;
+  border-radius: 1.5rem;
   color: $color-gray-6;
-  padding: 24px 24px 48px 24px;
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
 
   &__header {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   &__input {
     border: 1px solid $color-gray-1;
-    border-radius: 15px;
-    height: 16px;
-    font-size: 14px;
+    border-radius: 1.5rem;
+    height: 1.6rem;
+    font-size: 1.4rem;
 
     &:focus:valid {
       border-color: $color-gray-3;
@@ -33,21 +33,21 @@
   }
 
   &__paragraph {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 
   &__link {
-    font-size: 12px;
+    font-size: 1.2rem;
     text-decoration: none;
     color: $color-gray-3;
   }
 
   &--signup {
-    height: 442px;
+    height: 44.2rem;
   }
 
   &__forgot {
-    font-size: 12px;
+    font-size: 1.2rem;
     text-align: center;
     color: $color-gray-5;
     line-height: 1.5;
@@ -56,6 +56,6 @@
 
 .auth-error {
   color: $color-tomato;
-  font-size: 12px;
+  font-size: 1.2rem;
   text-align: center;
 }

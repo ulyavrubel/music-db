@@ -8,14 +8,14 @@
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(2, 132px);
-  grid-column-gap: 50px;
+  grid-template-columns: repeat(2, 13.2rem);
+  grid-column-gap: 5rem;
 }
 
 .grid-album {
   &__img {
-    width: 132px;
-    height: 132px;
+    width: 13.2rem;
+    height: 13.2rem;
     object-fit: cover;
   }
 
@@ -25,15 +25,15 @@
   }
 
   &__paragraph {
-    margin: 8px 0 0 0;
+    margin: 0.8rem 0 0 0;
     text-align: center;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 }
 
 @media (min-width: 1024px) {
   .grid-container {
-    grid-template-columns: repeat(5, 132px);
+    grid-template-columns: repeat(5, 13.2rem);
   }
 }

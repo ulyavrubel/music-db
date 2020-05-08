@@ -3,9 +3,9 @@
   margin-right: auto;
   margin-left: auto;
   border: solid 1px $color-gray-1;
-  border-radius: 15px;
-  width: 319px;
-  padding: 12px 12px 48px 12px;
+  border-radius: 1.5rem;
+  width: 31.9rem;
+  padding: 1.2rem 1.2rem 4.8rem 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,6 @@
 
 @media (min-width: 1024px) {
   .album-page {
-    width: 384px;
+    width: 38.4rem;
   }
 }
