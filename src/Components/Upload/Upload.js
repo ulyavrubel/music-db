@@ -284,6 +284,7 @@ class UploadForm extends React.Component {
               >
                 <option value="">Select</option>
                 <option value="Vinyl">Vinyl</option>
+                <option value="Digital">Digital</option>
                 <option value="CD">CD</option>
                 <option value="DVD">DVD</option>
                 <option value="Cassette">Cassette</option>
