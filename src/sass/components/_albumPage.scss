@@ -9,13 +9,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  & a {
-    text-decoration: none;
-    color: rgba(31, 31, 31, 1);
-  }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .album-page {
     width: 38.4rem;
   }

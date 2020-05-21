@@ -35,7 +35,7 @@
   color: $color-white;
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .footer-links {
     display: flex;
     flex-direction: row;

@@ -75,6 +75,12 @@ class UploadForm extends React.Component {
     }
   };
 
+  getUrl = (str) => {
+    let index = str.indexOf(".jpg?alt=media&token");
+    let newStr = str.slice(0, index) + "_300x300" + str.slice(index);
+    return newStr;
+  };
+
   handleUploadFile = (event) => {
     event.preventDefault();
     const { img } = this.state;
@@ -83,20 +89,20 @@ class UploadForm extends React.Component {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          //progress function
+          // console.log(snapshot);
         },
         (error) => {
-          console.log(error);
+          // console.log(error);
         },
         () => {
-          //complete function
+          // complete function
           storage
             .ref("images")
             .child(img.name)
             .getDownloadURL()
             .then((url) => {
-              console.log(url);
-              this.setState({ url: url });
+              let resizedUrl = this.getUrl(url);
+              this.setState({ url: resizedUrl });
             });
         }
       );

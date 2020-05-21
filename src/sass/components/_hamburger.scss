@@ -33,7 +33,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .hamburger-container {
     display: flex;
     flex-direction: row;

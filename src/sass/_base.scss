@@ -22,13 +22,14 @@ body {
   margin-top: 9.6rem;
   font-size: 1.4rem;
   margin-left: 1.2rem;
+
   & a {
     text-decoration: none;
     color: $color-gray-4;
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .mobile {
     display: none;
   }

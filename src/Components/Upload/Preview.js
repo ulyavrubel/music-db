@@ -21,6 +21,7 @@ function Preview(props) {
         targetGenre = genre;
       }
     }
+
     setAlbum((prev) => {
       return { ...prev, genre: targetGenre };
     });

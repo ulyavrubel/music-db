@@ -72,7 +72,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .info {
     max-width: 60rem;
   }

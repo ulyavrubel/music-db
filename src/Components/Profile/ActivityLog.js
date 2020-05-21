@@ -11,7 +11,7 @@ function ActivityLog() {
 
   useEffect(() => {
     let d = new Date();
-    d.setMonth(d.getMonth() - 2);
+    d.setMonth(d.getMonth() - 1);
 
     if (currentUser) {
       setActivity([]);
@@ -61,7 +61,7 @@ function ActivityLog() {
           })
           .catch((err) => {
             if (err) {
-              console.log("Error getting documents", err.message);
+              console.log(log, "Error getting documents", err.message, err);
               setActivityWithAlbums([]);
             }
           });

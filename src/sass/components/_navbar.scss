@@ -91,7 +91,7 @@ input {
   margin-left: 0.4rem;
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .navbar {
     height: 5.2rem;
     justify-content: space-between;

@@ -38,7 +38,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .subscribe__header {
     font-size: 2.4rem;
 

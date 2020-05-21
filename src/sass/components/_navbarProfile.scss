@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .navbar-profile-desktop {
     margin: 0;
     padding-left: 6.4rem;

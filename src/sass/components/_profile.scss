@@ -81,7 +81,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-land) {
   .profile-container {
     margin-top: 5.2rem;
   }

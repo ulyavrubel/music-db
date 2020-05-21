@@ -119,6 +119,10 @@
     width: 1.2rem;
     padding: 0;
     margin: 0 0.8rem 0 0;
+
+    &:invalid {
+      box-shadow: none;
+    }
   }
 }
 
@@ -133,6 +137,7 @@
 
 .upload-error {
   text-align: center;
+  font-size: 1.4rem;
 }
 
 .upload-success {

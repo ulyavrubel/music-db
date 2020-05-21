@@ -109,7 +109,7 @@ function Album(props) {
 
   if (!currentUser) {
     return (
-      <div className="album-page">
+      <div className="album-page marg-t-xxl">
         <AlbumCard album={album} />
         <p className="not-logged">
           <a href="/login">Login</a> to add to your collection, wishlist

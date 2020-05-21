@@ -73,7 +73,7 @@ body {
     text-decoration: none;
     color: #787878; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .mobile {
     display: none; }
   .desktop {
@@ -158,7 +158,7 @@ input {
   height: 1.6rem;
   margin-left: 0.4rem; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .navbar {
     height: 5.2rem;
     justify-content: space-between; }
@@ -235,7 +235,7 @@ input {
     .hamburger-links__link:hover {
       background-color: #c4c4c4; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .hamburger-container {
     display: flex;
     flex-direction: row;
@@ -288,7 +288,7 @@ input {
   text-decoration: none;
   color: white; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .footer-links {
     display: flex;
     flex-direction: row;
@@ -456,7 +456,7 @@ input {
     .navbar-profile__link:hover:after, .navbar-profile__link:focus:after {
       width: 100%; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .navbar-profile-desktop {
     margin: 0;
     padding-left: 6.4rem;
@@ -530,7 +530,7 @@ input {
     line-height: 1.6rem;
     color: #929292; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .info {
     max-width: 60rem; } }
 
@@ -584,7 +584,11 @@ input {
   font-size: 1.2rem;
   line-height: 1.6rem; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 43.75em) {
+  .grid-container {
+    grid-template-columns: repeat(4, 13.2rem); } }
+
+@media only screen and (min-width: 64em) {
   .grid-container {
     grid-template-columns: repeat(5, 13.2rem); } }
 
@@ -689,6 +693,8 @@ input {
     width: 1.2rem;
     padding: 0;
     margin: 0 0.8rem 0 0; }
+    .genre-div__checkbox:invalid {
+      box-shadow: none; }
 
 .myCollection {
   display: flex;
@@ -698,7 +704,8 @@ input {
     font-size: 1.2rem; }
 
 .upload-error {
-  text-align: center; }
+  text-align: center;
+  font-size: 1.4rem; }
 
 .upload-success {
   text-align: center;
@@ -738,7 +745,8 @@ input {
   z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  font-size: 1.6rem; }
   .modal:empty {
     display: none; }
   .modal__div {
@@ -824,7 +832,7 @@ input {
     .subscribe__input:focus {
       outline: none; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .subscribe__header {
     font-size: 2.4rem; }
     .subscribe__header--span {
@@ -868,11 +876,8 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .album-page a {
-    text-decoration: none;
-    color: #1f1f1f; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .album-page {
     width: 38.4rem; } }
 
@@ -937,7 +942,7 @@ input {
     margin: 0 0 0 0.8rem;
     color: #787878; }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64em) {
   .profile-container {
     margin-top: 5.2rem; }
   .profile-wrapper {

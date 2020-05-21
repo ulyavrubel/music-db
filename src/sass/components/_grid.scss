@@ -32,7 +32,13 @@
   }
 }
 
-@media (min-width: 1024px) {
+@include respond(tab-port) {
+  .grid-container {
+    grid-template-columns: repeat(4, 13.2rem);
+  }
+}
+
+@include respond(tab-land) {
   .grid-container {
     grid-template-columns: repeat(5, 13.2rem);
   }
