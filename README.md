@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Music-DB - music database
+Simple Discogs clone built with React and Firebase.
 
-## Available Scripts
+## Table of Contents
+* [Introduction](#introduction)
+* [Demo](#demo)
+* [Technologies](#technologies)
+* [Features](#features)
+* [To-do](#todo)
 
-In the project directory, you can run:
+## Introduction
+This project is a simplistic clone of Discogs - database of information about music artists, albums, labels, and genres. I have built it with the aim to dive deep into React and make a "real-world" application with authentication and realtime database provided by Firebase. 
 
-### `npm start`
+## Demo
+Live demo https://react-music-db.herokuapp.com/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
+Project is created with:
+- React 16.13
+- Firebase 7.14
+- reach/router 1.3
+- node-sass 4.14
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
+Features for unauthenticated users:
+- view recently added albums
+- view album page
+- search through database
 
-### `npm test`
+Features for authenticated users only:
+- add/remove an album to/from user's collection and wishlist
+- switch between grid/row view for user's collection and wishlist
+- sort albums by date added to database, artist, album, genre, release year
+- upload new album to the database
+- view all albums uploaded by the current user
+- view user's activity log for the past month
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## To-do
+- to extend the album page with track list
+- to create video selector for adding youtube videos to the album page
