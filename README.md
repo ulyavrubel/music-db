@@ -6,7 +6,7 @@ Simple Discogs clone built with React and Firebase.
 * [Demo](#demo)
 * [Technologies](#technologies)
 * [Features](#features)
-* [To-do](#todo)
+* [To-do](#to-do)
 
 ## Introduction
 This project is a simplistic clone of Discogs - database of information about music artists, albums, labels, and genres. I have built it with the aim to dive deep into React and make a "real-world" application with authentication and realtime database provided by Firebase. 
